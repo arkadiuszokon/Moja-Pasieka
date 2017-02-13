@@ -5,26 +5,45 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.MojaPasieka.Droid PreferredExecutionTarget="Android.5&quot; KitKat (4.4) XXHDPI Phone" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MojaPasieka\DataModel\Base\DataModelBase.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MojaPasieka\IoC\IoC.cs">
     <Files>
       <File FileName="MojaPasieka\CommandHandler\Interfaces\ICommandHandler.cs" Line="13" Column="1" />
       <File FileName="MojaPasieka\Command\Interfaces\ICommand.cs" Line="4" Column="15" />
-      <File FileName="MojaPasieka\Event\Interfaces\IEvent.cs" Line="4" Column="2" />
+      <File FileName="MojaPasieka\Event\Interfaces\IEvent.cs" Line="6" Column="3" />
       <File FileName="MojaPasieka\IoC\SimpleContainer.cs" Line="34" Column="3" />
       <File FileName="MojaPasieka\IoC\IDependencyContainer.cs" Line="7" Column="16" />
       <File FileName="MojaPasieka\IoC\IResolver.cs" Line="26" Column="28" />
       <File FileName="MojaPasieka\Bus\Interfaces\ICommandBus.cs" Line="13" Column="1" />
-      <File FileName="MojaPasieka\Bus\CommandBus.cs" Line="18" Column="1" />
+      <File FileName="MojaPasieka\Bus\CommandBus.cs" Line="43" Column="5" />
       <File FileName="MojaPasieka\Event\Interfaces\IEventPublisher.cs" Line="12" Column="1" />
       <File FileName="MojaPasieka\App.xaml" Line="1" Column="1" />
-      <File FileName="MojaPasieka\App.xaml.cs" Line="22" Column="63" />
+      <File FileName="MojaPasieka\App.xaml.cs" Line="25" Column="7" />
       <File FileName="MojaPasieka\Bus\Interfaces\IQueryBus.cs" Line="12" Column="1" />
       <File FileName="MojaPasieka\Query\Interfaces\IQuery.cs" Line="5" Column="6" />
       <File FileName="MojaPasieka\CommandHandler\Interfaces\ICommandHandlerAsync.cs" Line="13" Column="1" />
-      <File FileName="MojaPasieka\QueryHandler\Interfaces\IQueryHandler.cs" Line="14" Column="1" />
+      <File FileName="MojaPasieka\QueryHandler\Interfaces\IQueryHandler.cs" Line="13" Column="2" />
       <File FileName="MojaPasieka\QueryHandler\Interfaces\IQueryHandlerAsync.cs" Line="16" Column="1" />
       <File FileName="MojaPasieka\Bus\QueryBus.cs" Line="27" Column="5" />
-      <File FileName="MojaPasieka\DataModel\Base\DataModelBase.cs" Line="5" Column="3" />
+      <File FileName="MojaPasieka\DataModel\Base\DataModelBase.cs" Line="10" Column="4" />
+      <File FileName="MojaPasieka\IoC\IoC.cs" Line="4" Column="24" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MojaPasieka" expanded="True">
+            <Node name="MojaPasieka" expanded="True">
+              <Node name="Event" expanded="True">
+                <Node name="Interfaces" expanded="True" />
+              </Node>
+              <Node name="IoC" expanded="True">
+                <Node name="IoC.cs" selected="True" />
+              </Node>
+              <Node name="QueryHandler" expanded="True" />
+              <Node name="App.xaml" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
 </Properties>

@@ -55,6 +55,7 @@
     <Compile Include="QueryHandler\Interfaces\IQueryHandlerAsync.cs" />
     <Compile Include="Bus\QueryBus.cs" />
     <Compile Include="DataModel\Base\DataModelBase.cs" />
+    <Compile Include="IoC\IoC.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

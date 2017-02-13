@@ -1,10 +1,16 @@
 ﻿using System;
+using System.ComponentModel;
+
 namespace MojaPasieka
 {
-	public class DataModelBase
+	public class DataModelBase: INotifyPropertyChanged
 	{
-		public DataModelBase()
+		public event PropertyChangedEventHandler PropertyChanged;
+		protected void OnPropertyChanged(string propertyName)
 		{
+			this.PropertyChanged?.Invoke(this,
+			  new PropertyChangedEventArgs(propertyName));
 		}
+
 	}
 }
