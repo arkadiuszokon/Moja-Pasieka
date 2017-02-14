@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace MojaPasieka
+namespace MojaPasieka.DataModel
 {
 	public class DataModelBase: INotifyPropertyChanged
 	{

@@ -1,5 +1,6 @@
 ﻿using System;
 using SQLite;
+using SQLite.Net.Attributes;
 namespace MojaPasieka.DataModel
 {
 	public class BeeHive : DataModelBase

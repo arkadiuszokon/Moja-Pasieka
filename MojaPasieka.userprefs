@@ -1,16 +1,44 @@
 ﻿<Properties StartupConfiguration="{4E901ACF-5B0E-4254-BB64-292057558CF7}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="MojaPasieka/AppResources.resx">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\App.xaml.cs" line="58" column="1" />
+      <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\App.xaml.cs" line="34" column="11" />
+      <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\Startup\Task\RegisterTypesTask.cs" line="26" column="4" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.MojaPasieka.Droid PreferredExecutionTarget="Android.00ecc44dfee92e74" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MojaPasieka\Bus\CommandBus.cs">
     <Files>
-      <File FileName="MojaPasieka/DataModel/BeeHive.cs" Line="8" Column="16" />
-      <File FileName="MojaPasieka/DataModel/Base/DataModelBase.cs" Line="4" Column="32" />
-      <File FileName="MojaPasieka/AppResources.resx" Line="16" Column="1" />
-      <File FileName="MojaPasieka/AppResources.Designer.cs" Line="1" Column="1" />
+      <File FileName="MojaPasieka\DataModel\BeeHive.cs" Line="3" Column="29" />
+      <File FileName="MojaPasieka\DataModel\Base\DataModelBase.cs" Line="4" Column="32" />
+      <File FileName="MojaPasieka\AppResources.resx" Line="16" Column="1" />
+      <File FileName="MojaPasieka\AppResources.Designer.cs" Line="1" Column="1" />
+      <File FileName="MojaPasieka\IoC\IoC.cs" Line="23" Column="1" />
+      <File FileName="MojaPasieka\App.xaml" Line="1" Column="1" />
+      <File FileName="MojaPasieka\App.xaml.cs" Line="34" Column="33" />
+      <File FileName="MojaPasieka\Command\AddBeeHiveCommand.cs" Line="6" Column="43" />
+      <File FileName="MojaPasieka\CommandHandler\AddBeeHiveHandler.cs" Line="19" Column="4" />
+      <File FileName="MojaPasieka\CommandHandler\Interfaces\ICommandHandler.cs" Line="1" Column="1" />
+      <File FileName="MojaPasieka\CommandHandler\Interfaces\ICommandHandlerAsync.cs" Line="1" Column="1" />
+      <File FileName="MojaPasieka\Event\BeeHiveAddedEvent.cs" Line="16" Column="1" />
+      <File FileName="MojaPasieka\Bus\QueryBus.cs" Line="16" Column="4" />
+      <File FileName="MojaPasieka\Bus\CommandBus.cs" Line="18" Column="37" />
+      <File FileName="MojaPasieka\Startup\AppStarter.cs" Line="28" Column="5" />
+      <File FileName="MojaPasieka\Startup\IStartupTask.cs" Line="2" Column="30" />
+      <File FileName="MojaPasieka\Event\Interfaces\IEvent.cs" Line="1" Column="1" />
+      <File FileName="MojaPasieka\Event\Interfaces\IEventPublisher.cs" Line="12" Column="1" />
+      <File FileName="MojaPasieka\Bus\EventBus.cs" Line="41" Column="1" />
+      <File FileName="MojaPasieka\Event\Interfaces\IConsumer.cs" Line="7" Column="3" />
+      <File FileName="MojaPasieka\Command\Interfaces\ICommand.cs" Line="1" Column="1" />
+      <File FileName="MojaPasieka\Event\Interfaces\IConsumerAsync.cs" Line="12" Column="1" />
+      <File FileName="MojaPasieka\Startup\Task\RegisterTypesTask.cs" Line="26" Column="1" />
+      <File FileName="Droid\DatabaseConnection_Android.cs" Line="23" Column="1" />
+      <File FileName="MojaPasieka\Startup\Task\DBConnectTask.cs" Line="16" Column="27" />
+      <File FileName="MojaPasieka\DataModel\Base\IDatabaseConnection.cs" Line="12" Column="1" />
+      <File FileName="Droid\MainActivity.cs" Line="1" Column="1" />
+      <File FileName="MojaPasieka\Bus\Interfaces\ICommandBus.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.MojaPasieka.Droid PreferredExecutionTarget="Android.test" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

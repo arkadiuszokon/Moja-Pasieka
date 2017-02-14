@@ -1,10 +1,12 @@
 ﻿using MojaPasieka.cqrs;
 using System.Reflection;
-
+using System.Linq;
 using Xamarin.Forms;
 using System.Diagnostics;
 using System.Collections.Generic;
 using System;
+using MojaPasieka.Startup;
+using Autofac;
 
 namespace MojaPasieka
 {
@@ -12,21 +14,28 @@ namespace MojaPasieka
 	{
 		public App()
 		{
-			var currentdomain = typeof(string).GetTypeInfo().Assembly.GetType("System.AppDomain").GetRuntimeProperty("CurrentDomain").GetMethod.Invoke(null, new object[] { });
-			var getassemblies = currentdomain.GetType().GetRuntimeMethod("GetAssemblies", new System.Type[] { });
-			var assemblies = getassemblies.Invoke(currentdomain, new object[] { }) as Assembly[];
-			for (var i = 0; i < assemblies.Length; i++)
-			{
-				if (assemblies[i].GetName().Name == "MojaPasieka")
-				{
-					IEnumerable<TypeInfo> types = assemblies[i].DefinedTypes;
-					foreach (var type in types)
-					{
-						
-					}
-				}
-			}
+			
 			InitializeComponent();
+
+			var containerBuilder = new ContainerBuilder();
+
+
+			var appStarter = new AppStarter(new List<IStartupTask> 
+			{ 
+				new DBConnectTask(containerBuilder), 
+				new RegisterTypesTask(containerBuilder)
+			});
+			appStarter.Start();
+
+			IoC.container = containerBuilder.Build();
+			using (var scope = IoC.container.BeginLifetimeScope())
+			{
+				scope.Resolve<ICommandBus>();
+			}
+				
+
+
+			appStarter.Start();
 			MainPage = new MojaPasiekaPage();
 		}
 

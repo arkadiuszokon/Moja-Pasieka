@@ -1,20 +1,21 @@
 ﻿using System;
-namespace MojaPasieka.IoC
+using Autofac;
+namespace MojaPasieka
 {
 
 	public static class IoC
 	{
-		private static SimpleContainer _container;
+		private static IContainer _container;
 
-		public static SimpleContainer container
+		public static IContainer container
 		{
 			get
 			{
-				if (_container == null)
-				{
-					_container = new SimpleContainer();
-				}
 				return _container;
+			}
+			set
+			{
+				_container = value;
 			}
 		}
 	}

@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Threading.Tasks;
-using MojaPasieka.IoC;
+using Autofac;
 
 namespace MojaPasieka.cqrs
 {
 	public class QueryBus:IQueryBus
 	{
 
-		private readonly IResolver _resolver;
+		private readonly ILifetimeScope _resolver;
 
 
-		public QueryBus(IResolver resolver)
+		public QueryBus(ILifetimeScope resolver)
 		{
 			_resolver = resolver;
 		}

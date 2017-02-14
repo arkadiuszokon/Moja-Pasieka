@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using MojaPasieka.IoC;
+using Autofac;
 
 namespace MojaPasieka.cqrs
 {
@@ -9,10 +9,10 @@ namespace MojaPasieka.cqrs
 	/// </summary>
 	public class CommandBus : ICommandBus
 	{
-		private readonly IResolver _resolver;
+		private readonly ILifetimeScope _resolver;
 		private readonly IEventPublisher _eventPublisher;
 
-		public CommandBus(IResolver resolver, IEventPublisher eventPublisher)
+		public CommandBus(ILifetimeScope resolver, IEventPublisher eventPublisher)
 		{
 			_resolver = resolver;
 			_eventPublisher = eventPublisher;
