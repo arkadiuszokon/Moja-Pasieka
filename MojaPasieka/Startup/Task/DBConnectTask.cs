@@ -1,8 +1,9 @@
 ﻿using System;
 using MojaPasieka.DataModel;
-using SQLite.Net.Async;
+using SQLite;
 using Xamarin.Forms;
 using Autofac;
+using System.Threading.Tasks;
 
 namespace MojaPasieka.Startup
 {
@@ -17,8 +18,9 @@ namespace MojaPasieka.Startup
 
 		public void Execute()
 		{
-			var database = DependencyService.Get<IDatabaseConnection>().DBConnection();
-			_container.RegisterInstance<SQLiteAsyncConnection>(database);
+				var database = DependencyService.Get<IDatabaseConnection>().DBConnection();
+				_container.RegisterInstance<SQLiteAsyncConnection>(database);
+
 		}
 	}
 }

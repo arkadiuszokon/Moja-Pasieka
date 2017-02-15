@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace MojaPasieka.Startup
 {
@@ -23,7 +24,7 @@ namespace MojaPasieka.Startup
 			foreach (var task in _tasks)
 			{
 
-				task.Execute();
+				 task.Execute();
 
 			}
 

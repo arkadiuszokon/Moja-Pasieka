@@ -1,7 +1,8 @@
 ﻿using System;
-using SQLite.Net.Async;
+using SQLite;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace MojaPasieka.cqrs
 {
@@ -16,11 +17,17 @@ namespace MojaPasieka.cqrs
 
 		public async Task<ICollection<IEvent>> HandleAsync(AddBeeHiveCommand command)
 		{
-			
-			var beeHiveID = await _conn.InsertAsync(command.beeHive);
-			command.beeHive.ul_id = beeHiveID;
-			return new List<IEvent> { new BeeHiveAddedEvent(command.beeHive) };
-
+			try
+			{
+				var beeHiveID = await _conn.InsertAsync(command.beeHive);
+				command.beeHive.ul_id = beeHiveID;
+				return new List<IEvent> { new BeeHiveAddedEvent(command.beeHive) };
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine(ex.ToString());
+			}
+			return new List<IEvent>() { };
 		}
 	}
 }

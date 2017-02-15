@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using Autofac;
 
@@ -9,6 +10,9 @@ namespace MojaPasieka.cqrs
 	/// </summary>
 	public class CommandBus : ICommandBus
 	{
+
+		public string tmp = "";
+
 		private readonly ILifetimeScope _resolver;
 		private readonly IEventPublisher _eventPublisher;
 
@@ -57,20 +61,27 @@ namespace MojaPasieka.cqrs
 			{
 				throw new ArgumentNullException("command");
 			}
-
-			var commandHandler = _resolver.Resolve<ICommandHandlerAsync<TCommand>>();
-
-			if (commandHandler == null)
+			try
 			{
-				throw new Exception(string.Format("No handler found for command '{0}'", cmd.GetType().FullName));
+				var commandHandler = _resolver.Resolve<ICommandHandlerAsync<TCommand>>();
+				if (commandHandler == null)
+				{
+					throw new Exception(string.Format("No handler found for command '{0}'", cmd.GetType().FullName));
+				}
+
+				var events = await commandHandler.HandleAsync(cmd);
+
+				foreach (var @event in events)
+				{
+					await _eventPublisher.PublishAsync(@event);
+				}
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine(ex.ToString());
 			}
 
-			var events = await commandHandler.HandleAsync(cmd);
 
-			foreach (var @event in events)
-			{
-				await _eventPublisher.PublishAsync(@event);
-			}
 			return;
 		}
 	}

@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using System.Diagnostics;
 using System.Collections.Generic;
 using System;
+using System.Reflection;
 using MojaPasieka.Startup;
 using Autofac;
 
@@ -16,28 +17,49 @@ namespace MojaPasieka
 		{
 			
 			InitializeComponent();
+			starApp();
 
+		}
+
+
+		private async void starApp()
+		{
 			var containerBuilder = new ContainerBuilder();
 
-
-			var appStarter = new AppStarter(new List<IStartupTask> 
-			{ 
-				new DBConnectTask(containerBuilder), 
-				new RegisterTypesTask(containerBuilder)
+			var appStarter = new AppStarter(new List<IStartupTask>
+			{
+				new DBConnectTask(containerBuilder),
+				new RegisterTypesTask(containerBuilder),
 			});
 			appStarter.Start();
+			try
+			{
+				IoC.container = containerBuilder.Build();
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine(ex.ToString());
+			}
 
-			IoC.container = containerBuilder.Build();
 			using (var scope = IoC.container.BeginLifetimeScope())
 			{
-				scope.Resolve<ICommandBus>();
+				var models = scope.Resolve<IEnumerable<DataModel.IDataModel>>();
+				var database = scope.Resolve<SQLite.SQLiteAsyncConnection>();
+				var method = database.GetType().GetRuntimeMethods().Where((MethodInfo arg) => arg.Name == "CreateTableAsync").First();
+				foreach (var model in models)
+				{
+					var res = await (dynamic)method.MakeGenericMethod(new Type[] { model.getDataModelType() }).Invoke(database, new object[] { SQLite.CreateFlags.None });
+				}
+
+				var cb = scope.Resolve<ICommandBus>();
+				await cb.SendCommandAsync<AddBeeHiveCommand>(new AddBeeHiveCommand(new DataModel.BeeHive() { ul_name="Test1" }));
 			}
-				
 
 
-			appStarter.Start();
+
 			MainPage = new MojaPasiekaPage();
 		}
+
 
 		protected override void OnStart()
 		{

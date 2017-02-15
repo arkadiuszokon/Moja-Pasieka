@@ -1,9 +1,10 @@
 ﻿using System;
 using SQLite;
-using SQLite.Net.Attributes;
+
 namespace MojaPasieka.DataModel
 {
-	public class BeeHive : DataModelBase
+	[Table("tb_ul_beehive")]
+	public class BeeHive : DataModelBase, IDataModel
 	{
 		private int _ul_id;
 
@@ -157,6 +158,11 @@ namespace MojaPasieka.DataModel
 				_ul_timestamp = value;
 				OnPropertyChanged (nameof (ul_timestamp));
 			}
+		}
+
+		public Type getDataModelType()
+		{
+			return this.GetType();
 		}
 	}
 

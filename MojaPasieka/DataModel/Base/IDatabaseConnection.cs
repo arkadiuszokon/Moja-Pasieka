@@ -1,6 +1,6 @@
 ﻿using System;
 using SQLite;
-using SQLite.Net.Async;
+using SQLite;
 
 namespace MojaPasieka.DataModel
 {
