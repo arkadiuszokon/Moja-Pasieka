@@ -52,7 +52,7 @@ namespace MojaPasieka
 				}
 				MainPage = new MojaPasiekaPage();
 				var cb = scope.Resolve<ICommandBus>();
-				await cb.SendCommandAsync<AddBeeHiveCommand>(new AddBeeHiveCommand(new DataModel.BeeHive() { ul_name="Test1" }));
+				await cb.SendCommandAsync<AddBeeHive>(new AddBeeHive(new DataModel.BeeHive() { ul_name="Test1" }));
 			}
 
 

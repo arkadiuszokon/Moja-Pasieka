@@ -6,26 +6,30 @@
       <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\App.xaml.cs" line="77" column="1" />
       <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\Startup\Task\DatabaseCreateTask.cs" line="22" column="5" />
       <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\Startup\Task\DatabaseCreateTask.cs" line="20" column="4" />
-      <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\Bus\CommandBus.cs" line="78" column="34" />
-      <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\CommandHandler\AddBeeHiveHandler.cs" line="31" column="36" />
+      <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\Bus\CommandBus.cs" line="77" column="34" />
+      <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\MojaPasiekaPage.xaml.cs" line="25" column="4" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.MojaPasieka.Droid PreferredExecutionTarget="Android.00ecc44dfee92e74" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MojaPasieka\Event\Interfaces\IEvent.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MojaPasieka\QueryHandler\Interfaces\IQueryHandlerAsync.cs">
     <Files>
-      <File FileName="MojaPasieka\MojaPasiekaPage.xaml.cs" Line="29" Column="26" />
+      <File FileName="MojaPasieka\MojaPasiekaPage.xaml.cs" Line="27" Column="4" />
       <File FileName="MojaPasieka\Event\Interfaces\IConsumerAsync.cs" Line="12" Column="1" />
       <File FileName="MojaPasieka\Event\Interfaces\IEventPublisher.cs" Line="16" Column="3" />
       <File FileName="MojaPasieka\Bus\QueryBus.cs" Line="38" Column="39" />
-      <File FileName="MojaPasieka\Bus\EventBus.cs" Line="27" Column="40" />
-      <File FileName="MojaPasieka\Bus\CommandBus.cs" Line="71" Column="5" />
+      <File FileName="MojaPasieka\Bus\EventBus.cs" Line="59" Column="65" />
+      <File FileName="MojaPasieka\Bus\CommandBus.cs" Line="47" Column="4" />
       <File FileName="MojaPasieka\App.xaml.cs" Line="33" Column="7" />
-      <File FileName="MojaPasieka\Event\BeeHiveAddedEvent.cs" Line="13" Column="4" />
-      <File FileName="MojaPasieka\CommandHandler\AddBeeHiveHandler.cs" Line="33" Column="1" />
+      <File FileName="MojaPasieka\Event\BeeHiveWasAdded.cs" Line="16" Column="1" />
+      <File FileName="MojaPasieka\CommandHandler\AddBeeHiveHandler.cs" Line="19" Column="4" />
       <File FileName="MojaPasieka\CommandHandler\Interfaces\ICommandHandlerAsync.cs" Line="9" Column="7" />
       <File FileName="MojaPasieka\Event\Interfaces\IConsumer.cs" Line="9" Column="1" />
-      <File FileName="MojaPasieka\CommandHandler\Interfaces\ICommandHandler.cs" Line="10" Column="21" />
-      <File FileName="MojaPasieka\Event\Interfaces\IEvent.cs" Line="4" Column="19" />
+      <File FileName="MojaPasieka\CommandHandler\Interfaces\ICommandHandler.cs" Line="1" Column="1" />
+      <File FileName="MojaPasieka\Event\Interfaces\IEvent.cs" Line="8" Column="1" />
+      <File FileName="MojaPasieka\Query\GetListOfBeeHives.cs" Line="14" Column="1" />
+      <File FileName="MojaPasieka\QueryHandler\GetListOfBeeHivesHandler.cs" Line="8" Column="61" />
+      <File FileName="MojaPasieka\Command\AddBeeHive.cs" Line="14" Column="3" />
+      <File FileName="MojaPasieka\QueryHandler\Interfaces\IQueryHandlerAsync.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
 </Properties>

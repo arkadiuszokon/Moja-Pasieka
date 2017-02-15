@@ -53,9 +53,9 @@
     <Compile Include="DataModel\Base\DataModelBase.cs" />
     <Compile Include="IoC\IoC.cs" />
     <Compile Include="DataModel\BeeHive.cs" />
-    <Compile Include="Command\AddBeeHiveCommand.cs" />
+    <Compile Include="Command\AddBeeHive.cs" />
     <Compile Include="CommandHandler\AddBeeHiveHandler.cs" />
-    <Compile Include="Event\BeeHiveAddedEvent.cs" />
+    <Compile Include="Event\BeeHiveWasAdded.cs" />
     <Compile Include="Startup\AppStarter.cs" />
     <Compile Include="Startup\IStartupTask.cs" />
     <Compile Include="Event\Interfaces\IConsumer.cs" />
@@ -65,6 +65,8 @@
     <Compile Include="Startup\Task\DBConnectTask.cs" />
     <Compile Include="DataModel\Base\IDatabaseConnection.cs" />
     <Compile Include="DataModel\Base\IDataModel.cs" />
+    <Compile Include="Query\GetListOfBeeHives.cs" />
+    <Compile Include="QueryHandler\GetListOfBeeHivesHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Practices.ServiceLocation">

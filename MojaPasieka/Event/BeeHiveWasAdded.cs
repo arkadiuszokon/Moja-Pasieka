@@ -3,11 +3,11 @@ using MojaPasieka.DataModel;
 
 namespace MojaPasieka.cqrs
 {
-	public class BeeHiveAddedEvent : IEvent
+	public class BeeHiveWasAdded : IEvent
 	{
 		public readonly BeeHive beeHive;
 
-		public BeeHiveAddedEvent(BeeHive beeHive)
+		public BeeHiveWasAdded(BeeHive beeHive)
 		{
 			this.beeHive = beeHive;
 		}

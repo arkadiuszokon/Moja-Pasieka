@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 namespace MojaPasieka.cqrs
 {
-	public class AddBeeHiveHandler : ICommandHandlerAsync<AddBeeHiveCommand>
+	public class AddBeeHiveHandler : ICommandHandlerAsync<AddBeeHive>
 	{
 		private SQLiteAsyncConnection _conn;
 
@@ -18,13 +18,12 @@ namespace MojaPasieka.cqrs
 			_eventBus = eventBus;
 		}
 
-		public async Task HandleAsync(AddBeeHiveCommand command)
+		public async Task HandleAsync(AddBeeHive command)
 		{
 			try
 			{
-				var beeHiveID = await _conn.InsertAsync(command.beeHive);
-				command.beeHive.ul_id = beeHiveID;
-				await _eventBus.PublishAsync<BeeHiveAddedEvent>(new BeeHiveAddedEvent(command.beeHive));
+				await _conn.InsertAsync(command.beeHive);
+				await _eventBus.PublishAsync<BeeHiveWasAdded>(new BeeHiveWasAdded(command.beeHive));
 
 			}
 			catch (Exception ex)
