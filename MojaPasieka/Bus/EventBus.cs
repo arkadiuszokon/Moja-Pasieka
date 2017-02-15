@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Reflection;
 using Autofac;
 using MojaPasieka.cqrs;
+using System.Diagnostics;
 
 namespace MojaPasieka.cqrs
 {
@@ -18,69 +19,78 @@ namespace MojaPasieka.cqrs
 
 		public void Publish<TEvent>(TEvent @event) where TEvent : IEvent
 		{
-			List<IConsumer> consumers;
+			List<object> consumers;
 			if (_consumers.TryGetValue(@event.GetType(), out consumers))
 			{
 				foreach (var consumer in consumers)
 				{
-					consumer.Handle(@event);
+					if (consumer is IConsumer<TEvent>)
+					{
+						(consumer as IConsumer<TEvent>).Handle(@event);
+					}
+
 				}
 			}
 		}
 
 		public async Task PublishAsync<TEvent>(TEvent @event) where TEvent : IEvent
 		{
-			List<IConsumerAsync> consumers;
-			if (_consumersAsync.TryGetValue(@event.GetType(), out consumers))
+			
+			List<object> consumers;
+			if (_consumersAsync.TryGetValue(typeof(TEvent), out consumers))
 			{
 				foreach (var consumer in consumers)
 				{
-					await consumer.HandleAsync(@event);
+					if (consumer is IConsumerAsync<TEvent>)
+					{
+						await (consumer as IConsumerAsync<TEvent>).HandleAsync(@event);
+					}
 				}
 			}
 		}
 
-		private static Dictionary<Type, List<IConsumer>> _consumers = new Dictionary<Type, List<IConsumer>>();
-		private static Dictionary<Type, List<IConsumerAsync>> _consumersAsync = new Dictionary<Type, List<IConsumerAsync>>();
+		private static Dictionary<Type, List<object>> _consumers = new Dictionary<Type, List<object>>();
+		private static Dictionary<Type, List<object>> _consumersAsync = new Dictionary<Type, List<object>>();
 
-		public void RegisterAsyncConsumer<TEvent>(IConsumerAsync consumer) where TEvent : IEvent
+
+		public void RegisterAsyncConsumer<TEvent>(IConsumerAsync<TEvent> consumer) where TEvent : IEvent
 		{
-			List<IConsumerAsync> current;
+			List<object> current;
 			if (_consumersAsync.TryGetValue(typeof(TEvent), out current))
 			{
 				current.Add(consumer);
 			}
 			else
 			{
-				_consumersAsync.Add(typeof(TEvent), new List<IConsumerAsync> {consumer});
+				_consumersAsync.Add(typeof(TEvent), new List<object> {consumer});
 			}
 		}
 
-		public void RegisterConsumer<TEvent>(IConsumer consumer) where TEvent : IEvent
+		public void RegisterConsumer<TEvent>(IConsumer<TEvent> consumer) where TEvent : IEvent
 		{
-			List<IConsumer> current;
+			List<object> current;
 			if (_consumers.TryGetValue(typeof(TEvent), out current))
 			{
-				current.Add((consumer as IConsumer));
+				current.Add(consumer);
 			}
 			else
 			{
-				_consumers.Add(typeof(TEvent), new List<IConsumer> { consumer });
+				_consumers.Add(typeof(TEvent), new List<object> { consumer });
 			}
 		}
 
-		public void UnregisterAsyncConsumer<TEvent>(IConsumerAsync consumer) where TEvent : IEvent
+		public void UnregisterAsyncConsumer<TEvent>(IConsumerAsync<TEvent> consumer) where TEvent : IEvent
 		{
-			List<IConsumerAsync> current;
+			List<object> current;
 			if (_consumersAsync.TryGetValue(typeof(TEvent), out current))
 			{
 				current.Remove(consumer);
 			}
 		}
 
-		public void UnregisterConsumer<TEvent>(IConsumer consumer) where TEvent : IEvent
+		public void UnregisterConsumer<TEvent>(IConsumer<TEvent> consumer) where TEvent : IEvent
 		{
-			List<IConsumer> current;
+			List<object> current;
 			if (_consumers.TryGetValue(typeof(TEvent), out current))
 			{
 				current.Remove(consumer);

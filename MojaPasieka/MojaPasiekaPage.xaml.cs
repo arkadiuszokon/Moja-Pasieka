@@ -7,7 +7,7 @@ using System.Diagnostics;
 
 namespace MojaPasieka
 {
-	public partial class MojaPasiekaPage : ContentPage, IConsumerAsync
+	public partial class MojaPasiekaPage : ContentPage, IConsumerAsync<BeeHiveAddedEvent>
 	{
 		public MojaPasiekaPage()
 		{
@@ -19,17 +19,13 @@ namespace MojaPasieka
 			}
 		}
 
-		public async Task HandleAsync(IEvent eventMessage)
+		public async Task HandleAsync(BeeHiveAddedEvent eventMessage)
 		{
-			if (eventMessage is BeeHiveAddedEvent)
-			{
-				Debug.WriteLine("uff");
-			}
+			
+			Debug.WriteLine("uff");
 			await Task.Delay(100);
 
 		}
-
-	
 
 
 	}

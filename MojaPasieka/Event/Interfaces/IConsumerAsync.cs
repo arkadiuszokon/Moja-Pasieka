@@ -3,9 +3,9 @@ using System.Threading.Tasks;
 
 namespace MojaPasieka.cqrs
 {
-	public interface IConsumerAsync
+	public interface IConsumerAsync<TEvent> where TEvent : IEvent
 	{
-		Task HandleAsync(IEvent eventMessage);
+		Task HandleAsync(TEvent eventMessage);
 	}
 
 }

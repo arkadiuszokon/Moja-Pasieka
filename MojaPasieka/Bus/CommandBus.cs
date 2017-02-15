@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Autofac;
@@ -41,12 +42,9 @@ namespace MojaPasieka.cqrs
 				throw new Exception(string.Format("No handler found for command '{0}'", cmd.GetType().FullName));
 			}
 
-			var events = commandHandler.Handle(cmd);
+			commandHandler.Handle(cmd);
 
-			foreach (var @event in events)
-			{
-				_eventPublisher.Publish(@event);
-			}
+
 		}
 
 		/// <summary>
@@ -69,12 +67,10 @@ namespace MojaPasieka.cqrs
 					throw new Exception(string.Format("No handler found for command '{0}'", cmd.GetType().FullName));
 				}
 
-				var events = await commandHandler.HandleAsync(cmd);
 
-				foreach (var @event in events)
-				{
-					await _eventPublisher.PublishAsync(@event);
-				}
+				await commandHandler.HandleAsync(cmd);
+
+
 			}
 			catch (Exception ex)
 			{

@@ -6,14 +6,26 @@
       <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\App.xaml.cs" line="77" column="1" />
       <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\Startup\Task\DatabaseCreateTask.cs" line="22" column="5" />
       <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\Startup\Task\DatabaseCreateTask.cs" line="20" column="4" />
-      <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\Bus\CommandBus.cs" line="81" column="34" />
-      <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\CommandHandler\AddBeeHiveHandler.cs" line="28" column="36" />
+      <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\Bus\CommandBus.cs" line="78" column="34" />
+      <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\CommandHandler\AddBeeHiveHandler.cs" line="31" column="36" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.MojaPasieka.Droid PreferredExecutionTarget="Android.5&quot; KitKat (4.4) XXHDPI Phone" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MojaPasieka\MojaPasiekaPage.xaml.cs">
+  <MonoDevelop.Ide.ItemProperties.MojaPasieka.Droid PreferredExecutionTarget="Android.00ecc44dfee92e74" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MojaPasieka\Event\Interfaces\IEvent.cs">
     <Files>
-      <File FileName="MojaPasieka\MojaPasiekaPage.xaml.cs" Line="31" Column="3" />
+      <File FileName="MojaPasieka\MojaPasiekaPage.xaml.cs" Line="29" Column="26" />
+      <File FileName="MojaPasieka\Event\Interfaces\IConsumerAsync.cs" Line="12" Column="1" />
+      <File FileName="MojaPasieka\Event\Interfaces\IEventPublisher.cs" Line="16" Column="3" />
+      <File FileName="MojaPasieka\Bus\QueryBus.cs" Line="38" Column="39" />
+      <File FileName="MojaPasieka\Bus\EventBus.cs" Line="27" Column="40" />
+      <File FileName="MojaPasieka\Bus\CommandBus.cs" Line="71" Column="5" />
+      <File FileName="MojaPasieka\App.xaml.cs" Line="33" Column="7" />
+      <File FileName="MojaPasieka\Event\BeeHiveAddedEvent.cs" Line="13" Column="4" />
+      <File FileName="MojaPasieka\CommandHandler\AddBeeHiveHandler.cs" Line="33" Column="1" />
+      <File FileName="MojaPasieka\CommandHandler\Interfaces\ICommandHandlerAsync.cs" Line="9" Column="7" />
+      <File FileName="MojaPasieka\Event\Interfaces\IConsumer.cs" Line="9" Column="1" />
+      <File FileName="MojaPasieka\CommandHandler\Interfaces\ICommandHandler.cs" Line="10" Column="21" />
+      <File FileName="MojaPasieka\Event\Interfaces\IEvent.cs" Line="4" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
 </Properties>

@@ -7,6 +7,6 @@ namespace MojaPasieka.cqrs
 {
 	public interface ICommandHandler<in TCommand> where TCommand : ICommand
 	{
-		ICollection<IEvent> Handle(TCommand command);
+		void Handle(TCommand command);
 	}
 }

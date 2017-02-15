@@ -1,8 +1,8 @@
 ﻿using System;
 namespace MojaPasieka.cqrs
 {
-	public interface IConsumer
+	public interface IConsumer<TEvent> where TEvent : IEvent
 	{
-		void Handle(IEvent eventMessage);
+		void Handle(TEvent eventMessage);
 	}
 }
