@@ -3,54 +3,17 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\App.xaml.cs" line="79" column="1" />
+      <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\App.xaml.cs" line="77" column="1" />
       <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\Startup\Task\DatabaseCreateTask.cs" line="22" column="5" />
-      <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\App.xaml.cs" line="27" column="4" />
       <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\Startup\Task\DatabaseCreateTask.cs" line="20" column="4" />
       <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\Bus\CommandBus.cs" line="81" column="34" />
-      <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\Bus\CommandBus.cs" line="66" column="5" />
       <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\CommandHandler\AddBeeHiveHandler.cs" line="28" column="36" />
-      <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\CommandHandler\AddBeeHiveHandler.cs" line="22" column="1" />
-      <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\App.xaml.cs" line="51" column="9" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.MojaPasieka.Droid PreferredExecutionTarget="Android.00ecc44dfee92e74" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MojaPasieka\packages.config">
+  <MonoDevelop.Ide.ItemProperties.MojaPasieka.Droid PreferredExecutionTarget="Android.5&quot; KitKat (4.4) XXHDPI Phone" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MojaPasieka\MojaPasiekaPage.xaml.cs">
     <Files>
-      <File FileName="MojaPasieka\DataModel\BeeHive.cs" Line="167" Column="3" />
-      <File FileName="MojaPasieka\DataModel\Base\DataModelBase.cs" Line="13" Column="4" />
-      <File FileName="MojaPasieka\AppResources.resx" Line="16" Column="1" />
-      <File FileName="MojaPasieka\AppResources.Designer.cs" Line="1" Column="1" />
-      <File FileName="MojaPasieka\IoC\IoC.cs" Line="23" Column="1" />
-      <File FileName="MojaPasieka\App.xaml" Line="1" Column="1" />
-      <File FileName="MojaPasieka\App.xaml.cs" Line="22" Column="1" />
-      <File FileName="MojaPasieka\Command\AddBeeHiveCommand.cs" Line="6" Column="43" />
-      <File FileName="MojaPasieka\CommandHandler\AddBeeHiveHandler.cs" Line="22" Column="1" />
-      <File FileName="MojaPasieka\CommandHandler\Interfaces\ICommandHandler.cs" Line="1" Column="1" />
-      <File FileName="MojaPasieka\CommandHandler\Interfaces\ICommandHandlerAsync.cs" Line="1" Column="1" />
-      <File FileName="MojaPasieka\Event\BeeHiveAddedEvent.cs" Line="13" Column="4" />
-      <File FileName="MojaPasieka\Bus\QueryBus.cs" Line="17" Column="3" />
-      <File FileName="MojaPasieka\Bus\CommandBus.cs" Line="66" Column="1" />
-      <File FileName="MojaPasieka\Startup\AppStarter.cs" Line="9" Column="7" />
-      <File FileName="MojaPasieka\Startup\IStartupTask.cs" Line="7" Column="3" />
-      <File FileName="MojaPasieka\Event\Interfaces\IEvent.cs" Line="1" Column="1" />
-      <File FileName="MojaPasieka\Event\Interfaces\IEventPublisher.cs" Line="12" Column="1" />
-      <File FileName="MojaPasieka\Bus\EventBus.cs" Line="38" Column="2" />
-      <File FileName="MojaPasieka\Event\Interfaces\IConsumer.cs" Line="7" Column="3" />
-      <File FileName="MojaPasieka\Command\Interfaces\ICommand.cs" Line="1" Column="1" />
-      <File FileName="MojaPasieka\Event\Interfaces\IConsumerAsync.cs" Line="12" Column="1" />
-      <File FileName="MojaPasieka\Startup\Task\RegisterTypesTask.cs" Line="53" Column="4" />
-      <File FileName="Droid\DatabaseConnection_Android.cs" Line="25" Column="1" />
-      <File FileName="MojaPasieka\Startup\Task\DBConnectTask.cs" Line="23" Column="4" />
-      <File FileName="MojaPasieka\DataModel\Base\IDatabaseConnection.cs" Line="3" Column="14" />
-      <File FileName="Droid\MainActivity.cs" Line="17" Column="4" />
-      <File FileName="MojaPasieka\Bus\Interfaces\ICommandBus.cs" Line="10" Column="3" />
-      <File FileName="MojaPasieka\Startup\Task\DatabaseCreateTask.cs" Line="20" Column="4" />
-      <File FileName="MojaPasieka\QueryHandler\Interfaces\IQueryHandler.cs" Line="11" Column="33" />
-      <File FileName="MojaPasieka\packages.config" Line="11" Column="24" />
-      <File FileName="MojaPasieka\DataModel\Base\IDataModel.cs" Line="2" Column="32" />
-      <File FileName="MojaPasieka\QueryHandler\Interfaces\IQueryHandlerAsync.cs" Line="1" Column="1" />
-      <File FileName="Droid\packages.config" Line="63" Column="12" />
+      <File FileName="MojaPasieka\MojaPasiekaPage.xaml.cs" Line="31" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
 </Properties>

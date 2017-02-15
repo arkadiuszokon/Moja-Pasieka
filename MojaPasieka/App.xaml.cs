@@ -50,14 +50,12 @@ namespace MojaPasieka
 				{
 					var res = await (dynamic)method.MakeGenericMethod(new Type[] { model.getDataModelType() }).Invoke(database, new object[] { SQLite.CreateFlags.None });
 				}
-
+				MainPage = new MojaPasiekaPage();
 				var cb = scope.Resolve<ICommandBus>();
 				await cb.SendCommandAsync<AddBeeHiveCommand>(new AddBeeHiveCommand(new DataModel.BeeHive() { ul_name="Test1" }));
 			}
 
 
-
-			MainPage = new MojaPasiekaPage();
 		}
 
 

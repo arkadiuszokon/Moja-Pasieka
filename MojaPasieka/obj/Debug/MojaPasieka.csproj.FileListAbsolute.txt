@@ -5,6 +5,7 @@ C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\De
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\PCLStorage.Abstractions.dll
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\PCLStorage.dll
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\SQLite-net.dll
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\SQLitePCL.raw.dll
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\Xamarin.Forms.Core.dll
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\Xamarin.Forms.Platform.dll
@@ -17,6 +18,7 @@ C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\De
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\Xamarin.Forms.Xaml.pdb
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\Xamarin.Forms.Xaml.xml
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\Autofac.xml
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.csprojResolveAssemblyReference.cache
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.App.xaml.g.cs
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.MojaPasiekaPage.xaml.g.cs
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.dll
