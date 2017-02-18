@@ -3,7 +3,7 @@ using SQLite;
 
 namespace MojaPasieka.DataModel
 {
-	[Table("tb_ul_beehive")]
+	[Table("tb_beehive")]
 	public class BeeHive : DataModelBase, IDataModel
 	{
 		private int _ul_id;
@@ -160,10 +160,7 @@ namespace MojaPasieka.DataModel
 			}
 		}
 
-		public Type getDataModelType()
-		{
-			return this.GetType();
-		}
+
 	}
 
 	/// <summary>

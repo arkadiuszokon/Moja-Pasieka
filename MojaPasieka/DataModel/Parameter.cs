@@ -4,7 +4,7 @@ using SQLite;
 
 namespace MojaPasieka.DataModel
 {
-	[Table("tb_prm_parameter")]
+	[Table("tb_parameter")]
 	public class Parameter : DataModelBase, IDataModel
 	{
 		public Parameter()
@@ -52,10 +52,7 @@ namespace MojaPasieka.DataModel
 			}
 		}
 
-		public Type getDataModelType()
-		{
-			return this.GetType();
-		}
+
 	}
 
 	/// <summary>

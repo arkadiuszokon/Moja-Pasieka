@@ -12,5 +12,10 @@ namespace MojaPasieka.DataModel
 			  new PropertyChangedEventArgs(propertyName));
 		}
 
+		public virtual Type getDataModelType()
+		{
+			return this.GetType();
+		}
+
 	}
 }
