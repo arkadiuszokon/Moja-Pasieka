@@ -1,7 +1,11 @@
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.csprojResolveAssemblyReference.cache
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.App.xaml.g.cs
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.MenuPage.xaml.g.cs
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\MojaPasieka.dll
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\MojaPasieka.pdb
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\Autofac.dll
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\ModernHttpClient.dll
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\PCLStorage.Abstractions.dll
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\PCLStorage.dll
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\SQLite-net.dll
@@ -18,12 +22,5 @@ C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\De
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\Xamarin.Forms.Xaml.pdb
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\Xamarin.Forms.Xaml.xml
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\Autofac.xml
-C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.csprojResolveAssemblyReference.cache
-C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.App.xaml.g.cs
-C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.MojaPasiekaPage.xaml.g.cs
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.dll
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.pdb
-C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.dll.mdb
-C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\MojaPasieka.dll.mdb
-C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.dll.mdb
-C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\MojaPasieka.dll.mdb

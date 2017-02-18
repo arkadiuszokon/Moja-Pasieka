@@ -11,23 +11,21 @@ namespace MojaPasieka.Startup
 	public class RegisterTypesTask : IStartupTask
 	{
 
-		private readonly ContainerBuilder _container;
 
-		public RegisterTypesTask(ContainerBuilder container)
+		public RegisterTypesTask()
 		{
-			_container = container;
 		}
 
-		public void Execute()
+		public void Execute(ContainerBuilder builder)
 		{
 			//rejestrujemy kontener
 			//_container.Register<IResolver>(_container.GetResolver());
 
 
 			//rejestrujemy elementy cqrsa
-			_container.RegisterType<EventBus>().As<IEventPublisher>().SingleInstance();
-			_container.RegisterType<CommandBus>().As<ICommandBus>().SingleInstance();
-			_container.RegisterType<QueryBus>().As<IQueryBus>().SingleInstance();
+			builder.RegisterType<EventBus>().As<IEventPublisher>().SingleInstance();
+			builder.RegisterType<CommandBus>().As<ICommandBus>().SingleInstance();
+			builder.RegisterType<QueryBus>().As<IQueryBus>().SingleInstance();
 
 
 
@@ -39,12 +37,15 @@ namespace MojaPasieka.Startup
 				if (assemblies[i].GetName().Name == "MojaPasieka")
 				{
 
-					_container.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(ICommandHandler<>)).SingleInstance();
-					_container.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(ICommandHandlerAsync<>)).SingleInstance();
-					_container.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(IQueryHandler<,>)).SingleInstance();
-					_container.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(IQueryHandlerAsync<,>)).SingleInstance();
-					_container.RegisterAssemblyTypes(assemblies[i]).AssignableTo<DataModelBase>().AsImplementedInterfaces().SingleInstance();
-					IEnumerable<TypeInfo> types = assemblies[i].DefinedTypes;
+					builder.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(ICommandHandler<>)).SingleInstance();
+					builder.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(ICommandHandlerAsync<>)).SingleInstance();
+					builder.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(IQueryHandler<,>)).SingleInstance();
+					builder.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(IQueryHandlerAsync<,>)).SingleInstance();
+					builder.RegisterAssemblyTypes(assemblies[i]).AssignableTo<DataModelBase>().AsImplementedInterfaces().SingleInstance();
+					builder.RegisterAssemblyTypes(assemblies[i]).AssignableTo<IViewModel>().WithParameter(new TypedParameter(typeof(ViewPage<>), "view"));
+
+
+					//IEnumerable<TypeInfo> types = assemblies[i].DefinedTypes;
 
 				}
 			}

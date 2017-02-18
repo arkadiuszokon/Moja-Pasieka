@@ -9,17 +9,15 @@ namespace MojaPasieka.Startup
 {
 	public class DBConnectTask : IStartupTask
 	{
-		private readonly ContainerBuilder _container;
 
-		public DBConnectTask(ContainerBuilder container)
+		public DBConnectTask()
 		{
-			_container = container;
 		}
 
-		public void Execute()
+		public void Execute(ContainerBuilder builder)
 		{
 				var database = DependencyService.Get<IDatabaseConnection>().DBConnection();
-				_container.RegisterInstance<SQLiteAsyncConnection>(database);
+				builder.RegisterInstance<SQLiteAsyncConnection>(database);
 
 		}
 	}

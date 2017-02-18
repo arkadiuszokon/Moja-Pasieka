@@ -8,6 +8,7 @@ using System;
 using System.Reflection;
 using MojaPasieka.Startup;
 using Autofac;
+using MojaPasieka.DataModel;
 
 namespace MojaPasieka
 {
@@ -24,54 +25,49 @@ namespace MojaPasieka
 
 		private async void starApp()
 		{
-			var containerBuilder = new ContainerBuilder();
+			
 
 			var appStarter = new AppStarter(new List<IStartupTask>
 			{
-				new DBConnectTask(containerBuilder),
-				new RegisterTypesTask(containerBuilder),
+				new DBConnectTask(),
+				new RegisterTypesTask(),
 			});
 			appStarter.Start();
-			try
-			{
-				IoC.container = containerBuilder.Build();
-			}
-			catch (Exception ex)
-			{
-				Debug.WriteLine(ex.ToString());
-			}
+
+			MainPage = new AppMainPage();
 
 			using (var scope = IoC.container.BeginLifetimeScope())
 			{
-				var models = scope.Resolve<IEnumerable<DataModel.IDataModel>>();
-				var database = scope.Resolve<SQLite.SQLiteAsyncConnection>();
-				var method = database.GetType().GetRuntimeMethods().Where((MethodInfo arg) => arg.Name == "CreateTableAsync").First();
-				foreach (var model in models)
-				{
-					var res = await (dynamic)method.MakeGenericMethod(new Type[] { model.getDataModelType() }).Invoke(database, new object[] { SQLite.CreateFlags.None });
-				}
-				MainPage = new MojaPasiekaPage();
+				var qb = scope.Resolve<IQueryBus>();
 				var cb = scope.Resolve<ICommandBus>();
-				await cb.SendCommandAsync<AddBeeHive>(new AddBeeHive(new DataModel.BeeHive() { ul_name="Test1" }));
+				var tutorialStatus = await qb.ProcessAsync<GetParameter, string>(new GetParameter(ParameterName.TUTORIAL_STATUS));
+				if (tutorialStatus != "1")
+				{
+					var res = await MainPage.DisplayAlert("Witaj", "Czy chcesz uruchomić tutorial, aby zapoznać się z aplikacją?", "Tak", "Anuluj");
+					if (res)
+					{
+						await cb.SendCommandAsync<ShowView>(new ShowView(new TutorialPage(), true));
+						await cb.SendCommandAsync<SaveParameter>(new SaveParameter(ParameterName.TUTORIAL_STATUS, "1"));
+					}
+				}
 			}
-
-
 		}
 
 
 		protected override void OnStart()
 		{
 			// Handle when your app starts
+			base.OnStart();
 		}
 
 		protected override void OnSleep()
 		{
-			// Handle when your app sleeps
+			base.OnSleep();
 		}
 
 		protected override void OnResume()
 		{
-			// Handle when your app resumes
+			base.OnResume();
 		}
 	}
 }

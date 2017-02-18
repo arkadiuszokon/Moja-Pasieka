@@ -18,7 +18,7 @@ namespace MojaPasieka.Droid
 			TabLayoutResource = Resource.Layout.Tabbar;
 			ToolbarResource = Resource.Layout.Toolbar;
 			base.OnCreate(bundle);
-
+			Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
 			global::Xamarin.Forms.Forms.Init(this, bundle);
 
 			LoadApplication(new App());
