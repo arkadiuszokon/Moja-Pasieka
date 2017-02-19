@@ -52,9 +52,9 @@ C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\obj\Debug\re
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\obj\Debug\R.cs.flag
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\obj\Debug\uploadflags.txt
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\MojaPasieka.Droid.dll.mdb
-C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\MojaPasieka.dll.mdb
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\Java.Interop.dll.mdb
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\Microsoft.CSharp.dll.mdb
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\MojaPasieka.dll.mdb
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\Mono.Android.dll.mdb
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\Mono.CSharp.dll.mdb
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\mscorlib.dll.mdb

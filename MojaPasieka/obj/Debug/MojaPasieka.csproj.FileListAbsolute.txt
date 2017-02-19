@@ -26,5 +26,3 @@ C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\De
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.pdb
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.dll.mdb
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\MojaPasieka.dll.mdb
-C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.dll.mdb
-C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\MojaPasieka.dll.mdb

@@ -93,6 +93,11 @@
     <Compile Include="DataModel\HoneyHarvest.cs" />
     <Compile Include="DataModel\Parameter.cs" />
     <Compile Include="DataModel\Treatment.cs" />
+    <Compile Include="DataModel\HiveBody.cs" />
+    <Compile Include="DataModel\QueenBee.cs" />
+    <Compile Include="DataModel\Apiary.cs" />
+    <Compile Include="DataModel\BeeColony.cs" />
+    <Compile Include="DataModel\BeeColonyHistory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Practices.ServiceLocation">

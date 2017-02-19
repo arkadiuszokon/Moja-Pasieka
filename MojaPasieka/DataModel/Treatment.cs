@@ -5,16 +5,7 @@ namespace MojaPasieka.DataModel
 	[Table("tb_treatment")]
 	public class Treatment : DataModelBase, IDataModel
 	{
-		/*new Column("lc_id", "INTEGER", "", true, true, true),
-				new Column("lc_lk_id", "INTEGER", "", true), //id leku
-				new Column("lc_rd_id", "INTEGER", "", true), //id rodziny
-				new Column("lc_quan", "DECIMAL", "10,6", true), //ilość leku
-				new Column("lc_start", "INTEGER", "", true), //rozpoczęcie leczenia
-				new Column("lc_end", "INTEGER", "", true), //zakonczenie leczenia
-				new Column("lc_effect", "VARCHAR", "100", false), //efekt leczenia
-				new Column("lc_desc", "VARCHAR", "255", false) //dodatkowy opis
-				*/
-
+		
 		private int _lc_id;
 		private int _lc_lk_id;
 		private int _lc_rd_id;
@@ -131,6 +122,42 @@ namespace MojaPasieka.DataModel
 			{
 				_lc_end = value;
 				OnPropertyChanged(nameof(lc_end));
+			}
+		}
+
+		/// <summary>
+		/// Opis efektu leczenia
+		/// </summary>
+		/// <value>The lc effect.</value>
+		public string lc_effect
+		{
+			get
+			{
+				return _lc_effect;
+			}
+
+			set
+			{
+				_lc_effect = value;
+				OnPropertyChanged(nameof(lc_effect));
+			}
+		}
+
+		/// <summary>
+		/// Dodatkowy opis
+		/// </summary>
+		/// <value>The lc desc.</value>
+		public string lc_desc
+		{
+			get
+			{
+				return _lc_desc;
+			}
+
+			set
+			{
+				_lc_desc = value;
+				OnPropertyChanged(nameof(lc_desc));
 			}
 		}
 

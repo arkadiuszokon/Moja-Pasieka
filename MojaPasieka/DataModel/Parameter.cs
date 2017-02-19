@@ -7,9 +7,7 @@ namespace MojaPasieka.DataModel
 	[Table("tb_parameter")]
 	public class Parameter : DataModelBase, IDataModel
 	{
-		public Parameter()
-		{
-		}
+
 
 		public static Dictionary<string, string> cache = new Dictionary<string, string>();
 

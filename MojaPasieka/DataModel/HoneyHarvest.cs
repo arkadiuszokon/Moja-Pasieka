@@ -7,13 +7,6 @@ namespace MojaPasieka.DataModel
 	public class HoneyHarvest : DataModelBase, IDataModel
 	{
 
-		
-		public HoneyHarvest()
-		{
-		}
-
-
-
 		private int _md_id;
 		private int _md_rd_id;
 		private int _md_framescount;
@@ -88,7 +81,7 @@ namespace MojaPasieka.DataModel
 		{
 			get
 			{
-				return _md_rd_id;
+				return _md_rd_id; 
 			}
 
 			set
