@@ -6,157 +6,157 @@ namespace MojaPasieka.DataModel
 	[Table("tb_beehive")]
 	public class BeeHive : DataModelBase, IDataModel
 	{
-		private int _ul_id;
+		private int _bh_id;
 
 		/// <summary>
-		/// ID ula
+		/// ID bha
 		/// </summary>
-		/// <value>The ul identifier.</value>
+		/// <value>The bh identifier.</value>
 		[PrimaryKey, AutoIncrement]
-		public int ul_id {
+		public int bh_id {
 			get {
-				return _ul_id;
+				return _bh_id;
 			}
 
 			set {
-				_ul_id = value;
-				OnPropertyChanged (nameof (ul_id));
+				_bh_id = value;
+				OnPropertyChanged (nameof (bh_id));
 			}
 		}
 
-		private string _ul_name;
+		private string _bh_name;
 
 		/// <summary>
 		/// nazwa własna / numer pasieki
 		/// </summary>
-		/// <value>The name of the ul.</value>
-		public string ul_name {
+		/// <value>The name of the bh.</value>
+		public string bh_name {
 			get {
-				return _ul_name;
+				return _bh_name;
 			}
 
 			set {
-				_ul_name = value;
-				OnPropertyChanged (nameof (ul_name));
+				_bh_name = value;
+				OnPropertyChanged (nameof (bh_name));
 			}
 		}
 
-		private int _ul_ps_id;
+		private int _bh_ap_id;
 
 		/// <summary>
 		/// id pasieki
 		/// </summary>
-		/// <value>The ul ps identifier.</value>
-		public int ul_ps_id {
+		/// <value>The bh ps identifier.</value>
+		public int bh_ap_id {
 			get {
-				return _ul_ps_id;
+				return _bh_ap_id;
 			}
 
 			set {
-				_ul_ps_id = value;
-				OnPropertyChanged (nameof (ul_ps_id));
+				_bh_ap_id = value;
+				OnPropertyChanged (nameof (bh_ap_id));
 			}
 		}
-		private BeeHiveTopType _ul_toptype;
+		private BeeHiveTopType _bh_toptype;
 
-		public BeeHiveTopType ul_toptype {
+		public BeeHiveTopType bh_toptype {
 			get {
-				return _ul_toptype;
+				return _bh_toptype;
 			}
 
 			set {
-				_ul_toptype = value;
-				OnPropertyChanged (nameof (ul_toptype));
+				_bh_toptype = value;
+				OnPropertyChanged (nameof (bh_toptype));
 			}
 		}
 
-		private BeeHiveBottomType _ul_bottomtype;
+		private BeeHiveBottomType _bh_bottomtype;
 
-		public BeeHiveBottomType ul_bottomtype {
+		public BeeHiveBottomType bh_bottomtype {
 			get {
-				return _ul_bottomtype;
+				return _bh_bottomtype;
 			}
 
 			set {
-				_ul_bottomtype = value;
-				OnPropertyChanged (nameof (ul_bottomtype));
+				_bh_bottomtype = value;
+				OnPropertyChanged (nameof (bh_bottomtype));
 			}
 		}
 
-		private BeeHiveType _ul_type;
+		private BeeHiveType _bh_type;
 
-		public BeeHiveType ul_type {
+		public BeeHiveType bh_type {
 			get {
-				return _ul_type;
+				return _bh_type;
 			}
 
 			set {
-				_ul_type = value;
-				OnPropertyChanged (nameof (ul_type));
+				_bh_type = value;
+				OnPropertyChanged (nameof (bh_type));
 			}
 		}
 
-		private string _ul_paint;
+		private string _bh_paint;
 
 		/// <summary>
-		/// Malowanie ula
+		/// Malowanie bha
 		/// </summary>
-		/// <value>The ul paint.</value>
-		public string ul_paint {
+		/// <value>The bh paint.</value>
+		public string bh_paint {
 			get {
-				return _ul_paint;
+				return _bh_paint;
 			}
 
 			set {
-				_ul_paint = value;
-				OnPropertyChanged (nameof (ul_paint));
+				_bh_paint = value;
+				OnPropertyChanged (nameof (bh_paint));
 			}
 		}
 
-		private BeeHiveMaterialType _ul_material;
+		private BeeHiveMaterialType _bh_material;
 
-		public BeeHiveMaterialType ul_material {
+		public BeeHiveMaterialType bh_material {
 			get {
-				return _ul_material;
+				return _bh_material;
 			}
 
 			set {
-				_ul_material = value;
-				OnPropertyChanged (nameof (ul_material));
+				_bh_material = value;
+				OnPropertyChanged (nameof (bh_material));
 			}
 		}
 
-		private string _ul_desc;
+		private string _bh_desc;
 
 		/// <summary>
-		/// Dodatkowy opis ula
+		/// Dodatkowy opis bha
 		/// </summary>
-		/// <value>The ul desc.</value>
-		public string ul_desc {
+		/// <value>The bh desc.</value>
+		public string bh_desc {
 			get {
-				return _ul_desc;
+				return _bh_desc;
 			}
 
 			set {
-				_ul_desc = value;
-				OnPropertyChanged (nameof (ul_desc));
+				_bh_desc = value;
+				OnPropertyChanged (nameof (bh_desc));
 			}
 		}
 
-		private DateTime _ul_timestamp;
+		private DateTime _bh_timestamp;
 
 		/// <summary>
 		/// Timestamp z dodania do bazy
 		/// </summary>
-		/// <value>The ul timestamp.</value>
-		public DateTime ul_timestamp {
+		/// <value>The bh timestamp.</value>
+		public DateTime bh_timestamp {
 			get {
-				return _ul_timestamp;
+				return _bh_timestamp;
 			}
 
 			set {
-				_ul_timestamp = value;
-				OnPropertyChanged (nameof (ul_timestamp));
+				_bh_timestamp = value;
+				OnPropertyChanged (nameof (bh_timestamp));
 			}
 		}
 
@@ -164,18 +164,17 @@ namespace MojaPasieka.DataModel
 	}
 
 	/// <summary>
-	/// Rodzaj materiału z którego wykonany jest ul
+	/// Rodzaj materiału z którego wykonany jest bh
 	/// </summary>
 	public enum BeeHiveMaterialType
 	{
-
-		DREWNIANY_OCIEPLNY = 1,
-		STYROPIAN = 2,
+		WOODEN_INSULATED = 1,
+		STYROFOAM = 2,
 		STYRODUR = 3,
-		DREWNIANY_JEDNOSCIENNY = 4,
-		POLIURETAN = 5,
+		WOODEN = 4,
+		POLIPOLYURETHANE = 5,
 		OSB = 6,
-		SLOMA = 7,
+		STRAW = 7,
 		INNE = 8
 	}
 
@@ -184,34 +183,33 @@ namespace MojaPasieka.DataModel
 	/// </summary>
 	public enum BeeHiveBottomType
 	{
-		NISKA_PELNA = 1,
-		NISKA_OSIATKOWANA = 2,
-		WYSOKA_OSIATKOWANA = 3,
-		INNA = 4
-
+		LOW_FULL = 1,
+		LOW_WITH_NET = 2,
+		HIGH_WITH_NET = 3,
+		OTHER = 4
 	}
 
 	/// <summary>
-	/// Rodzaj nakrycia ula od góry
+	/// Rodzaj nakrycia bha od góry
 	/// </summary>
 	public enum BeeHiveTopType
 	{
-		POWALKA = 1,
-		BELECZKI = 2,
-		FOLIA = 3,
-		PLOTNO = 4,
-		BRAK = 5
+		VENTED_COVER = 1,
+		BARS = 2,
+		FOIL = 3,
+		CLOTH = 4,
+		NONE = 5
 	};
 
 	/// <summary>
-	/// Typ ula, jego rodzaj/przeznaczenie
+	/// Typ bha, jego rodzaj/przeznaczenie
 	/// </summary>
 	public enum BeeHiveType
 	{
-		STOJAK = 1,
-		LEZAK = 2,
-		ODKLADOWY = 3,
-		ROJNICA = 4,
-		WESELNY = 5
+		VERTICAL = 1,
+		HORIZONTAL = 2,
+		FOR_NUCLEUS = 3,
+		FOR_SWARM = 4,
+		MATING_BOX = 5
 	}
 }

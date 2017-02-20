@@ -35,8 +35,17 @@ namespace MojaPasieka.cqrs
 				throw new ArgumentNullException("command");
 			}
 
-			var commandHandler = _resolver.Resolve<ICommandHandler<TCommand>>();
+			var commandValidator = _resolver.ResolveOptional<IValidator<TCommand>>();
+			if (commandValidator != null)
+			{
+				var res = commandValidator.validate(cmd);
+				if (res.result == false)
+				{
+					throw new Exception(res.message);
+				}
+			}
 
+			var commandHandler = _resolver.ResolveOptional<ICommandHandler<TCommand>>();
 			if (commandHandler == null)
 			{
 				throw new Exception(string.Format("No handler found for command '{0}'", cmd.GetType().FullName));
@@ -57,28 +66,28 @@ namespace MojaPasieka.cqrs
 		{
 			if (cmd == null)
 			{
-				throw new ArgumentNullException("command");
+				throw new Exception("command not defined");
 			}
-			try
+
+			var commandValidator = _resolver.ResolveOptional<IValidatorAsync<TCommand>>();
+			if (commandValidator != null)
 			{
-				var commandHandler = _resolver.Resolve<ICommandHandlerAsync<TCommand>>();
-				if (commandHandler == null)
+				var res = await commandValidator.validate(cmd);
+				if (res.result == false)
 				{
-					throw new Exception(string.Format("No handler found for command '{0}'", cmd.GetType().FullName));
+					throw new Exception(res.message);
 				}
-
-
-				await commandHandler.HandleAsync(cmd);
-
-
 			}
-			catch (Exception ex)
+
+			var commandHandler = _resolver.ResolveOptional<ICommandHandlerAsync<TCommand>>();
+			if (commandHandler == null)
 			{
-				Debug.WriteLine(ex.ToString());
+				throw new Exception(string.Format("No handler found for command '{0}'", cmd.GetType().FullName));
 			}
 
 
-			return;
+			await commandHandler.HandleAsync(cmd);
+
 		}
 	}
 }

@@ -49,6 +49,10 @@ namespace MojaPasieka.Startup
 				foreach (var model in models)
 				{
 					var res = await(dynamic)method.MakeGenericMethod(new Type[] { model.getDataModelType() }).Invoke(database, new object[] { SQLite.CreateFlags.None });
+					if (model is IDataModelSelfInit)
+					{
+						await (model as IDataModelSelfInit).fillWithData(database);
+					}
 				}
 
 

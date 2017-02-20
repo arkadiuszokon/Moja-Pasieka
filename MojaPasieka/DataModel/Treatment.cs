@@ -6,163 +6,159 @@ namespace MojaPasieka.DataModel
 	public class Treatment : DataModelBase, IDataModel
 	{
 		
-		private int _lc_id;
-		private int _lc_lk_id;
-		private int _lc_rd_id;
-		private decimal _lc_quan;
-		private DateTime _lc_start;
-		private DateTime _lc_end;
-		private string _lc_effect;
-		private string _lc_desc;
+		private int _tt_id;
+		private int _tt_lk_id;
+		private int _tt_bc_id;
+		private decimal _tt_quan;
+		private DateTime _tt_start;
+		private DateTime _tt_end;
+		private string _tt_effect;
+		private string _tt_desc;
 
 		/// <summary>
 		/// id leczenia
 		/// </summary>
-		/// <value>The lc identifier.</value>
+		/// <value>The tt identifier.</value>
 		[PrimaryKey, AutoIncrement]
-		public int lc_id
+		public int tt_id
 		{
 			get
 			{
-				return _lc_id;
+				return _tt_id;
 			}
 
 			set
 			{
-				_lc_id = value;
-				OnPropertyChanged(nameof(lc_id));
+				_tt_id = value;
+				OnPropertyChanged(nameof(tt_id));
 			}
 		}
 
 		/// <summary>
 		/// id zastosowanego leku
 		/// </summary>
-		/// <value>The lc lk identifier.</value>
+		/// <value>The tt lk identifier.</value>
 		[Indexed]
-		public int lc_lk_id
+		public int tt_lk_id
 		{
 			get
 			{
-				return _lc_lk_id;
+				return _tt_lk_id;
 			}
 
 			set
 			{
-				_lc_lk_id = value;
-				OnPropertyChanged(nameof(lc_lk_id));
+				_tt_lk_id = value;
+				OnPropertyChanged(nameof(tt_lk_id));
 			}
 		}
 
 		/// <summary>
 		/// Id rodziny
 		/// </summary>
-		/// <value>The lc rd identifier.</value>
+		/// <value>The tt bc identifier.</value>
 		[Indexed]
-		public int lc_rd_id
+		public int tt_bc_id
 		{
 			get
 			{
-				return _lc_rd_id;
+				return _tt_bc_id;
 			}
 
 			set
 			{
-				_lc_rd_id = value;
-				OnPropertyChanged(nameof(lc_rd_id));
+				_tt_bc_id = value;
+				OnPropertyChanged(nameof(tt_bc_id));
 			}
 		}
 
 		/// <summary>
 		/// Zastosowana ilość
 		/// </summary>
-		/// <value>The lc quan.</value>
-		public decimal lc_quan
+		/// <value>The tt quan.</value>
+		public decimal tt_quan
 		{
 			get
 			{
-				return _lc_quan;
+				return _tt_quan;
 			}
 
 			set
 			{
-				_lc_quan = value;
-				OnPropertyChanged(nameof(lc_quan));
+				_tt_quan = value;
+				OnPropertyChanged(nameof(tt_quan));
 			}
 		}
 
 		/// <summary>
 		/// Data rozpoczęcia leczenia
 		/// </summary>
-		/// <value>The lc start.</value>
-		public DateTime lc_start
+		/// <value>The tt start.</value>
+		public DateTime tt_start
 		{
 			get
 			{
-				return _lc_start;
+				return _tt_start;
 			}
 
 			set
 			{
-				_lc_start = value;
-				OnPropertyChanged(nameof(lc_start));
+				_tt_start = value;
+				OnPropertyChanged(nameof(tt_start));
 			}
 		}
 		/// <summary>
 		/// Data zakończenia leczenia
 		/// </summary>
-		/// <value>The lc end.</value>
-		public DateTime lc_end
+		/// <value>The tt end.</value>
+		public DateTime tt_end
 		{
 			get
 			{
-				return _lc_end;
+				return _tt_end;
 			}
 
 			set
 			{
-				_lc_end = value;
-				OnPropertyChanged(nameof(lc_end));
+				_tt_end = value;
+				OnPropertyChanged(nameof(tt_end));
 			}
 		}
 
 		/// <summary>
 		/// Opis efektu leczenia
 		/// </summary>
-		/// <value>The lc effect.</value>
-		public string lc_effect
+		/// <value>The tt effect.</value>
+		public string tt_effect
 		{
 			get
 			{
-				return _lc_effect;
+				return _tt_effect;
 			}
 
 			set
 			{
-				_lc_effect = value;
-				OnPropertyChanged(nameof(lc_effect));
+				_tt_effect = value;
+				OnPropertyChanged(nameof(tt_effect));
 			}
 		}
 
 		/// <summary>
 		/// Dodatkowy opis
 		/// </summary>
-		/// <value>The lc desc.</value>
-		public string lc_desc
+		/// <value>The tt desc.</value>
+		public string tt_desc
 		{
 			get
 			{
-				return _lc_desc;
+				return _tt_desc;
 			}
 
 			set
 			{
-				_lc_desc = value;
-				OnPropertyChanged(nameof(lc_desc));
+				_tt_desc = value;
+				OnPropertyChanged(nameof(tt_desc));
 			}
-		}
-
-		public Treatment()
-		{
 		}
 
 	

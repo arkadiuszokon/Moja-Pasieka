@@ -93,11 +93,21 @@
     <Compile Include="DataModel\HoneyHarvest.cs" />
     <Compile Include="DataModel\Parameter.cs" />
     <Compile Include="DataModel\Treatment.cs" />
-    <Compile Include="DataModel\HiveBody.cs" />
+    <Compile Include="DataModel\BeeHiveBody.cs" />
     <Compile Include="DataModel\QueenBee.cs" />
     <Compile Include="DataModel\Apiary.cs" />
     <Compile Include="DataModel\BeeColony.cs" />
     <Compile Include="DataModel\BeeColonyHistory.cs" />
+    <Compile Include="DataModel\BeeColonyHistoryType.cs" />
+    <Compile Include="DataModel\Core\IDataModelSelfInit.cs" />
+    <Compile Include="DataModel\BeeColonyCondition.cs" />
+    <Compile Include="DataModel\Scale.cs" />
+    <Compile Include="DataModel\ScaleValue.cs" />
+    <Compile Include="DataModel\BeeHiveHistory.cs" />
+    <Compile Include="DataModel\BeeHiveHistoryType.cs" />
+    <Compile Include="Validator\Core\IValidator.cs" />
+    <Compile Include="Validator\Core\IValidatorAsync.cs" />
+    <Compile Include="Validator\Core\ValidationResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Practices.ServiceLocation">
@@ -162,6 +172,8 @@
     <Folder Include="View\Components\" />
     <Folder Include="Assets\" />
     <Folder Include="Assets\Icons\" />
+    <Folder Include="Validator\" />
+    <Folder Include="Validator\Core\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

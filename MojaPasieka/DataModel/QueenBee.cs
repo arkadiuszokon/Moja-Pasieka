@@ -20,126 +20,127 @@ namespace MojaPasieka.DataModel
 			{QueenBeeColor.BLUE, new int[] {5,0}}
 		};
 
-		private int _mt_id;
-		private string _mt_name;
-		private QueenBeeColor _mt_color;
-		private int _mt_year;
-		private int _mt_rs_id;
-		private QueenBeeSource _mt_source;
-		private int _mt_rd_idraised;
-		private int _mt_mt_id;
-		private int _mt_rd_idfather;
-		private int _mt_hd_id;
-		private string _mt_desc;
-		private DateTime _mt_timestamp;
+		private int _qb_id;
+		private string _qb_name;
+		private QueenBeeColor _qb_color;
+		private int _qb_year;
+		private int _qb_rs_id;
+		private QueenBeeSource _qb_source;
+		private int _qb_bc_idraised;
+		private int _qb_qb_id;
+		private int _qb_bc_idfather;
+		private int _qb_hd_id;
+		private string _qb_desc;
+		private bool _qb_alive;
+		private DateTime _qb_timestamp;
 
 		/// <summary>
 		/// Id matki
 		/// </summary>
-		/// <value>The mt identifier.</value>
+		/// <value>The qb identifier.</value>
 		[PrimaryKey, AutoIncrement]
-		public int mt_id
+		public int qb_id
 		{
 			get
 			{
-				return _mt_id;
+				return _qb_id;
 			}
 
 			set
 			{
-				_mt_id = value;
-				OnPropertyChanged(nameof(mt_id));
+				_qb_id = value;
+				OnPropertyChanged(nameof(qb_id));
 			}
 		}
 
 		/// <summary>
 		/// Nazwa matki
 		/// </summary>
-		/// <value>The name of the mt.</value>
-		public string mt_name
+		/// <value>The name of the qb.</value>
+		public string qb_name
 		{
 			get
 			{
-				return _mt_name;
+				return _qb_name;
 			}
 
 			set
 			{
-				_mt_name = value;
-				OnPropertyChanged(nameof(mt_name));
+				_qb_name = value;
+				OnPropertyChanged(nameof(qb_name));
 			}
 		}
 
 		/// <summary>
 		/// Kolor opalitka
 		/// </summary>
-		/// <value>The color of the mt.</value>
-		public QueenBeeColor mt_color
+		/// <value>The color of the qb.</value>
+		public QueenBeeColor qb_color
 		{
 			get
 			{
-				return _mt_color;
+				return _qb_color;
 			}
 
 			set
 			{
-				_mt_color = value;
-				OnPropertyChanged(nameof(mt_color));
+				_qb_color = value;
+				OnPropertyChanged(nameof(qb_color));
 			}
 		}
 
 		/// <summary>
 		/// Rok matki
 		/// </summary>
-		/// <value>The mt year.</value>
-		public int mt_year
+		/// <value>The qb year.</value>
+		public int qb_year
 		{
 			get
 			{
-				return _mt_year;
+				return _qb_year;
 			}
 
 			set
 			{
-				_mt_year = value;
-				OnPropertyChanged(nameof(mt_year));
+				_qb_year = value;
+				OnPropertyChanged(nameof(qb_year));
 			}
 		}
 
 		/// <summary>
 		/// id rasy matki
 		/// </summary>
-		/// <value>The mt rs identifier.</value>
+		/// <value>The qb rs identifier.</value>
 		[Indexed]
-		public int mt_rs_id
+		public int qb_rs_id
 		{
 			get
 			{
-				return _mt_rs_id;
+				return _qb_rs_id;
 			}
 
 			set
 			{
-				_mt_rs_id = value;
-				OnPropertyChanged(nameof(mt_rs_id));
+				_qb_rs_id = value;
+				OnPropertyChanged(nameof(qb_rs_id));
 			}
 		}
 
 		/// <summary>
 		/// Źródło pozyskania matki
 		/// </summary>
-		/// <value>The mt source.</value>
-		public QueenBeeSource mt_source
+		/// <value>The qb source.</value>
+		public QueenBeeSource qb_source
 		{
 			get
 			{
-				return _mt_source;
+				return _qb_source;
 			}
 
 			set
 			{
-				_mt_source = value;
-				OnPropertyChanged(nameof(mt_source));
+				_qb_source = value;
+				OnPropertyChanged(nameof(qb_source));
 			}
 		}
 
@@ -147,19 +148,19 @@ namespace MojaPasieka.DataModel
 		/// Id rodziny wychowującej
 		/// Uzupełniane w przypadku własnej chodowli
 		/// </summary>
-		/// <value>The mt rd idraised.</value>
+		/// <value>The qb bc idraised.</value>
 		[Indexed]
-		public int mt_rd_idraised
+		public int qb_bc_idraised
 		{
 			get
 			{
-				return _mt_rd_idraised;
+				return _qb_bc_idraised;
 			}
 
 			set
 			{
-				_mt_rd_idraised = value;
-				OnPropertyChanged(nameof(mt_rd_idraised));
+				_qb_bc_idraised = value;
+				OnPropertyChanged(nameof(qb_bc_idraised));
 			}
 		}
 
@@ -167,19 +168,19 @@ namespace MojaPasieka.DataModel
 		/// Strona mateczna
 		/// uzupełniane w przypadku własnej chodowli
 		/// </summary>
-		/// <value>The mt mt identifier.</value>
+		/// <value>The qb qb identifier.</value>
 		[Indexed]
-		public int mt_mt_id
+		public int qb_qb_id
 		{
 			get
 			{
-				return _mt_mt_id;
+				return _qb_qb_id;
 			}
 
 			set
 			{
-				_mt_mt_id = value;
-				OnPropertyChanged(nameof(mt_mt_id));
+				_qb_qb_id = value;
+				OnPropertyChanged(nameof(qb_qb_id));
 			}
 		}
 
@@ -187,19 +188,19 @@ namespace MojaPasieka.DataModel
 		/// Strona ojcowska
 		/// uzupełniane w przypadku własnej chodowli
 		/// </summary>
-		/// <value>The mt rd idfather.</value>
+		/// <value>The qb bc idfather.</value>
 		[Indexed]
-		public int mt_rd_idfather
+		public int qb_bc_idfather
 		{
 			get
 			{
-				return _mt_rd_idfather;
+				return _qb_bc_idfather;
 			}
 
 			set
 			{
-				_mt_rd_idfather = value;
-				OnPropertyChanged(nameof(mt_rd_idfather));
+				_qb_bc_idfather = value;
+				OnPropertyChanged(nameof(qb_bc_idfather));
 			}
 		}
 
@@ -207,54 +208,71 @@ namespace MojaPasieka.DataModel
 		/// Id hodowcy u którego kupiono matkę
 		/// uzupełniane w przypadku zakupu matki z zewnatrz
 		/// </summary>
-		/// <value>The mt hd identifier.</value>
+		/// <value>The qb hd identifier.</value>
 		[Indexed]
-		public int mt_hd_id
+		public int qb_hd_id
 		{
 			get
 			{
-				return _mt_hd_id;
+				return _qb_hd_id;
 			}
 
 			set
 			{
-				_mt_hd_id = value;
-				OnPropertyChanged(nameof(mt_hd_id));
+				_qb_hd_id = value;
+				OnPropertyChanged(nameof(qb_hd_id));
 			}
 		}
 
 		/// <summary>
 		/// DOdatkowy opis
 		/// </summary>
-		/// <value>The mt desc.</value>
-		public string mt_desc
+		/// <value>The qb desc.</value>
+		public string qb_desc
 		{
 			get
 			{
-				return _mt_desc;
+				return _qb_desc;
 			}
 
 			set
 			{
-				_mt_desc = value;
-				OnPropertyChanged(nameof(mt_desc));
+				_qb_desc = value;
+				OnPropertyChanged(nameof(qb_desc));
 			}
 		}
 
-		public DateTime mt_timestamp
+		public DateTime qb_timestamp
 		{
 			get
 			{
-				return _mt_timestamp;
+				return _qb_timestamp;
 			}
 
 			set
 			{
-				_mt_timestamp = value;
-				OnPropertyChanged(nameof(mt_timestamp));
+				_qb_timestamp = value;
+				OnPropertyChanged(nameof(qb_timestamp));
 			}
 		}
 
+		/// <summary>
+		/// Czy matka jeszcze żyje
+		/// </summary>
+		/// <value><c>true</c> if qb alive; otherwise, <c>false</c>.</value>
+		public bool qb_alive
+		{
+			get
+			{
+				return _qb_alive;
+			}
+
+			set
+			{
+				_qb_alive = value;
+				OnPropertyChanged(nameof(qb_alive));
+			}
+		}
 	}
 
 
