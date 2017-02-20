@@ -4,8 +4,8 @@ namespace MojaPasieka.cqrs
 	/// <summary>
 	/// Weryfikator komendy
 	/// </summary>
-	public interface IVerifier<TCommand> where TCommand : ICommand
+	public interface IValidator<TCommand> where TCommand : ICommand 
 	{
-		bool verity(TCommand command);
+		ValidationResult validate(TCommand command);
 	}
 }
