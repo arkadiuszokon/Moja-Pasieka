@@ -1,5 +1,5 @@
 ﻿using System;
-namespace MojaPasieka
+namespace MojaPasieka.cqrs
 {
 	public class ValidationResult
 	{
@@ -13,6 +13,6 @@ namespace MojaPasieka
 		/// Komunikat o walidacji
 		/// </summary>
 		/// <value>The message.</value>
-		private string message { get; set;}
+		public string message { get; set;}
 	}
 }

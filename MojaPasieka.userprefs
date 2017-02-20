@@ -9,14 +9,14 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.MojaPasieka.Droid PreferredExecutionTarget="Android.5&quot; KitKat (4.4) XXHDPI Phone" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MojaPasieka\Bus\CommandBus.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MojaPasieka\Validator\Core\IValidator.cs">
     <Files>
       <File FileName="MojaPasieka\Command\Core\ICommand.cs" Line="1" Column="1" />
       <File FileName="MojaPasieka\Validator\IVerifierAsync.cs" Line="14" Column="1" />
       <File FileName="MojaPasieka\CommandHandler\Core\ICommandHandler.cs" Line="13" Column="1" />
       <File FileName="MojaPasieka\Startup\IStartupTask.cs" Line="12" Column="1" />
       <File FileName="MojaPasieka\Startup\Task\RegisterTypesTask.cs" Line="36" Column="5" />
-      <File FileName="MojaPasieka\Bus\CommandBus.cs" Line="77" Column="6" />
+      <File FileName="MojaPasieka\Bus\CommandBus.cs" Line="77" Column="1" />
       <File FileName="MojaPasieka\Bus\EventBus.cs" Line="59" Column="65" />
       <File FileName="MojaPasieka\Bus\QueryBus.cs" Line="39" Column="4" />
       <File FileName="MojaPasieka\Validator\Core\IValidator.cs" Line="12" Column="1" />

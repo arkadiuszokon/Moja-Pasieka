@@ -28,7 +28,7 @@ namespace MojaPasieka.cqrs
 				throw new ArgumentNullException("query");
 			}
 
-			var queryHandler = _resolver.Resolve<IQueryHandler<TQuery,TResult>>();
+			var queryHandler = _resolver.ResolveOptional<IQueryHandler<TQuery,TResult>>();
 
 			if (queryHandler == null)
 			{
@@ -52,7 +52,7 @@ namespace MojaPasieka.cqrs
 				throw new ArgumentNullException("query");
 			}
 
-			var queryHandler = _resolver.Resolve<IQueryHandlerAsync<TQuery, TResult>>();
+			var queryHandler = _resolver.ResolveOptional<IQueryHandlerAsync<TQuery, TResult>>();
 
 			if (queryHandler == null)
 			{

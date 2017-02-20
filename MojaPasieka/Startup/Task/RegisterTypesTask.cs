@@ -39,6 +39,8 @@ namespace MojaPasieka.Startup
 
 					builder.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(ICommandHandler<>)).SingleInstance();
 					builder.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(ICommandHandlerAsync<>)).SingleInstance();
+					builder.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(IValidator<>)).SingleInstance();
+					builder.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(IValidatorAsync<>)).SingleInstance();
 					builder.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(IQueryHandler<,>)).SingleInstance();
 					builder.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(IQueryHandlerAsync<,>)).SingleInstance();
 					builder.RegisterAssemblyTypes(assemblies[i]).AssignableTo<DataModelBase>().AsImplementedInterfaces().SingleInstance();
