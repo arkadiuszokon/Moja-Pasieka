@@ -8,8 +8,9 @@ namespace MojaPasieka.DataModel
 		
 		private int _bhb_id;
 		private int _bhb_bh_id;
+		private int _bhb_wh_id;
 		private int _bhb_framescount;
-		private int _bhb_rt_id;
+		private int _bhb_ft_id;
 		private int _bhb_order;
 		private string _bhb_paint;
 		private string _bhb_name;
@@ -35,6 +36,10 @@ namespace MojaPasieka.DataModel
 			}
 		}
 
+		/// <summary>
+		/// Id ula
+		/// </summary>
+		/// <value>Null jeżeli jest w magazynie</value>
 		[Indexed]
 		public int bhb_bh_id
 		{
@@ -73,17 +78,17 @@ namespace MojaPasieka.DataModel
 		/// </summary>
 		/// <value>The bhb rt identifier.</value>
 		[Indexed]
-		public int bhb_rt_id
+		public int bhb_ft_id
 		{
 			get
 			{
-				return _bhb_rt_id;
+				return _bhb_ft_id;
 			}
 
 			set
 			{
-				_bhb_rt_id = value;
-				OnPropertyChanged(nameof(bhb_rt_id));
+				_bhb_ft_id = value;
+				OnPropertyChanged(nameof(bhb_ft_id));
 			}
 		}
 
@@ -170,6 +175,24 @@ namespace MojaPasieka.DataModel
 			{
 				_bhb_timestamp = value;
 				OnPropertyChanged(nameof(bhb_timestamp));
+			}
+		}
+
+		/// <summary>
+		/// Id magazynu
+		/// </summary>
+		/// <value>null jeżeli jest na ulu</value>
+		[Indexed]
+		public int bhb_wh_id
+		{
+			get
+			{
+				return _bhb_wh_id;
+			}
+
+			set
+			{
+				_bhb_wh_id = value;
 			}
 		}
 	}

@@ -9,7 +9,7 @@ namespace MojaPasieka.DataModel
 		private int _bhh_id;
 		private int _bhh_bh_id;
 		private int _bhh_bhht_id;
-		private string _bhh_note;
+		private string _bhh_desc;
 		private DateTime _bhh_date;
 		private DateTime _bhh_timestamp;
 
@@ -103,6 +103,24 @@ namespace MojaPasieka.DataModel
 			{
 				_bhh_timestamp = value;
 				OnPropertyChanged(nameof(bhh_timestamp));
+			}
+		}
+
+		/// <summary>
+		/// Dodatkowe uwagi
+		/// </summary>
+		/// <value>The bhh desc.</value>
+		public string bhh_desc
+		{
+			get
+			{
+				return _bhh_desc;
+			}
+
+			set
+			{
+				_bhh_desc = value;
+				OnPropertyChanged(nameof(bhh_note));
 			}
 		}
 	}

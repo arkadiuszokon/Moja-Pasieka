@@ -108,6 +108,11 @@
     <Compile Include="Validator\Core\IValidator.cs" />
     <Compile Include="Validator\Core\IValidatorAsync.cs" />
     <Compile Include="Validator\Core\ValidationResult.cs" />
+    <Compile Include="DataModel\BeeBreed.cs" />
+    <Compile Include="DataModel\Medicine.cs" />
+    <Compile Include="DataModel\Frame.cs" />
+    <Compile Include="DataModel\FrameHistory.cs" />
+    <Compile Include="DataModel\FrameHistoryType.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Practices.ServiceLocation">

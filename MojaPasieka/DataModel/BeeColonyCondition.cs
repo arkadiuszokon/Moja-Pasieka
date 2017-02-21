@@ -4,23 +4,13 @@ namespace MojaPasieka.DataModel
 {
 	public class BeeColonyCondition : DataModelBase, IDataModel
 	{
-		/*	new Column("rs_id", "INTEGER", "", true, true, true),
-				new Column("rs_rd_id", "INTEGER", "", true), //id rodziny
-				new Column("rs_strength", "INTEGER", "", true), //siła rodziny
-				new Column("rs_maggotscount", "INTEGER", "", true), //ilość czerwiu
-				new Column("rs_honeycount", "INTEGER", "", true), //ilość pokarmu
-				new Column("rs_swarmready", "INTEGER", "", true), //rojliwość
-				new Column("rs_agressive", "INTEGER", "", true), //agresywność
-				new Column("rs_sticking", "INTEGER", "", true), //trzymanie się plastra
-				new Column("rs_healthy", "INTEGER", "", true), //ocena zdrowia
-				new Column("rs_additional", "INTEGER", "", true), //dodatkowa wartość
-				new Column("rs_timestamp", "INTEGER", "", true) */
 
 		private int _bcc_id;
 		private int _bcc_bc_id;
 		private int _bcc_strenght;
 		private int _bcc_maggotscount;
 		private int _bcc_honeycount;
+		private int _bcc_pergacount;
 		private int _bcc_swarmready;
 		private int _bcc_agressive;
 		private int _bcc_sticking;
@@ -243,6 +233,24 @@ namespace MojaPasieka.DataModel
 			{
 				_bcc_timestamp = value;
 				OnPropertyChanged(nameof(bcc_timestamp));
+			}
+		}
+
+		/// <summary>
+		/// Ilość pierzgi
+		/// </summary>
+		/// <value>The bcc pergacount.</value>
+		public int bcc_pergacount
+		{
+			get
+			{
+				return _bcc_pergacount;
+			}
+
+			set
+			{
+				_bcc_pergacount = value;
+				OnPropertyChanged(nameof(bcc_pergacount));
 			}
 		}
 	}
