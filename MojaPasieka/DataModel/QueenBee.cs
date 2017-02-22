@@ -4,6 +4,9 @@ using SQLite;
 
 namespace MojaPasieka.DataModel
 {
+	/// <summary>
+	/// Królowa
+	/// </summary>
 	[Table("tb_queenbee")]
 	public class QueenBee : DataModelBase, IDataModel
 	{
@@ -19,7 +22,7 @@ namespace MojaPasieka.DataModel
 			{QueenBeeColor.GREEN, new int[] {4,9}},
 			{QueenBeeColor.BLUE, new int[] {5,0}}
 		};
-
+	
 		private int _qb_id;
 		private string _qb_name;
 		private QueenBeeColor _qb_color;
@@ -281,9 +284,16 @@ namespace MojaPasieka.DataModel
 	/// </summary>
 	public enum QueenBeeSource
 	{
+		[EnumName("Własna hodowla")]
 		OWN_BREEDING = 1,
+
+		[EnumName("Zakup wewnetrzny")]
 		EXTERNAL_PURCHASE = 2,
+
+		[EnumName("Matka rojowa")]
 		SWARM_QUEEN = 3,
+
+		[EnumName("Inne")]
 		OTHER = 4
 	}
 
@@ -292,10 +302,19 @@ namespace MojaPasieka.DataModel
 	/// </summary>
 	public enum QueenBeeColor
 	{
+		[EnumName("Biały"), EnumColor("#ffffff")]
 		WHITE = 1,
+
+		[EnumName("Żółty"), EnumColor("#FFEB3B")]
 		YELLOW = 2,
+
+		[EnumName("Czerwony"), EnumColor("#FF3D00")]
 		RED = 3,
+
+		[EnumName("Zielony"), EnumColor("#388E3C")]
 		GREEN = 4,
+
+		[EnumName("Niebieski"), EnumColor("#1565C0")]
 		BLUE = 5
 	}
 

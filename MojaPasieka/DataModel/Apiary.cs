@@ -2,6 +2,9 @@
 using SQLite;
 namespace MojaPasieka.DataModel
 {
+	/// <summary>
+	/// Pasieka
+	/// </summary>
 	[Table("tb_apiary")]
 	public class Apiary : DataModelBase, IDataModel
 	{

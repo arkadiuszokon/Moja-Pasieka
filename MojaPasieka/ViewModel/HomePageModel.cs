@@ -1,5 +1,5 @@
 ﻿using System;
-namespace MojaPasieka
+namespace MojaPasieka.View
 {
 	public class HomePageModel : IViewModel
 	{

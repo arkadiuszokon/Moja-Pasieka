@@ -5,10 +5,14 @@ using SQLite;
 
 namespace MojaPasieka.DataModel
 {
+	/// <summary>
+	/// Typ historii rodziny
+	/// </summary>
 	[Table("tb_beecolonyhistorytype")]
 	public class BeeColonyHistoryType : DataModelBase, IDataModel, IDataModelSelfInit
 	{
-		
+
+
 		private int _bcht_id;
 		private string _bcht_name;
 		private BeeColonyHistoryMain _bcht_main;
@@ -102,68 +106,67 @@ namespace MojaPasieka.DataModel
 			}
 		}
 
-		public async Task fillWithData(SQLiteAsyncConnection database)
+		public void fillWithData(SQLiteConnection database)
 		{
-			var res = await database.ExecuteScalarAsync<int>("SELECT COUNT(bcht_id) FROM tb_beecolonyhistorytype");
+			var res = database.ExecuteScalar<int>("SELECT COUNT(bcht_id) FROM tb_beecolonyhistorytype");
 			if (res == 0)
 			{
-				await database.InsertAllAsync(new List<BeeColonyHistoryType> {
-						new BeeColonyHistoryType{
-							bcht_name="Nowa rodzina",
-							bcht_main = BeeColonyHistoryMain.NEW_COLONY,
-							bcht_dataname="Źródło rodziny",
-							bcht_timestamp = DateTime.Now
-						},
-						new BeeColonyHistoryType{
-							bcht_name="Poddanie matki",
-							bcht_dataname="Źródło matki",
-							bcht_timestamp = DateTime.Now
-						},
-						new BeeColonyHistoryType{
-							bcht_name="Rozpoczęcie czerwienia przez matkę",
-							bcht_dataname="",
-							bcht_timestamp = DateTime.Now
-						},
-						new BeeColonyHistoryType{
-							bcht_name="Brak matki",
-							bcht_dataname="Przyczyna",
-							bcht_timestamp = DateTime.Now
-						},
-						new BeeColonyHistoryType{
-							bcht_name="Wyjście rójki",
-							bcht_dataname="Numer rójki",
-							bcht_timestamp = DateTime.Now
-						},
-						new BeeColonyHistoryType{
-							bcht_name="Miodobranie",
-							bcht_main= BeeColonyHistoryMain.HONEY_HARVEST,
-							bcht_dataname="Numer miodobrania",
-							bcht_timestamp = DateTime.Now
-						},
-						new BeeColonyHistoryType{
-							bcht_name="Rabunek",
-							bcht_dataname="Przyczyna",
-							bcht_timestamp = DateTime.Now
-						},
-						new BeeColonyHistoryType{
-							bcht_name="Oblot wiosenny",
-							bcht_dataname="",
-							bcht_timestamp = DateTime.Now
-						},
-						new BeeColonyHistoryType{
-							bcht_name="Trutówki",
-							bcht_dataname="",
-							bcht_timestamp = DateTime.Now
-						},
-						new BeeColonyHistoryType{
-							bcht_name="Osypanie rodziny",
-							bcht_main=BeeColonyHistoryMain.DEAD_COLONY,
-							bcht_dataname="Przyczyna",
-							bcht_timestamp = DateTime.Now
-						}
+				 database.InsertAll(new List<BeeColonyHistoryType> {
+					new BeeColonyHistoryType{
+						bcht_name="Nowa rodzina",
+						bcht_main = BeeColonyHistoryMain.NEW_COLONY,
+						bcht_dataname="Źródło rodziny",
+						bcht_timestamp = DateTime.Now
+					},
+					new BeeColonyHistoryType{
+						bcht_name="Poddanie matki",
+						bcht_dataname="Źródło matki",
+						bcht_timestamp = DateTime.Now
+					},
+					new BeeColonyHistoryType{
+						bcht_name="Rozpoczęcie czerwienia przez matkę",
+						bcht_dataname="",
+						bcht_timestamp = DateTime.Now
+					},
+					new BeeColonyHistoryType{
+						bcht_name="Brak matki",
+						bcht_dataname="Przyczyna",
+						bcht_timestamp = DateTime.Now
+					},
+					new BeeColonyHistoryType{
+						bcht_name="Wyjście rójki",
+						bcht_dataname="Numer rójki",
+						bcht_timestamp = DateTime.Now
+					},
+					new BeeColonyHistoryType{
+						bcht_name="Miodobranie",
+						bcht_main= BeeColonyHistoryMain.HONEY_HARVEST,
+						bcht_dataname="Numer miodobrania",
+						bcht_timestamp = DateTime.Now
+					},
+					new BeeColonyHistoryType{
+						bcht_name="Rabunek",
+						bcht_dataname="Przyczyna",
+						bcht_timestamp = DateTime.Now
+					},
+					new BeeColonyHistoryType{
+						bcht_name="Oblot wiosenny",
+						bcht_dataname="",
+						bcht_timestamp = DateTime.Now
+					},
+					new BeeColonyHistoryType{
+						bcht_name="Trutówki",
+						bcht_dataname="",
+						bcht_timestamp = DateTime.Now
+					},
+					new BeeColonyHistoryType{
+						bcht_name="Osypanie rodziny",
+						bcht_main=BeeColonyHistoryMain.DEAD_COLONY,
+						bcht_dataname="Przyczyna",
+						bcht_timestamp = DateTime.Now
+					}
 
-
-					});
+				});
 
 			}
 		}
@@ -171,8 +174,11 @@ namespace MojaPasieka.DataModel
 
 	public enum BeeColonyHistoryMain
 	{
+		[EnumName("Nowa rodzina")]
 		NEW_COLONY = 1,
+		[EnumName("Miodobranie")]
 		HONEY_HARVEST = 2,
+		[EnumName("Osypanie rodziny")]
 		DEAD_COLONY = 3
 	}
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using MojaPasieka.cqrs;
 using Autofac;
+using MojaPasieka.View;
 using MojaPasieka.DataModel;
 using System.Threading.Tasks;
 
@@ -42,7 +43,6 @@ namespace MojaPasieka.Startup
 					builder.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(IValidator<>)).SingleInstance();
 					builder.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(IValidatorAsync<>)).SingleInstance();
 					builder.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(IQueryHandler<,>)).SingleInstance();
-					builder.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(IQueryHandlerAsync<,>)).SingleInstance();
 					builder.RegisterAssemblyTypes(assemblies[i]).AssignableTo<DataModelBase>().AsImplementedInterfaces().SingleInstance();
 					builder.RegisterAssemblyTypes(assemblies[i]).AssignableTo<IViewModel>().WithParameter(new TypedParameter(typeof(ViewPage<>), "view"));
 

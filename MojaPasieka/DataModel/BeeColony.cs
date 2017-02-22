@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using SQLite;
 
 namespace MojaPasieka.DataModel
 {
+	/// <summary>
+	/// Rodzina
+	/// </summary>
 	[Table("tb_beecolony")]
 	public class BeeColony : DataModelBase, IDataModel
 	{
-		
 
 		private int _bc_id;
 		private DateTime _bc_created;
@@ -126,7 +129,9 @@ namespace MojaPasieka.DataModel
 	/// </summary>
 	public enum BeeColonyInspectedType
 	{
+		[EnumName("Uproszczony: Oceniamy rodzinę całościowo")]
 		SIMPLIFIED = 1,
+		[EnumName("Szeczółowy: Oceniamy każdą ramkę")]
 		DETAILED = 2
 	}
 }

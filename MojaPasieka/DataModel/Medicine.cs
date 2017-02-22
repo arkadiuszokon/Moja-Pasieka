@@ -4,17 +4,13 @@ using System.Threading.Tasks;
 using SQLite;
 namespace MojaPasieka.DataModel
 {
+	/// <summary>
+	/// Lekarstwo
+	/// </summary>
 	[Table("tb_medicine")]
 	public class Medicine : DataModelBase, IDataModel, IDataModelSelfInit
 	{
-		public static Dictionary<MedicineUom, string> medicineUomName = new Dictionary<MedicineUom, string>
-		{
-			{MedicineUom.GRAM, "gram"},
-			{MedicineUom.ML, "ml"},
-			{MedicineUom.PACKAGE, "opak."},
-			{MedicineUom.STRIPE, "pasek"},
-			{MedicineUom.TABLETS, "tabletka"}
-		};
+		
 
 		private int _md_id;
 		private string _md_name;
@@ -147,12 +143,12 @@ namespace MojaPasieka.DataModel
 			}
 		}
 
-		public async Task fillWithData(SQLiteAsyncConnection database)
+		public void fillWithData(SQLiteConnection database)
 		{
-			var res = await database.ExecuteScalarAsync<int>("SELECT COUNT(md_id) FROM tb_medicine");
+			var res =  database.ExecuteScalar<int>("SELECT COUNT(md_id) FROM tb_medicine");
 			if (res == 0)
 			{
-				await database.InsertAllAsync(new List<Medicine> {
+				database.InsertAll(new List<Medicine> {
 
 					new Medicine{
 						md_name = "Apiwarol",
@@ -261,10 +257,19 @@ namespace MojaPasieka.DataModel
 	/// </summary>
 	public enum MedicineUom
 	{
+		[EnumName("ml")]
 		ML = 1,
+
+		[EnumName("gram")]
 		GRAM = 2,
+
+		[EnumName("Tabletka")]
 		TABLETS = 3,
+
+		[EnumName("Opakowanie")]
 		PACKAGE = 4,
+
+		[EnumName("Pasek")]
 		STRIPE = 5
 	}
 }

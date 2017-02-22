@@ -2,7 +2,7 @@
 
 using Xamarin.Forms;
 
-namespace MojaPasieka
+namespace MojaPasieka.View
 {
 	public class CardView : Frame
 	{

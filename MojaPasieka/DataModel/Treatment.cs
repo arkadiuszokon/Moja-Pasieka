@@ -2,12 +2,15 @@
 using SQLite;
 namespace MojaPasieka.DataModel
 {
+	/// <summary>
+	/// Leczenie
+	/// </summary>
 	[Table("tb_treatment")]
 	public class Treatment : DataModelBase, IDataModel
 	{
 		
 		private int _tt_id;
-		private int _tt_lk_id;
+		private int _tt_md_id;
 		private int _tt_bc_id;
 		private decimal _tt_quan;
 		private DateTime _tt_start;
@@ -39,17 +42,17 @@ namespace MojaPasieka.DataModel
 		/// </summary>
 		/// <value>The tt lk identifier.</value>
 		[Indexed]
-		public int tt_lk_id
+		public int tt_md_id
 		{
 			get
 			{
-				return _tt_lk_id;
+				return _tt_md_id;
 			}
 
 			set
 			{
-				_tt_lk_id = value;
-				OnPropertyChanged(nameof(tt_lk_id));
+				_tt_md_id = value;
+				OnPropertyChanged(nameof(tt_md_id));
 			}
 		}
 

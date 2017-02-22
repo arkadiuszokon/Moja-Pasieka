@@ -3,6 +3,9 @@ using SQLite;
 
 namespace MojaPasieka.DataModel
 {
+	/// <summary>
+	/// wpis z historii rodziny
+	/// </summary>
 	[Table("tb_beecolonyhistory")]
 	public class BeeColonyHistory : DataModelBase, IDataModel
 	{

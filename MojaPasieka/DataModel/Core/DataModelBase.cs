@@ -5,16 +5,24 @@ namespace MojaPasieka.DataModel
 {
 	public class DataModelBase: INotifyPropertyChanged
 	{
+		protected object lockObject = new object();
+
 		public event PropertyChangedEventHandler PropertyChanged;
 		protected void OnPropertyChanged(string propertyName)
 		{
-			this.PropertyChanged?.Invoke(this,
-			  new PropertyChangedEventArgs(propertyName));
+			lock(lockObject)
+			{
+				this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 
 		public virtual Type getDataModelType()
 		{
-			return this.GetType();
+			lock(lockObject)
+			{
+				return this.GetType();
+			}
+
 		}
 
 	}

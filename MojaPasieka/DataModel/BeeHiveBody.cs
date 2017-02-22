@@ -2,6 +2,9 @@
 using SQLite;
 namespace MojaPasieka.DataModel
 {
+	/// <summary>
+	/// Korpus ula
+	/// </summary>
 	[Table("tb_beehivebody")]
 	public class BeeHiveBody:DataModelBase, IDataModel
 	{

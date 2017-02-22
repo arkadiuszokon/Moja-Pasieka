@@ -3,6 +3,9 @@ using SQLite;
 
 namespace MojaPasieka.DataModel
 {
+	/// <summary>
+	/// Miodobranie
+	/// </summary>
 	[Table("tb_honeyharvest")]
 	public class HoneyHarvest : DataModelBase, IDataModel
 	{

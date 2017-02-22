@@ -5,17 +5,17 @@ using SQLite;
 
 namespace MojaPasieka.cqrs
 {
-	public class GetParameterHandler : IQueryHandlerAsync<GetParameter, string>
+	public class GetParameterHandler : IQueryHandler<GetParameter, string>
 	{
 
-		private SQLiteAsyncConnection _database;
+		private SQLiteConnection _database;
 
-		public GetParameterHandler(SQLiteAsyncConnection database)
+		public GetParameterHandler(SQLiteConnection database)
 		{
 			_database = database;
 		}
 
-		public async Task<string> ExecuteAsync(GetParameter query)
+		public string Execute(GetParameter query)
 		{
 			if (Parameter.cache.ContainsKey(query.pa_name))
 			{
@@ -23,11 +23,12 @@ namespace MojaPasieka.cqrs
 			}
 			else
 			{
-				var res = await _database.QueryAsync<Parameter>("SELECT * FROM tb_prm_parameter WHERE pa_name = '" + query.pa_name + "'");
-				if (res != null && res.Count != 0)
+				
+				var res = _database.ExecuteScalar<string>("SELECT pa_value FROM tb_parameter WHERE pa_name = '" + query.pa_name + "'");
+				if (res != null)
 				{
-					Parameter.cache[query.pa_name] = res[0].pa_value;
-					return res[0].pa_value;
+					Parameter.cache[query.pa_name] = res;
+					return res;
 				}
 				else
 				{

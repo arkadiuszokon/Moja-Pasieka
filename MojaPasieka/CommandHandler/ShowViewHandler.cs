@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-
+using MojaPasieka.View;
 namespace MojaPasieka.cqrs
 {
 	public class ShowViewHandler : ICommandHandlerAsync<ShowView>

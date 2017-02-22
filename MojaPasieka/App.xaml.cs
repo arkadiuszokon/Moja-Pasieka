@@ -5,10 +5,11 @@ using Xamarin.Forms;
 using System.Diagnostics;
 using System.Collections.Generic;
 using System;
-using System.Reflection;
 using MojaPasieka.Startup;
 using Autofac;
+using MojaPasieka.View;
 using MojaPasieka.DataModel;
+using System.Threading.Tasks;
 
 namespace MojaPasieka
 {
@@ -18,12 +19,19 @@ namespace MojaPasieka
 		{
 			
 			InitializeComponent();
-			starApp();
+			try
+			{
+				starApp();
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine(ex.ToString());
+			}
 
 		}
 
 
-		private async void starApp()
+		private async Task starApp()
 		{
 			
 
@@ -38,17 +46,26 @@ namespace MojaPasieka
 
 			using (var scope = IoC.container.BeginLifetimeScope())
 			{
-				var qb = scope.Resolve<IQueryBus>();
-				var cb = scope.Resolve<ICommandBus>();
-				var tutorialStatus = await qb.ProcessAsync<GetParameter, string>(new GetParameter(ParameterName.TUTORIAL_STATUS));
-				if (tutorialStatus != "1")
+				try
 				{
-					var res = await MainPage.DisplayAlert("Witaj", "Czy chcesz uruchomić tutorial, aby zapoznać się z aplikacją?", "Tak", "Anuluj");
-					if (res)
+					var qb = scope.Resolve<IQueryBus>();
+					var cb = scope.Resolve<ICommandBus>();
+					var tutorialStatus = qb.Process<GetParameter, string>(new GetParameter(ParameterName.TUTORIAL_STATUS));
+					if (tutorialStatus != "1")
 					{
-						await cb.SendCommandAsync<ShowView>(new ShowView(new TutorialPage(), true));
-						await cb.SendCommandAsync<SaveParameter>(new SaveParameter(ParameterName.TUTORIAL_STATUS, "1"));
+						await Task.Delay(500);
+						var res = await MainPage.DisplayAlert("Witaj", "Czy chcesz uruchomić tutorial, aby zapoznać się z aplikacją?", "Tak", "Anuluj");
+						if (res)
+						{
+							await cb.SendCommandAsync<ShowView>(new ShowView(new TutorialPage(), true));
+							await cb.SendCommandAsync<SaveParameter>(new SaveParameter(ParameterName.TUTORIAL_STATUS, "1"));
+						}
 					}
+
+				}
+				catch (Exception ex)
+				{
+					Debug.WriteLine(ex.ToString());
 				}
 			}
 		}

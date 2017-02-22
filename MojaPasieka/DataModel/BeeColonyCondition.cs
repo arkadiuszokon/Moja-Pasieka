@@ -2,6 +2,10 @@
 using SQLite;
 namespace MojaPasieka.DataModel
 {
+	/// <summary>
+	/// Ocena stanu rodziny
+	/// </summary>
+	[Table("tb_beecolonycondition")]
 	public class BeeColonyCondition : DataModelBase, IDataModel
 	{
 

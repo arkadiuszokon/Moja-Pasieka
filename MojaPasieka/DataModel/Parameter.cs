@@ -4,6 +4,9 @@ using SQLite;
 
 namespace MojaPasieka.DataModel
 {
+	/// <summary>
+	/// Parametr
+	/// </summary>
 	[Table("tb_parameter")]
 	public class Parameter : DataModelBase, IDataModel
 	{

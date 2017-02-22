@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 using SQLite;
 namespace MojaPasieka.DataModel
 {
+	/// <summary>
+	/// Typ historii ula
+	/// </summary>
 	[Table("tb_beehivehistorytype")]
 	public class BeeHiveHistoryType : DataModelBase, IDataModel, IDataModelSelfInit
 	{
@@ -86,12 +89,12 @@ namespace MojaPasieka.DataModel
 			}
 		}
 
-		public async Task fillWithData(SQLiteAsyncConnection database)
+		public void fillWithData(SQLiteConnection database)
 		{
-			var res = await database.ExecuteScalarAsync<int>("SELECT COUNT(bhht_id) FROM tb_beehivehistorytype");
+			var res =  database.ExecuteScalar<int>("SELECT COUNT(bhht_id) FROM tb_beehivehistorytype");
 			if (res == 0)
 			{
-				await database.InsertAllAsync(new List<BeeHiveHistoryType> { 
+				 database.InsertAll(new List<BeeHiveHistoryType> { 
 				
 					new BeeHiveHistoryType {
 						bhht_name="Nowy",
@@ -131,11 +134,22 @@ namespace MojaPasieka.DataModel
 
 	public enum BeeHiveHistoryTypeMain
 	{
+		[EnumName("Nowy")]
 		NEW = 1,
+
+		[EnumName("Dodano władnę dennicową")]
 		BOTTOM_INSERT_ADDED = 2,
+
+		[EnumName("Usunięto wkładkę dennicową")]
 		BOTTOM_INSERT_REMOVED = 3,
+
+		[EnumName("Dezynfekcja")]
 		DISINFECTION = 4,
+
+		[EnumName("Utylizacja")]
 		UTILIZATION = 5,
+
+		[EnumName("Konserwacja")]
 		CONSERVATION = 6
 	}
 }

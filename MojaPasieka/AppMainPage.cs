@@ -2,7 +2,7 @@
 using Microsoft.Practices.ServiceLocation;
 using Xamarin.Forms;
 
-namespace MojaPasieka
+namespace MojaPasieka.View
 {
 	public class AppMainPage : MasterDetailPage
 	{

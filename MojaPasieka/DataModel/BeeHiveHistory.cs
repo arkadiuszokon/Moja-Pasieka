@@ -2,6 +2,9 @@
 using SQLite;
 namespace MojaPasieka.DataModel
 {
+	/// <summary>
+	/// Historia ula
+	/// </summary>
 	[Table("tb_beehivehistory")]
 	public class BeeHiveHistory : DataModelBase, IDataModel
 	{
@@ -120,7 +123,7 @@ namespace MojaPasieka.DataModel
 			set
 			{
 				_bhh_desc = value;
-				OnPropertyChanged(nameof(bhh_note));
+				OnPropertyChanged(nameof(bhh_desc));
 			}
 		}
 	}

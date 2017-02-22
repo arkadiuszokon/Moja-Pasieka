@@ -3,9 +3,9 @@ using Xamarin.Forms;
 using MojaPasieka.cqrs;
 using Autofac;
 
-namespace MojaPasieka
+namespace MojaPasieka.View
 {
-	public class ViewPage<T> : ContentPage where T : IViewModel
+	public abstract  class ViewPage<T> : ContentPage where T : IViewModel
 	{
 		readonly T _viewModel;
 		public T ViewModel

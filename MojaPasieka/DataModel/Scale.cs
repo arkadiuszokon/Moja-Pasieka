@@ -2,6 +2,9 @@
 using SQLite;
 namespace MojaPasieka.DataModel
 {
+	/// <summary>
+	/// Waga pasieczna
+	/// </summary>
 	[Table("tb_scale")]
 	public class Scale : DataModelBase, IDataModel
 	{

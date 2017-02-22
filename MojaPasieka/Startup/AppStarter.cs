@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Autofac;
 using MojaPasieka.cqrs;
 using MojaPasieka.DataModel;
+using SQLite;
 
 namespace MojaPasieka.Startup
 {
@@ -24,7 +25,7 @@ namespace MojaPasieka.Startup
 			_tasks = tasks;
 		}
 
-		public async void Start()
+		public void Start()
 		{
 			ContainerBuilder builder = new ContainerBuilder();
 			foreach (var task in _tasks)
@@ -43,16 +44,31 @@ namespace MojaPasieka.Startup
 			//tworzymy model bazy danych
 			using (var scope = IoC.container.BeginLifetimeScope())
 			{
-				var models = scope.Resolve<IEnumerable<DataModel.IDataModel>>();
-				var database = scope.Resolve<SQLite.SQLiteAsyncConnection>();
-				var method = database.GetType().GetRuntimeMethods().Where((MethodInfo arg) => arg.Name == "CreateTableAsync").First();
-				foreach (var model in models)
+				try
 				{
-					var res = await(dynamic)method.MakeGenericMethod(new Type[] { model.getDataModelType() }).Invoke(database, new object[] { SQLite.CreateFlags.None });
-					if (model is IDataModelSelfInit)
+					var models = scope.Resolve<IEnumerable<DataModel.IDataModel>>();
+					var database = scope.Resolve<SQLite.SQLiteConnection>();
+
+					//var method = database.GetType().GetRuntimeMethods().Where((MethodInfo arg) => arg.Name == "CreateTable").First();
+					//database.CreateTable<BeeHive>();
+
+					foreach (var model in models)
 					{
-						await (model as IDataModelSelfInit).fillWithData(database);
+
+						//var generic = method.MakeGenericMethod(new Type[] { model.getDataModelType() });
+						//var res = generic.Invoke(database, new object[] { SQLite.CreateFlags.None });
+						var res = database.CreateTable(model.getDataModelType());
+
+						if (model is IDataModelSelfInit)
+						{	
+							(model as IDataModelSelfInit).fillWithData(database);
+						}
 					}
+
+				}
+				catch (Exception ex)
+				{
+					Debug.WriteLine(ex.ToString());
 				}
 
 

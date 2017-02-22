@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using Xamarin.Forms;
 
-namespace MojaPasieka
+namespace MojaPasieka.View
 {
 	public partial class MenuPage : ContentPage
 	{

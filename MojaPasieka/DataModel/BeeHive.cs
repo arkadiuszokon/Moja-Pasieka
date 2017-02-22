@@ -3,9 +3,15 @@ using SQLite;
 
 namespace MojaPasieka.DataModel
 {
+	/// <summary>
+	/// Ul
+	/// </summary>
 	[Table("tb_beehive")]
 	public class BeeHive : DataModelBase, IDataModel
 	{
+
+
+
 		private int _bh_id;
 
 		/// <summary>
@@ -47,6 +53,7 @@ namespace MojaPasieka.DataModel
 		/// id pasieki
 		/// </summary>
 		/// <value>The bh ps identifier.</value>
+		[Indexed]
 		public int bh_ap_id {
 			get {
 				return _bh_ap_id;
@@ -168,13 +175,28 @@ namespace MojaPasieka.DataModel
 	/// </summary>
 	public enum BeeHiveMaterialType
 	{
+		[EnumName("Drewniany ocieplony")]
 		WOODEN_INSULATED = 1,
+
+		[EnumName("Styropian")]
 		STYROFOAM = 2,
+
+		[EnumName("Styrodur")]
 		STYRODUR = 3,
+
+		[EnumName("Drewniany jednościenny")]
 		WOODEN = 4,
+
+		[EnumName("Poliuretan")]
 		POLIPOLYURETHANE = 5,
+
+		[EnumName("OSB")]
 		OSB = 6,
+
+		[EnumName("Słoma")]
 		STRAW = 7,
+
+		[EnumName("Inne")]
 		INNE = 8
 	}
 
@@ -183,33 +205,58 @@ namespace MojaPasieka.DataModel
 	/// </summary>
 	public enum BeeHiveBottomType
 	{
+		[EnumName("Niska pełna")]
 		LOW_FULL = 1,
+
+		[EnumName("Niska osiatkowana")]
 		LOW_WITH_NET = 2,
+
+		[EnumName("Wysoka osiatkowana")]
 		HIGH_WITH_NET = 3,
+
+		[EnumName("Inna")]
 		OTHER = 4
 	}
 
 	/// <summary>
-	/// Rodzaj nakrycia bha od góry
+	/// Rodzaj nakrycia ula od góry
 	/// </summary>
 	public enum BeeHiveTopType
 	{
+		[EnumName("Powałka")]
 		VENTED_COVER = 1,
+
+		[EnumName("Beleczki")]
 		BARS = 2,
+
+		[EnumName("Folia")]
 		FOIL = 3,
+
+		[EnumName("Płótno")]
 		CLOTH = 4,
+
+		[EnumName("Brak")]
 		NONE = 5
 	};
 
 	/// <summary>
-	/// Typ bha, jego rodzaj/przeznaczenie
+	/// Typ ula, jego rodzaj/przeznaczenie
 	/// </summary>
 	public enum BeeHiveType
 	{
+		[EnumName("Leżak")]
 		VERTICAL = 1,
+
+		[EnumName("Stojak")]
 		HORIZONTAL = 2,
+
+		[EnumName("Odkładowy")]
 		FOR_NUCLEUS = 3,
+
+		[EnumName("Rojnica")]
 		FOR_SWARM = 4,
+
+		[EnumName("Weselny")]
 		MATING_BOX = 5
 	}
 }

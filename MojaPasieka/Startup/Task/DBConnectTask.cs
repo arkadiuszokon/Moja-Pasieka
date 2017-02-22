@@ -16,8 +16,8 @@ namespace MojaPasieka.Startup
 
 		public void Execute(ContainerBuilder builder)
 		{
-				var database = DependencyService.Get<IDatabaseConnection>().DBConnection();
-				builder.RegisterInstance<SQLiteAsyncConnection>(database);
+			var database = DependencyService.Get<IDatabaseConnection>().DBConnection();
+			builder.RegisterInstance<SQLiteConnection>(database);
 
 		}
 	}

@@ -1,31 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Reflection;
 using SQLite;
 namespace MojaPasieka.DataModel
 {
+	/// <summary>
+	/// Ramka
+	/// </summary>
 	[Table("tb_frame")]
 	public class Frame : DataModelBase, IDataModel
 	{
-		public static Dictionary<FrameColor, string> frameColorName = new Dictionary<FrameColor, string> {
-			{FrameColor.LIGHT_YELLOW, "Jasnożółty, białawy"},
-			{FrameColor.YELLOW, "Żółty"},
-			{FrameColor.LIGHT_BROWN, "Jasnobrązowy"},
-			{FrameColor.BROWN, "Brązowy"},
-			{FrameColor.DARK_BROWN, "Ciemnobrązowy"},
-			{FrameColor.BLACK, "Czarny"}
-		};
 
-
-		/*new Column("rm_id", "INTEGER", "", true, true, true), //id ramki
-				new Column("rm_rt_id", "INTEGER", "", true), //id typu
-				new Column("rm_kr_id", "INTEGER", "", true), //id korpusu
-				new Column("rm_mg_id", "INTEGER", "", true), //id magazynu
-				new Column("rm_desc", "TEXT", "", false), //opis
-				new Column("rm_rk_id", "INTEGER", "", true), //id koloru ramki
-				new Column("rm_isolated", "TINYINT", "2", true), //czy ramka jest w izolatorze
-				new Column("rm_order", "INTEGER", "", true), //kolejnosc
-				new Column("rm_highlight", "VARCHAR", "255", false), // wyróżnienie ramki
-				new Column("rm_dategen", "INTEGER", "", true) //data zrobienia/wygenerowania*/
 		private int _fr_id;
 		private int _fr_ft_id;
 		private int _fr_bhb_id;
@@ -203,11 +187,22 @@ namespace MojaPasieka.DataModel
 	/// </summary>
 	public enum FrameColor
 	{
+		[EnumName("Jasnożółty, białawy"), EnumColor("#fff6c6")]
 		LIGHT_YELLOW = 1,
+
+		[EnumName("Żółty"), EnumColor("#ffe034")]
 		YELLOW = 2,
+
+		[EnumName("Jasnobrązowy"), EnumColor("#dfa10b")]
 		LIGHT_BROWN = 3,
+
+		[EnumName("Brązowy"), EnumColor("#ad5c0c")]
 		BROWN = 4,
+
+		[EnumName("Ciemnobrązowy"), EnumColor("#5c3106")]
 		DARK_BROWN = 5,
+
+		[EnumName("Czarny"), EnumColor("#1a0e02")]
 		BLACK = 6
 	}
 }

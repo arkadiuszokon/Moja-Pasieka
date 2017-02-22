@@ -7,19 +7,19 @@ using SQLite;
 
 namespace MojaPasieka
 {
-	public class GetListOfBeeHivesHandler : IQueryHandlerAsync<GetListOfBeeHives, List<BeeHive>>
+	public class GetListOfBeeHivesHandler : IQueryHandler<GetListOfBeeHives, List<BeeHive>>
 	{
 
-		private SQLiteAsyncConnection _database;
+		private SQLiteConnection _database;
 
-		public GetListOfBeeHivesHandler(SQLiteAsyncConnection database)
+		public GetListOfBeeHivesHandler(SQLiteConnection database)
 		{
 			_database = database;
 		}
 
-		public Task<List<BeeHive>> ExecuteAsync(GetListOfBeeHives query)
+		public List<BeeHive> Execute(GetListOfBeeHives query)
 		{
-			return _database.QueryAsync<BeeHive>("SELECT * FROM tb_ul_beehive");
+			return _database.Query<BeeHive>("SELECT * FROM tb_ul_beehive");
 		}
 	}
 }

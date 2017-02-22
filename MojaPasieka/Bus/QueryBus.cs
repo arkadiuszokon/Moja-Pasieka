@@ -38,28 +38,6 @@ namespace MojaPasieka.cqrs
 			return queryHandler.Execute(query);
 		}
 
-		/// <summary>
-		/// Asynchroniczne wykonanie zapytania
-		/// </summary>
-		/// <returns>The async.</returns>
-		/// <param name="query">Query.</param>
-		/// <typeparam name="TQuery">The 1st type parameter.</typeparam>
-		/// <typeparam name="TResult">The 2nd type parameter.</typeparam>
-		public async Task<TResult> ProcessAsync<TQuery, TResult>(TQuery query) where TQuery : IQuery<TResult>
-		{
-			if (query == null)
-			{
-				throw new ArgumentNullException("query");
-			}
 
-			var queryHandler = _resolver.ResolveOptional<IQueryHandlerAsync<TQuery, TResult>>();
-
-			if (queryHandler == null)
-			{
-				throw new Exception(string.Format("No handler found for qyery '{0}'", query.GetType().FullName));
-			}
-
-			return await queryHandler.ExecuteAsync(query);
-		}
 	}
 }

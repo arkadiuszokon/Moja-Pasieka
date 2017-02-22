@@ -2,6 +2,9 @@
 using SQLite;
 namespace MojaPasieka.DataModel
 {
+	/// <summary>
+	/// Historia ramki
+	/// </summary>
 	[Table("tb_framehistory")]
 	public class FrameHistory : DataModelBase, IDataModel
 	{

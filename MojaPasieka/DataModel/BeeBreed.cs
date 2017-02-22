@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 using SQLite;
 namespace MojaPasieka.DataModel
 {
+	/// <summary>
+	/// Rasa
+	/// </summary>
 	[Table("tb_beebreed")]
 	public class BeeBreed : DataModelBase, IDataModel, IDataModelSelfInit
 	{
@@ -81,12 +84,12 @@ namespace MojaPasieka.DataModel
 			}
 		}
 
-		public async Task fillWithData(SQLiteAsyncConnection database)
+		public void fillWithData(SQLiteConnection database)
 		{
-			var res = await database.ExecuteScalarAsync<int>("SELECT COUNT(bb_id) FROM tb_beebreed");
+			var res =  database.ExecuteScalar<int>("SELECT COUNT(bb_id) FROM tb_beebreed");
 			if (res == 0)
 			{
-				await database.InsertAllAsync(new List<BeeBreed> {
+				 database.InsertAll(new List<BeeBreed> {
 					new BeeBreed {
 						bb_name = "Kraińska",
 						bb_desc = "",
