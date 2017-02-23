@@ -10,7 +10,7 @@ namespace MojaPasieka.View
 		public HomePage()
 		{
 			InitializeComponent();
-			Title = "Moja Pasieka";
+			//Title = "Moja Pasieka";
 		}
 	}
 }

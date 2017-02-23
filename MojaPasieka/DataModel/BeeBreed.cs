@@ -84,7 +84,7 @@ namespace MojaPasieka.DataModel
 			}
 		}
 
-		public void fillWithData(SQLiteConnection database)
+		public void FillWithData(SQLiteConnection database)
 		{
 			var res =  database.ExecuteScalar<int>("SELECT COUNT(bb_id) FROM tb_beebreed");
 			if (res == 0)

@@ -23,21 +23,12 @@ namespace MojaPasieka.cqrs
 		/// <typeparam name="TResult">The 2nd type parameter.</typeparam>
 		public TResult Process<TQuery, TResult>(TQuery query) where TQuery : IQuery<TResult>
 		{
-			if (query == null)
-			{
-				throw new ArgumentNullException("query");
-			}
-
 			var queryHandler = _resolver.ResolveOptional<IQueryHandler<TQuery,TResult>>();
-
 			if (queryHandler == null)
 			{
 				throw new Exception(string.Format("No handler found for qyery '{0}'", query.GetType().FullName));
 			}
-
 			return queryHandler.Execute(query);
 		}
-
-
 	}
 }

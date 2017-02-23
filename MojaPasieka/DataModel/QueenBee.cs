@@ -32,7 +32,7 @@ namespace MojaPasieka.DataModel
 		private int _qb_bc_idraised;
 		private int _qb_qb_id;
 		private int _qb_bc_idfather;
-		private int _qb_hd_id;
+		private int _qb_br_id;
 		private string _qb_desc;
 		private bool _qb_alive;
 		private DateTime _qb_timestamp;
@@ -213,17 +213,17 @@ namespace MojaPasieka.DataModel
 		/// </summary>
 		/// <value>The qb hd identifier.</value>
 		[Indexed]
-		public int qb_hd_id
+		public int qb_br_id
 		{
 			get
 			{
-				return _qb_hd_id;
+				return _qb_br_id;
 			}
 
 			set
 			{
-				_qb_hd_id = value;
-				OnPropertyChanged(nameof(qb_hd_id));
+				_qb_br_id = value;
+				OnPropertyChanged(nameof(qb_br_id));
 			}
 		}
 

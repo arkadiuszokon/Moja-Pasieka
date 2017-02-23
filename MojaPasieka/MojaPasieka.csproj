@@ -129,6 +129,9 @@
     <Compile Include="View\TutorialPage.xaml.cs">
       <DependentUpon>TutorialPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataModel\Breeder.cs" />
+    <Compile Include="DataModel\PollenTrap.cs" />
+    <Compile Include="DataModel\PollenHarvest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Practices.ServiceLocation">

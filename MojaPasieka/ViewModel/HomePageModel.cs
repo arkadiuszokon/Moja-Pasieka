@@ -5,6 +5,7 @@ namespace MojaPasieka.View
 	{
 		public HomePageModel(HomePage view)
 		{
+			view.Title = "Strona główna";
 		}
 	}
 }

@@ -6,6 +6,6 @@ namespace MojaPasieka.cqrs
 	/// </summary>
 	public interface IValidator<TCommand> where TCommand : ICommand 
 	{
-		ValidationResult validate(TCommand command);
+		ValidationResult Validate(TCommand command);
 	}
 }

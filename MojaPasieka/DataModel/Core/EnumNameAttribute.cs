@@ -20,7 +20,7 @@ namespace MojaPasieka.DataModel
 		/// <returns>The value.</returns>
 		/// <param name="enumValue">Enum value.</param>
 		/// <typeparam name="TEnum">The 1st type parameter.</typeparam>
-		public static string getValue<TEnum>(TEnum enumValue) where TEnum : struct
+		public static string GetValue<TEnum>(TEnum enumValue) where TEnum : struct
 		{
 			var type = typeof(TEnum).GetTypeInfo();
 			var member = type.DeclaredMembers.Where((MemberInfo arg) => arg.Name == nameof(enumValue)).First();

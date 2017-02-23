@@ -57,11 +57,11 @@ namespace MojaPasieka.Startup
 
 						//var generic = method.MakeGenericMethod(new Type[] { model.getDataModelType() });
 						//var res = generic.Invoke(database, new object[] { SQLite.CreateFlags.None });
-						var res = database.CreateTable(model.getDataModelType());
+						var res = database.CreateTable(model.GetDataModelType());
 
 						if (model is IDataModelSelfInit)
 						{	
-							(model as IDataModelSelfInit).fillWithData(database);
+							(model as IDataModelSelfInit).FillWithData(database);
 						}
 					}
 

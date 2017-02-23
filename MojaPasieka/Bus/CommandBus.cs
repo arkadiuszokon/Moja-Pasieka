@@ -38,7 +38,7 @@ namespace MojaPasieka.cqrs
 			var commandValidator = _resolver.ResolveOptional<IValidator<TCommand>>();
 			if (commandValidator != null)
 			{
-				var res = commandValidator.validate(cmd);
+				var res = commandValidator.Validate(cmd);
 				if (res.result == false)
 				{
 					throw new Exception(res.message);
@@ -64,15 +64,11 @@ namespace MojaPasieka.cqrs
 		/// <typeparam name="T">The 1st type parameter.</typeparam>
 		public async Task SendCommandAsync<TCommand>(TCommand cmd) where TCommand : ICommand
 		{
-			if (cmd == null)
-			{
-				throw new Exception("command not defined");
-			}
 
 			var commandValidator = _resolver.ResolveOptional<IValidatorAsync<TCommand>>();
 			if (commandValidator != null)
 			{
-				var res = await commandValidator.validate(cmd);
+				var res = await commandValidator.Validate(cmd);
 				if (res.result == false)
 				{
 					throw new Exception(res.message);

@@ -5,6 +5,6 @@ namespace MojaPasieka.DataModel
 {
 	public interface IDataModelSelfInit
 	{
-		void fillWithData(SQLite.SQLiteConnection database);
+		void FillWithData(SQLite.SQLiteConnection database);
 	}
 }

@@ -8,6 +8,6 @@ namespace MojaPasieka.cqrs
 	/// </summary>
 	public interface IValidatorAsync<TCommand> where TCommand : ICommand
 	{
-		Task<ValidationResult> validate(TCommand command); 
+		Task<ValidationResult> Validate(TCommand command); 
 	}
 }
