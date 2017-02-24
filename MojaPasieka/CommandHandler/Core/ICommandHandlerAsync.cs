@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace MojaPasieka.cqrs
 {
-	public interface ICommandHandlerAsync<in TCommand> where TCommand : ICommand
+	public interface ICommandHandlerAsync<in TCommand> where TCommand : ICommandAsync
 	{
 		Task HandleAsync(TCommand command);
 

@@ -62,16 +62,32 @@ namespace MojaPasieka.cqrs
 		/// <returns>The command async.</returns>
 		/// <param name="cmd">Cmd.</param>
 		/// <typeparam name="T">The 1st type parameter.</typeparam>
-		public async Task SendCommandAsync<TCommand>(TCommand cmd) where TCommand : ICommand
+		public async Task SendCommandAsync<TCommand>(TCommand cmd) where TCommand : ICommandAsync
 		{
 
-			var commandValidator = _resolver.ResolveOptional<IValidatorAsync<TCommand>>();
-			if (commandValidator != null)
+			var commandValidatorAsync = _resolver.ResolveOptional<IValidatorAsync<TCommand>>();
+			if (commandValidatorAsync != null)
 			{
-				var res = await commandValidator.Validate(cmd);
+				var res = await commandValidatorAsync.Validate(cmd);
 				if (res.result == false)
 				{
-					throw new Exception(res.message);
+					if (res.message != String.Empty)
+					{
+						throw new Exception(res.message);
+					}
+				}
+			}
+
+			var commandValidator = _resolver.ResolveOptional<IValidator<TCommand>>();
+			if (commandValidatorAsync != null)
+			{
+				var res = commandValidator.Validate(cmd);
+				if (res.result == false)
+				{
+					if (res.message != String.Empty)
+					{
+						throw new Exception(res.message);
+					}
 				}
 			}
 

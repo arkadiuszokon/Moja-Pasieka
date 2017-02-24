@@ -2,17 +2,18 @@
 using SQLite;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using MojaPasieka.DataModel;
 using System.Diagnostics;
 
 namespace MojaPasieka.cqrs
 {
 	public class AddBeeHiveHandler : ICommandHandlerAsync<AddBeeHive>
 	{
-		private SQLiteAsyncConnection _conn;
+		private SQLiteConnection _conn;
 
 		private IEventPublisher _eventBus;
 
-		public AddBeeHiveHandler(SQLiteAsyncConnection conn, IEventPublisher eventBus)
+		public AddBeeHiveHandler(SQLiteConnection conn, IEventPublisher eventBus)
 		{
 			this._conn = conn;
 			_eventBus = eventBus;
@@ -20,16 +21,9 @@ namespace MojaPasieka.cqrs
 
 		public async Task HandleAsync(AddBeeHive command)
 		{
-			try
-			{
-				await _conn.InsertAsync(command.beeHive);
-				await _eventBus.PublishAsync<BeeHiveWasAdded>(new BeeHiveWasAdded(command.beeHive));
+			_conn.Insert(command.beeHive);
+			await _eventBus.PublishAsync<Event<BeeHive>>(new Event<BeeHive>(command.beeHive, EventAction.CREATE));
 
-			}
-			catch (Exception ex)
-			{
-				Debug.WriteLine(ex.ToString());
-			}
 		}
 	}
 }

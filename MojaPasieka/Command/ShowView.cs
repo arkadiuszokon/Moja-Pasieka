@@ -4,7 +4,7 @@ using Xamarin.Forms;
 
 namespace MojaPasieka.cqrs
 {
-	public class ShowView : ICommand
+	public class ShowView : ICommandAsync
 	{
 		public ContentPage view;
 

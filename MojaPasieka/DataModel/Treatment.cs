@@ -164,6 +164,9 @@ namespace MojaPasieka.DataModel
 			}
 		}
 
-	
+		public string getTableName()
+		{
+			return "tb_treatment";
+		}
 	}
 }

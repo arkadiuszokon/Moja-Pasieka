@@ -9,6 +9,12 @@
     <AssemblyName>MojaPasieka</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile151</TargetFrameworkProfile>
+    <Authors>Percatech Arkadiusz Okoń</Authors>
+    <NeutralLanguage>pl-pl</NeutralLanguage>
+    <Owners>Percatech Arkadiusz Okoń</Owners>
+    <PackageProjectUrl>https://github.com/arkadiuszokon/Moja-Pasieka</PackageProjectUrl>
+    <Summary>Aplikacja do zarządzania pasieką</Summary>
+    <Title>Moja Pasieka</Title>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -64,7 +70,6 @@
     <Compile Include="DataModel\BeeHive.cs" />
     <Compile Include="Command\AddBeeHive.cs" />
     <Compile Include="CommandHandler\AddBeeHiveHandler.cs" />
-    <Compile Include="Event\BeeHiveWasAdded.cs" />
     <Compile Include="Startup\AppStarter.cs" />
     <Compile Include="Startup\IStartupTask.cs" />
     <Compile Include="Event\Core\IConsumer.cs" />
@@ -74,8 +79,6 @@
     <Compile Include="Startup\Task\DBConnectTask.cs" />
     <Compile Include="DataModel\Core\IDatabaseConnection.cs" />
     <Compile Include="DataModel\Core\IDataModel.cs" />
-    <Compile Include="Query\GetListOfBeeHives.cs" />
-    <Compile Include="QueryHandler\GetListOfBeeHivesHandler.cs" />
     <Compile Include="ViewModel\Core\IViewModel.cs" />
     <Compile Include="View\Core\ViewPage.cs" />
     <Compile Include="Command\SaveParameter.cs" />
@@ -132,6 +135,21 @@
     <Compile Include="DataModel\Breeder.cs" />
     <Compile Include="DataModel\PollenTrap.cs" />
     <Compile Include="DataModel\PollenHarvest.cs" />
+    <Compile Include="Query\GetNumOfRowsInTable.cs" />
+    <Compile Include="QueryHandler\GetNumOfRowsInTableHandler.cs" />
+    <Compile Include="Command\AddApiary.cs" />
+    <Compile Include="CommandHandler\AppApiaryHandler.cs" />
+    <Compile Include="Command\Core\ICommandAsync.cs" />
+    <Compile Include="Command\DeleteApiary.cs" />
+    <Compile Include="CommandHandler\DeleteApiaryHandler.cs" />
+    <Compile Include="Event\Core\Event.cs" />
+    <Compile Include="Query\GetFullListOf.cs" />
+    <Compile Include="QueryHandler\GetFullListOfHandler.cs" />
+    <Compile Include="Command\AddBeeBreed.cs" />
+    <Compile Include="CommandHandler\AddBeeBreedHandler.cs" />
+    <Compile Include="CommandHandler\DeleteBeeBreedHandler.cs" />
+    <Compile Include="Command\DeleteBeeBreed.cs" />
+    <Compile Include="Validator\ApiaryToDelete.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Practices.ServiceLocation">

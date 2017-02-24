@@ -62,6 +62,7 @@
     <Compile Include="SetupTest.cs" />
     <Compile Include="BusTest\BusTests.cs" />
     <Compile Include="TestsPlugs\DatabaseConnectionForTests.cs" />
+    <Compile Include="DataModelTest\DataModelTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -75,6 +76,7 @@
   <ItemGroup>
     <Folder Include="BusTest\" />
     <Folder Include="TestsPlugs\" />
+    <Folder Include="DataModelTest\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.2\build\SQLitePCLRaw.lib.e_sqlite3.linux.targets" Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.linux.1.1.2\build\SQLitePCLRaw.lib.e_sqlite3.linux.targets')" />

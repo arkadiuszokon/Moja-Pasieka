@@ -21,6 +21,6 @@ namespace MojaPasieka.cqrs
 		/// <returns>The command async.</returns>
 		/// <param name="cmd">Cmd.</param>
 		/// <typeparam name="T">The 1st type parameter.</typeparam>
-		Task SendCommandAsync<TCommand>(TCommand cmd) where TCommand : ICommand;
+		Task SendCommandAsync<TCommand>(TCommand cmd) where TCommand : ICommandAsync;
 	}
 }

@@ -4,7 +4,7 @@ namespace MojaPasieka.cqrs
 	/// <summary>
 	/// komenda zapisu parametru
 	/// </summary>
-	public class SaveParameter : ICommand
+	public class SaveParameter : ICommandAsync
 	{
 		public string pa_name;
 

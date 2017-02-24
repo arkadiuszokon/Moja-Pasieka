@@ -26,7 +26,7 @@ namespace MojaPasieka.cqrs
 			var queryHandler = _resolver.ResolveOptional<IQueryHandler<TQuery,TResult>>();
 			if (queryHandler == null)
 			{
-				throw new Exception(string.Format("No handler found for qyery '{0}'", query.GetType().FullName));
+				throw new Exception(string.Format("No handler found for query '{0}'", query.GetType().FullName));
 			}
 			return queryHandler.Execute(query);
 		}

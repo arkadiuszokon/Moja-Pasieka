@@ -28,8 +28,6 @@ namespace MojaPasieka.Startup
 			builder.RegisterType<CommandBus>().As<ICommandBus>().SingleInstance();
 			builder.RegisterType<QueryBus>().As<IQueryBus>().SingleInstance();
 
-
-
 			var currentdomain = typeof(string).GetTypeInfo().Assembly.GetType("System.AppDomain").GetRuntimeProperty("CurrentDomain").GetMethod.Invoke(null, new object[] { });
 			var getassemblies = currentdomain.GetType().GetRuntimeMethod("GetAssemblies", new System.Type[] { });
 			var assemblies = getassemblies.Invoke(currentdomain, new object[] { }) as Assembly[];

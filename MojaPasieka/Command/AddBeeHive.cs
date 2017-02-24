@@ -3,7 +3,7 @@ using MojaPasieka.DataModel;
 
 namespace MojaPasieka.cqrs
 {
-	public class AddBeeHive : ICommand
+	public class AddBeeHive : ICommandAsync
 	{
 		public readonly BeeHive beeHive; 
 

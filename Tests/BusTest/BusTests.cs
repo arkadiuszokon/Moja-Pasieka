@@ -3,11 +3,14 @@ using Autofac;
 using MojaPasieka;
 using MojaPasieka.cqrs;
 using NUnit.Framework;
+using MojaPasieka.DataModel;
+using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace Tests
 {
 	[TestFixture]
-	public class BusTests
+	public class BusTests 
 	{
 		[Test]
 		public void checkCommandBus()
@@ -44,6 +47,8 @@ namespace Tests
 
 			}
 		}
+
+
 	}
 
 	public class QueryTest : IQuery<int>

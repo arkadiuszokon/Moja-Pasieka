@@ -6,7 +6,7 @@ namespace MojaPasieka.cqrs
 	/// <summary>
 	/// Interfejs dla werykifikatora komend
 	/// </summary>
-	public interface IValidatorAsync<TCommand> where TCommand : ICommand
+	public interface IValidatorAsync<TCommand> where TCommand : ICommandAsync
 	{
 		Task<ValidationResult> Validate(TCommand command); 
 	}
