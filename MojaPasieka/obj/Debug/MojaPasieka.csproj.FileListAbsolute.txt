@@ -23,9 +23,15 @@ C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\De
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\Xamarin.Forms.Xaml.xml
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\Autofac.xml
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\SQLite-net.xml
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.csprojResolveAssemblyReference.cache
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.App.xaml.g.cs
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.MenuPage.xaml.g.cs
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.View.HomePage.xaml.g.cs
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.View.TutorialPage.xaml.g.cs
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.View.Creator.xaml.g.cs
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.dll
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.pdb
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.dll.mdb
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\MojaPasieka.dll.mdb
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.dll.mdb
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\MojaPasieka.dll.mdb

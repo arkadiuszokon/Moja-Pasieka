@@ -14,8 +14,9 @@ namespace MojaPasieka.View
 			imageTop.Source = ImageSource.FromResource("MojaPasieka.Assets.MenuBees");
 			listView.ItemsSource = new ObservableCollection<MenuItem> { 
 			
-				new MenuItem { Title="Start", Icon=ImageSource.FromResource("MojaPasieka.Assets.Home") }
-
+				new MenuItem { Title="Start", Icon=ImageSource.FromResource("MojaPasieka.Assets.Home") },
+				new MenuItem { Title="Moje pasieki" },
+				new MenuItem { Title="Ustawienia" }
 			};
 		}
 	}

@@ -23,7 +23,6 @@ namespace MojaPasieka.cqrs
 		{
 			_conn.Insert(command.beeHive);
 			await _eventBus.PublishAsync<Event<BeeHive>>(new Event<BeeHive>(command.beeHive, EventAction.CREATE));
-
 		}
 	}
 }

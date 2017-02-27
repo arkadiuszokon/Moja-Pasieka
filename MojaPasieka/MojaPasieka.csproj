@@ -48,6 +48,9 @@
     <EmbeddedResource Include="View\TutorialPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Creator.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -150,6 +153,11 @@
     <Compile Include="CommandHandler\DeleteBeeBreedHandler.cs" />
     <Compile Include="Command\DeleteBeeBreed.cs" />
     <Compile Include="Validator\ApiaryToDelete.cs" />
+    <Compile Include="View\Creator.xaml.cs">
+      <DependentUpon>Creator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Core\INotification.cs" />
+    <Compile Include="Startup\Task\RegisterPlatformDependendTypesTask.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Practices.ServiceLocation">

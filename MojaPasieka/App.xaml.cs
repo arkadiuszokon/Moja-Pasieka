@@ -39,6 +39,7 @@ namespace MojaPasieka
 			{
 				new DBConnectTask(),
 				new RegisterTypesTask(),
+				new RegisterPlatformDependendTypesTask()
 			});
 			appStarter.Start();
 
@@ -54,7 +55,7 @@ namespace MojaPasieka
 					if (tutorialStatus != "1")
 					{
 						await Task.Delay(500);
-						var res = await MainPage.DisplayAlert("Witaj", "Czy chcesz uruchomić tutorial, aby zapoznać się z aplikacją?", "Tak", "Anuluj");
+						var res = await scope.Resolve<INotification>().askQuestion("Witaj", "Czy chcesz uruchomić tutorial, aby zapoznać się z aplikacją?", "Tak", "Anuluj");
 						if (res)
 						{
 							await cb.SendCommandAsync<ShowView>(new ShowView(new TutorialPage(), true));
