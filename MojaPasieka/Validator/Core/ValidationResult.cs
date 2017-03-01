@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace MojaPasieka.cqrs
 {
 	public class ValidationResult
@@ -7,12 +9,12 @@ namespace MojaPasieka.cqrs
 		/// Wynik walidacji
 		/// </summary>
 		/// <value><c>true</c> if result; otherwise, <c>false</c>.</value>
-		public bool result { get; set; }
+		public bool result = true;
 
 		/// <summary>
 		/// Komunikat o walidacji
 		/// </summary>
 		/// <value>The message.</value>
-		public string message { get; set;}
+		public List<string> message  = new List<string>();
 	}
 }

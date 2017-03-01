@@ -6,13 +6,9 @@ using SQLite;
 
 namespace MojaPasieka.DataModel
 {
-	public class DataModelBase: INotifyPropertyChanged
+	public abstract class DataModelBase: INotifyPropertyChanged
 	{
 
-		public DataModelBase()
-		{
-
-		}
 
 		public event PropertyChangedEventHandler PropertyChanged;
 		protected void OnPropertyChanged(string propertyName)

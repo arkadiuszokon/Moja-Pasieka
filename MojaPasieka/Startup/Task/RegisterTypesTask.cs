@@ -6,6 +6,7 @@ using Autofac;
 using MojaPasieka.View;
 using MojaPasieka.DataModel;
 using System.Threading.Tasks;
+using MojaPasieka.Utils;
 
 namespace MojaPasieka.Startup
 {
@@ -27,6 +28,9 @@ namespace MojaPasieka.Startup
 			builder.RegisterType<EventBus>().As<IEventPublisher>().SingleInstance();
 			builder.RegisterType<CommandBus>().As<ICommandBus>().SingleInstance();
 			builder.RegisterType<QueryBus>().As<IQueryBus>().SingleInstance();
+			builder.RegisterType<Creator>().As<Creator>().SingleInstance();
+			builder.RegisterType<MapUtil>().As<IMap>().SingleInstance();
+
 
 			var currentdomain = typeof(string).GetTypeInfo().Assembly.GetType("System.AppDomain").GetRuntimeProperty("CurrentDomain").GetMethod.Invoke(null, new object[] { });
 			var getassemblies = currentdomain.GetType().GetRuntimeMethod("GetAssemblies", new System.Type[] { });

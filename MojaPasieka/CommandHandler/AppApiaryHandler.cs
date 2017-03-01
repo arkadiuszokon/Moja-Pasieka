@@ -2,6 +2,9 @@
 using System.Threading.Tasks;
 using MojaPasieka.DataModel;
 using SQLite;
+using Autofac;
+using MojaPasieka.View;
+
 namespace MojaPasieka.cqrs
 {
 	public class AppApiaryHandler : ICommandHandlerAsync<AddApiary>

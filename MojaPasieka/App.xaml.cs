@@ -49,6 +49,7 @@ namespace MojaPasieka
 			{
 				try
 				{
+					/*
 					var qb = scope.Resolve<IQueryBus>();
 					var cb = scope.Resolve<ICommandBus>();
 					var tutorialStatus = qb.Process<GetParameter, string>(new GetParameter(ParameterName.TUTORIAL_STATUS));
@@ -62,6 +63,8 @@ namespace MojaPasieka
 							await cb.SendCommandAsync<SaveParameter>(new SaveParameter(ParameterName.TUTORIAL_STATUS, "1"));
 						}
 					}
+					*/
+					App.Current.MainPage = scope.Resolve<Creator>();
 
 				}
 				catch (Exception ex)
@@ -69,6 +72,8 @@ namespace MojaPasieka
 					Debug.WriteLine(ex.ToString());
 				}
 			}
+
+
 		}
 
 

@@ -5,7 +5,10 @@ x:TypeArguments="pages:TutorialPageModel" xmlns="http://xamarin.com/schemas/2014
 		<StackLayout Padding="20">
 			<pages:CardView>
 				<pages:CardView.Content>
-					<Label Text="Witaj w tutorialu" />
+					<StackLayout>
+						<Label Text="Witaj w tutorialu" />
+						<Button Command="{Binding showCreator}" Text="Uruchom kreator" BackgroundColor="{x:Static pages:AppColors.AccentColor}" />
+					</StackLayout>
 				</pages:CardView.Content>
 			</pages:CardView>
 		</StackLayout>

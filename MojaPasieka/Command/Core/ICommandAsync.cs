@@ -1,7 +1,7 @@
 ﻿using System;
 using MojaPasieka.cqrs;
 
-namespace MojaPasieka
+namespace MojaPasieka.cqrs
 {
 	/// <summary>
 	/// marker dla komend wykonywanych asynhronicznie

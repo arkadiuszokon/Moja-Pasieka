@@ -12,7 +12,9 @@ namespace MojaPasieka.cqrs
 		public ValidationResult Validate(DeleteApiary command)
 		{
 			var vr = new ValidationResult();
-			vr.result = true;
+
+
+
 			return vr;
 		}
 	}

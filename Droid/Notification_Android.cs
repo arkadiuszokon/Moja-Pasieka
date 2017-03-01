@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Android.App;
+using Android.Widget;
 using MojaPasieka.Droid;
 using MojaPasieka.View;
 
@@ -30,6 +31,24 @@ namespace MojaPasieka.Droid
 			builder.Create().Show();
 
 			return tcs.Task;
+		}
+
+		public void showAlert(string title, string message)
+		{
+			AlertDialog.Builder builder = new AlertDialog.Builder(Xamarin.Forms.Forms.Context);
+
+			builder.SetMessage(message);
+			builder.SetTitle(title);
+			builder.SetPositiveButton("OK", (object sender, Android.Content.DialogClickEventArgs e) =>
+			{
+				
+			});
+			builder.Create().Show();
+		}
+
+		public void showToast(string message)
+		{
+			Toast.MakeText(Xamarin.Forms.Forms.Context, message, ToastLength.Short).Show();
 		}
 	}
 }

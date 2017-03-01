@@ -1,6 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MojaPasieka.App">
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:pages="clr-namespace:MojaPasieka.View"  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MojaPasieka.App">
 	<Application.Resources>
-		<!-- Application resource dictionary -->
+		<ResourceDictionary>
+		 	<Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="BorderRadius" Value="2" />
+                <Setter Property="TextColor" Value="White" />
+				<Setter Property="BackgroundColor" Value = "{x:Static pages:AppColors.AccentColor}" />
+            </Style>
+			<Style x:Key="labelEntry" TargetType="Label">
+				<Setter Property="FontSize" Value="Medium" />
+				<Setter Property="TextColor" Value="#BDBDBD" />
+			</Style>
+		</ResourceDictionary>
 	</Application.Resources>
 </Application>

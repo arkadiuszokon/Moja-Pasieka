@@ -6,6 +6,8 @@ namespace MojaPasieka.View
 {
 	public class CardView : Frame
 	{
+
+
 		public CardView()
 		{
 			if (Device.OS == TargetPlatform.iOS)
@@ -20,6 +22,8 @@ namespace MojaPasieka.View
 				OutlineColor = Color.Transparent;
 				BackgroundColor = Color.White;
 			}
+
+
 		}
 	}
 }

@@ -17,10 +17,9 @@ namespace MojaPasieka.cqrs
 			else
 			{
 				await AppMainPage.nav.PushAsync(command.view);
+
 			}
 		}
-
-
 
 	}
 }

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:ViewPage xmlns:pages="clr-namespace:MojaPasieka.View" 
+x:TypeArguments="pages:CreatorStartModel" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MojaPasieka.View.CreatorStart">
+	<ContentPage.Content>
+		<StackLayout Orientation="Vertical" Padding="20" x:Name="layout">
+			<pages:CardView>
+				<pages:CardView.Content>
+					<StackLayout>
+						<Label LineBreakMode="WordWrap" XAlign="Center" Text="Witaj w kreatorze, to tutaj właśnie zaczynamy tworzenie pasieki. Krok po kroku przejdziemy przez kolejne etapy w celu odwzorowania stanu Twoich pasiek. Kreator ma na celu wstępne i szybkie wygenerowanie elementów, wszystko co teraz stworzymy, będziesz mógł później zmienić w aplikacji."/>
+						<Button HorizontalOptions="FillAndExpand"  x:Name="btnNext" Text="OK, idę dalej" Style="{StaticResource buttonStyle}" Command="{Binding nextStep}" IsEnabled="{Binding IsNextStepVisible}"/>
+					</StackLayout>
+				</pages:CardView.Content>
+			</pages:CardView>
+		</StackLayout>
+	</ContentPage.Content>
+</pages:ViewPage>
