@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace MojaPasieka
+namespace MojaPasieka.View
 {
 	public abstract class ViewModelBase : INotifyPropertyChanged
 	{

@@ -10,19 +10,29 @@ x:TypeArguments="pages:CreatorAddApiaryModel" xmlns="http://xamarin.com/schemas/
 					</StackLayout>
 				</pages:CardView.Content>
 			</pages:CardView>
-			<pages:CardView IsVisible="{Binding IsNextStepVisible}">
+			<pages:CardView IsVisible="{Binding IsAddApiaryVisible}">
 				<pages:CardView.Content>
 					<StackLayout>
 						<Label Text="Nazwa:" Style="{StaticResource labelEntry}" />
-						<Entry x:Name="apiaryName" Text="{Binding apiaryName, Mode=TwoWay}" />
+						<Entry x:Name="apiaryName" Text="{Binding ApiaryName, Mode=TwoWay}" />
+						<Label Text="Data utworzenia:" Style="{StaticResource labelEntry}" />
+						<DatePicker x:Name="dateCreated" Date="{Binding DateCreated, Mode=TwoWay}" Format="dd-MM-yyyy"/>
 						<Label Text="Opis:" Style="{StaticResource labelEntry}" />
-						<Editor HeightRequest="100" x:Name="apiaryDesc" Text="{Binding apiaryDesc, Mode=TwoWay}" />
+						<Editor HeightRequest="70" x:Name="apiaryDesc" Text="{Binding ApiaryDesc, Mode=TwoWay}" />
 						<Label Text="Lokalizacja:" Style="{StaticResource labelEntry}" />
 						<StackLayout Orientation="Horizontal">
-							<Label Text="{Binding location}" FontSize="Small" />
-							<Button Text="Wybierz lokalizację" Style="{StaticResource buttonStyle}" Command="{Binding showMap}" />
+							<Label Text="{Binding Location}" FontSize="Small" />
+							<Button Text="Wybierz lokalizację" Style="{StaticResource buttonStyle}" Command="{Binding ShowMap}" />
 						</StackLayout>
-						<Button HorizontalOptions="FillAndExpand"  x:Name="btnNext" Text="OK, idę dalej" Style="{StaticResource buttonStyle}" Command="{Binding nextStep}" IsEnabled="{Binding IsNextStepVisible}"/>
+						<Button HorizontalOptions="FillAndExpand" Text="Dodaj pasiekę" Style="{StaticResource buttonStyle}" Command="{Binding AddApiary}" />
+					</StackLayout>
+				</pages:CardView.Content>
+			</pages:CardView>
+			<pages:CardView IsVisible="{Binding IsReadyVisible}">
+				<pages:CardView.Content>
+					<StackLayout>
+						<Label LineBreakMode="WordWrap" XAlign="Center" Text="Gratulacje! Pomyślnie dodano pasiekę, możesz przejść do następnego kroku" />
+						<Button HorizontalOptions="FillAndExpand"  Text="OK, idę dalej" Style="{StaticResource buttonStyle}" Command="{Binding NextStep}" IsEnabled="{Binding IsNextStepVisible}"/>
 					</StackLayout>
 				</pages:CardView.Content>
 			</pages:CardView>

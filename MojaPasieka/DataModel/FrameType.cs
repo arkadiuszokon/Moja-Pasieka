@@ -139,7 +139,7 @@ namespace MojaPasieka.DataModel
 					},
 					new FrameType {
 						ft_name = "Wielkopolska 1/2",
-						ft_type = FrameTypeMain.REGULAR,
+						ft_type = FrameTypeMain.REGULAR_HALF,
 						ft_width = 360,
 						ft_height = 130,
 						ft_timestamp = DateTime.Now
@@ -159,6 +159,13 @@ namespace MojaPasieka.DataModel
 						ft_timestamp = DateTime.Now
 					},
 					new FrameType {
+						ft_name = "Dadant 1/2",
+						ft_type = FrameTypeMain.REGULAR_HALF,
+						ft_width = 435,
+						ft_height = 145,
+						ft_timestamp = DateTime.Now
+					},
+					new FrameType {
 						ft_name = "Ostrowskiej",
 						ft_type = FrameTypeMain.REGULAR,
 						ft_width = 360,
@@ -174,7 +181,7 @@ namespace MojaPasieka.DataModel
 					},
 					new FrameType {
 						ft_name = "Warszawska p. nadstawkowa",
-						ft_type = FrameTypeMain.REGULAR,
+						ft_type = FrameTypeMain.REGULAR_HALF,
 						ft_width = 300,
 						ft_height = 130,
 						ft_timestamp = DateTime.Now
@@ -188,7 +195,7 @@ namespace MojaPasieka.DataModel
 					},
 					new FrameType {
 						ft_name = "Warszawska nadstawkowa",
-						ft_type = FrameTypeMain.REGULAR,
+						ft_type = FrameTypeMain.REGULAR_HALF,
 						ft_width = 240,
 						ft_height = 130,
 						ft_timestamp = DateTime.Now
@@ -270,22 +277,25 @@ namespace MojaPasieka.DataModel
 		[EnumName("Zwykła ramka")]
 		REGULAR = 1,
 
+		[EnumName("Ramka nadstawkowa")]
+		REGULAR_HALF = 2,
+
 		[EnumName("Ramka pracy")]
-		WORK = 2,
+		WORK = 3,
 
 		[EnumName("Ramka wychowująca")]
-		QUEEN_RAISING = 3,
+		QUEEN_RAISING = 4,
 
 		[EnumName("Izolator")]
-		INSULATOR = 4,
+		INSULATOR = 5,
 
 		[EnumName("Podkarmiaczka")]
-		FEEDER = 5,
+		FEEDER = 6,
 
 		[EnumName("Krata odgrodowa")]
-		EXCLUDER = 6,
+		EXCLUDER = 7,
 
 		[EnumName("Zatwór")]
-		STRAW_MAT = 7
+		STRAW_MAT = 8
 	}
 }

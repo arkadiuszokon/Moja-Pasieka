@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:ViewPage xmlns:pages="clr-namespace:MojaPasieka.View" 
+x:TypeArguments="pages:CreatorSelectApiaryModel" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MojaPasieka.View.CreatorSelectApiary">
+	<ContentPage.Content>
+		<StackLayout Orientation="Vertical" Padding="20" x:Name="layout" Spacing="20">
+			<pages:CardView>
+				<pages:CardView.Content>
+					<StackLayout>
+						<Label LineBreakMode="WordWrap" XAlign="Center" Text="Masz już dodaną co najmniej jedną pasiekę, wybierz, na której będziemy pracować w kreatorze lub dodaj nową" />
+					</StackLayout>
+				</pages:CardView.Content>
+			</pages:CardView>
+			<ListView IsEnabled="{Binding IsListEnabled}" HorizontalOptions="FillAndExpand" HasUnevenRows="true" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" VerticalOptions="FillAndExpand" ItemsSource="{Binding ApiaryList}">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<StackLayout Padding="10" >
+								<Label Text="{Binding ap_name}" Style="{StaticResource itemTitle}"/>
+								<Label Text="{Binding ap_datecreated, StringFormat='Data utworzenia: {0:dd-MM-yyyy}'}" />
+							</StackLayout>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+			<StackLayout Orientation="Horizontal">
+				<Button HorizontalOptions="FillAndExpand"  Text="Dodaj pasiekę" Style="{StaticResource buttonStyle}" Command="{Binding AddApiary}" IsEnabled="{Binding IsAddApiaryVisible}"/>
+				<Button HorizontalOptions="FillAndExpand"  Text="OK, idę dalej" Style="{StaticResource buttonStyle}" Command="{Binding NextStep}" IsEnabled="{Binding IsNextStepVisible}"/>
+			</StackLayout>
+		</StackLayout>
+	</ContentPage.Content>
+</pages:ViewPage>

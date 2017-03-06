@@ -10,7 +10,6 @@ namespace MojaPasieka.View
 		public TutorialPage()
 		{
 			InitializeComponent();
-			Title = "Tutorial";
 		}
 	}
 }

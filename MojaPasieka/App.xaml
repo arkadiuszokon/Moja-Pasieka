@@ -13,6 +13,12 @@
 				<Setter Property="FontSize" Value="Medium" />
 				<Setter Property="TextColor" Value="#BDBDBD" />
 			</Style>
+
+			<Style x:Key="itemTitle" TargetType="Label">
+				<Setter Property="FontSize" Value="Medium" />
+				<Setter Property="FontAttributes" Value="Bold" />
+				<Setter Property="TextColor" Value="#1E88E5" />
+			</Style>
 		</ResourceDictionary>
 	</Application.Resources>
 </Application>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:ViewPage xmlns:pages="clr-namespace:MojaPasieka.View" 
+x:TypeArguments="pages:CreatorMakeBeeHivesModel" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MojaPasieka.View.CreatorMakeBeeHives">
+	<ContentPage.Content>
+		<ScrollView>
+			<StackLayout Orientation="Vertical" Padding="20" x:Name="layout" Spacing="20">
+				<pages:CardView>
+					<pages:CardView.Content>
+						<StackLayout>
+							<Label LineBreakMode="WordWrap" XAlign="Center" Text="Przed nami kolejne zadanie, będziemy tworzyć zbiorczo ule. Dla uproszczenia na razie wybierz jeden konkretny typ, ten którego w pasiece jest najwięcej. Pozostałe ule utworzysz później - ręcznie lub przy użyciu Kreatora. Pamiętaj, że wszystkio co teraz robimy, bedziesz mógł później zmienić w aplikacji." />
+						</StackLayout>
+					</pages:CardView.Content>
+				</pages:CardView>
+				<pages:CardView>
+					<pages:CardView.Content>
+						<StackLayout>
+							<Label  Text="Ramka:" Style="{StaticResource labelEntry}" />
+							<Picker ItemDisplayBinding="{Binding ft_name}" x:Name="frameType" Title="Rodzaj ramki" ItemsSource="{Binding FramesTypes}" />
+							<Label Text="Ul:" Style="{StaticResource labelEntry}" />
+							<Picker ItemDisplayBinding="{Binding Name}" x:Name="beeHiveType" Title="Rodzaj ula" ItemsSource="{Binding BeeHiveTypes}" />
+							<Label Text="Materiał:" Style="{StaticResource labelEntry}" />
+							<Picker ItemDisplayBinding="{Binding Name}" x:Name="beeHiveMaterial" Title="Materiał wykonania ula" ItemsSource="{Binding BeeHiveMaterials}" />
+							<Label Text="Dennica:" Style="{StaticResource labelEntry}" />
+							<Picker ItemDisplayBinding="{Binding Name}" x:Name="beeHiveBottom" Title="Rodzaj dennicy" ItemsSource="{Binding BeeHiveBottoms}" />
+						</StackLayout>
+					</pages:CardView.Content>
+				</pages:CardView>
+			</StackLayout>
+		</ScrollView>
+	</ContentPage.Content>
+</pages:ViewPage>

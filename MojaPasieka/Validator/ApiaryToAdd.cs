@@ -21,7 +21,16 @@ namespace MojaPasieka.cqrs
 				vr.result = false;
 				vr.message.Add("Brak lokalizacji pasieki");
 			}
-
+			if (command.apiary.ap_datecreated == null)
+			{
+				vr.result = false;
+				vr.message.Add("Brak daty utworzenia");
+			}
+			if (command.apiary.ap_datecreated > DateTime.Now)
+			{
+				vr.result = false;
+				vr.message.Add("Data utworzenia nie może być w przyszłości");
+			}
 			return vr;
 		}
 	}

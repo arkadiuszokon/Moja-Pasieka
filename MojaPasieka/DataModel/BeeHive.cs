@@ -244,10 +244,10 @@ namespace MojaPasieka.DataModel
 	/// </summary>
 	public enum BeeHiveType
 	{
-		[EnumName("Leżak")]
+		[EnumName("Stojak")]
 		VERTICAL = 1,
 
-		[EnumName("Stojak")]
+		[EnumName("Leżak")]
 		HORIZONTAL = 2,
 
 		[EnumName("Odkładowy")]

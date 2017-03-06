@@ -5,7 +5,7 @@ namespace MojaPasieka.cqrs
 {
 	public class AddBeeHive : ICommandAsync
 	{
-		public readonly BeeHive beeHive; 
+		public BeeHive beeHive { get; protected set; }
 
 		public AddBeeHive(BeeHive beeHive)
 		{
