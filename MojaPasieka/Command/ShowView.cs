@@ -6,14 +6,14 @@ namespace MojaPasieka.cqrs
 {
 	public class ShowView : ICommandAsync
 	{
-		public ContentPage view { get; protected set; }
+		public ContentPage View { get; protected set; }
 
-		public bool asRoot { get; protected set; }
+		public bool AsRoot { get; protected set; }
 
 		public ShowView(ContentPage view, bool asRoot)
 		{
-			this.view = view;
-			this.asRoot = asRoot;
+			this.View = view;
+			this.AsRoot = asRoot;
 		}
 	}
 }

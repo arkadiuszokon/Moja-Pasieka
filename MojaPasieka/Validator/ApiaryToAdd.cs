@@ -11,22 +11,22 @@ namespace MojaPasieka.cqrs
 		{
 			var vr = new ValidationResult();
 
-			if (command.apiary.ap_name == String.Empty)
+			if (command.Apiary.ap_name == String.Empty)
 			{
 				vr.result = false;
 				vr.message.Add("Brak nazwy pasieki");
 			}
-			if (command.apiary.ap_latlng == String.Empty)
+			if (command.Apiary.ap_latlng == String.Empty)
 			{
 				vr.result = false;
 				vr.message.Add("Brak lokalizacji pasieki");
 			}
-			if (command.apiary.ap_datecreated == null)
+			if (command.Apiary.ap_datecreated == null)
 			{
 				vr.result = false;
 				vr.message.Add("Brak daty utworzenia");
 			}
-			if (command.apiary.ap_datecreated > DateTime.Now)
+			if (command.Apiary.ap_datecreated > DateTime.Now)
 			{
 				vr.result = false;
 				vr.message.Add("Data utworzenia nie może być w przyszłości");

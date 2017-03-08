@@ -3,16 +3,19 @@ using MojaPasieka.DataModel;
 using Xamarin.Forms;
 using Autofac;
 using MojaPasieka.cqrs;
-using MojaPasieka.DataModel;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace MojaPasieka.View
 {
-	public class Creator : NavigationPage
+	public class Creator : NavigationPage, IConsumerAsync<Event<Apiary>>, IConsumerAsync<Event<BeeHive>>, IConsumerAsync<Event<DataModel.Frame>>
 	{
 
 		protected static CarouselPage carousel;
+		private List<BeeHive> addedBeeHives = new List<BeeHive>();
+		private List<DataModel.Frame> addedFrames = new List<DataModel.Frame>();
+		private List<Apiary> addedApiaries = new List<Apiary>();
 
 		static Creator()
 		{
@@ -26,6 +29,13 @@ namespace MojaPasieka.View
 			BarBackgroundColor = AppColors.MainColor;
 			BarTextColor = AppColors.TextColor;
 			carousel.Children.Add(new CreatorStart());
+			using (var scope = IoC.container.BeginLifetimeScope())
+			{
+				var eb = scope.Resolve<IEventPublisher>();
+				eb.RegisterAsyncConsumer<Event<Apiary>>(this);
+				eb.RegisterAsyncConsumer<Event<BeeHive>>(this);
+				eb.RegisterAsyncConsumer<Event<DataModel.Frame>>(this);
+			}
 		}
 
 		public Apiary apiary
@@ -37,6 +47,7 @@ namespace MojaPasieka.View
 		{
 			this.apiary = apiary;
 		}
+
 
 		public void replaceStep(ContentPage replaceWith)
 		{
@@ -80,7 +91,35 @@ namespace MojaPasieka.View
 				carousel.Children.Add(makeBeeHives);
 				carousel.CurrentPage = makeBeeHives;
 			}
+			else if (carousel.CurrentPage is CreatorMakeBeeHives)
+			{
 
+			}
+		}
+
+		public async Task HandleAsync(Event<Apiary> eventMessage)
+		{
+			if (eventMessage.action == EventAction.CREATE)
+			{
+				setApiaryContext(eventMessage.item);
+				addedApiaries.Add(eventMessage.item);
+			}
+		}
+
+		public async Task HandleAsync(Event<BeeHive> eventMessage)
+		{
+			if (eventMessage.action == EventAction.CREATE)
+			{
+				addedBeeHives.Add(eventMessage.item);
+			}
+		}
+
+		public async Task HandleAsync(Event<DataModel.Frame> eventMessage)
+		{
+			if (eventMessage.action == EventAction.CREATE)
+			{
+				addedFrames.Add(eventMessage.item);
+			}
 		}
 	}
 }

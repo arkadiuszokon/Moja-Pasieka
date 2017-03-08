@@ -19,8 +19,8 @@ namespace MojaPasieka.cqrs
 
 		public async Task HandleAsync(DeleteApiary command)
 		{
-			_conn.Delete(command.apiary);
-			await _eventBus.PublishAsync<Event<Apiary>>(new Event<Apiary>(command.apiary, EventAction.DELETE));
+			_conn.Delete(command.Apiary);
+			await _eventBus.PublishAsync<Event<Apiary>>(new Event<Apiary>(command.Apiary, EventAction.DELETE));
 		}
 	}
 }

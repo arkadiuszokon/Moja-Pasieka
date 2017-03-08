@@ -19,8 +19,8 @@ namespace MojaPasieka.cqrs
 
 		public async Task HandleAsync(DeleteBeeBreed command)
 		{
-			_conn.Delete(command.breed);
-			await _eventBus.PublishAsync<Event<BeeBreed>>(new Event<BeeBreed>(command.breed, EventAction.DELETE));
+			_conn.Delete(command.Breed);
+			await _eventBus.PublishAsync<Event<BeeBreed>>(new Event<BeeBreed>(command.Breed, EventAction.DELETE));
 		}
 	}
 }

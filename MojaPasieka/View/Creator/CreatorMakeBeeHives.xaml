@@ -1,6 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <pages:ViewPage xmlns:pages="clr-namespace:MojaPasieka.View" 
 x:TypeArguments="pages:CreatorMakeBeeHivesModel" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MojaPasieka.View.CreatorMakeBeeHives">
+	<ContentPage.Resources>
+        <ResourceDictionary>
+            <pages:StringIntConverter x:Key="stringIntConvert"></pages:StringIntConverter>
+			<pages:BoolInvertConverter x:Key="boolInvertConvert"></pages:BoolInvertConverter>
+        </ResourceDictionary>
+        </ContentPage.Resources>
 	<ContentPage.Content>
 		<ScrollView>
 			<StackLayout Orientation="Vertical" Padding="20" x:Name="layout" Spacing="20">
@@ -11,20 +17,69 @@ x:TypeArguments="pages:CreatorMakeBeeHivesModel" xmlns="http://xamarin.com/schem
 						</StackLayout>
 					</pages:CardView.Content>
 				</pages:CardView>
-				<pages:CardView>
-					<pages:CardView.Content>
-						<StackLayout>
-							<Label  Text="Ramka:" Style="{StaticResource labelEntry}" />
-							<Picker ItemDisplayBinding="{Binding ft_name}" x:Name="frameType" Title="Rodzaj ramki" ItemsSource="{Binding FramesTypes}" />
-							<Label Text="Ul:" Style="{StaticResource labelEntry}" />
-							<Picker ItemDisplayBinding="{Binding Name}" x:Name="beeHiveType" Title="Rodzaj ula" ItemsSource="{Binding BeeHiveTypes}" />
-							<Label Text="Materiał:" Style="{StaticResource labelEntry}" />
-							<Picker ItemDisplayBinding="{Binding Name}" x:Name="beeHiveMaterial" Title="Materiał wykonania ula" ItemsSource="{Binding BeeHiveMaterials}" />
-							<Label Text="Dennica:" Style="{StaticResource labelEntry}" />
-							<Picker ItemDisplayBinding="{Binding Name}" x:Name="beeHiveBottom" Title="Rodzaj dennicy" ItemsSource="{Binding BeeHiveBottoms}" />
-						</StackLayout>
-					</pages:CardView.Content>
-				</pages:CardView>
+				<StackLayout IsVisible="{Binding ShowContent}">
+					<pages:CardView Padding="0">
+						<pages:CardView.Content>
+							<StackLayout Padding="0">
+								<Label Text="Ul" Style="{StaticResource cardTitle}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+								<StackLayout Padding="15">
+									<Label  Text="Ramka:"  Style="{StaticResource labelEntry}"/>
+									<Picker SelectedItem="{Binding SelectedFrameType, Mode=TwoWay}" ItemDisplayBinding="{Binding ft_name}" x:Name="frameType" Title="Rodzaj ramki" ItemsSource="{Binding FramesTypes}" />
+									<Label Text="Ul:" Style="{StaticResource labelEntry}" />
+									<Picker SelectedItem="{Binding SelectedBeeHiveType, Mode=TwoWay}" ItemDisplayBinding="{Binding Name}" x:Name="beeHiveType" Title="Rodzaj ula" ItemsSource="{Binding BeeHiveTypes}" />
+									<Label Text="Materiał:" Style="{StaticResource labelEntry}" />
+									<Picker SelectedItem="{Binding SelectedBeeHiveMaterial, Mode=TwoWay}" ItemDisplayBinding="{Binding Name}" x:Name="beeHiveMaterial" Title="Materiał wykonania ula" ItemsSource="{Binding BeeHiveMaterials}" />
+									<Label Text="Dennica:" Style="{StaticResource labelEntry}" />
+									<Picker SelectedItem="{Binding SelectedBeeHiveBottom, Mode=TwoWay}" ItemDisplayBinding="{Binding Name}" x:Name="beeHiveBottom" Title="Rodzaj dennicy" ItemsSource="{Binding BeeHiveBottoms}" />
+									<Label Text="Nakrycie:" Style="{StaticResource labelEntry}" />
+									<Picker SelectedItem="{Binding SelectedBeeHiveTop, Mode=TwoWay}" ItemDisplayBinding="{Binding Name}" x:Name="beeHiveTop" Title="Rodzaj nakrycia od góry" ItemsSource="{Binding BeeHiveTops}" />
+									<StackLayout Orientation="Horizontal">
+										<StackLayout HorizontalOptions="FillAndExpand">
+											<Label  Text="Przedrostek numeracji:"  Style="{StaticResource labelEntry}"/>
+											<Entry Text="{Binding NumerationBegin, Mode=TwoWay}" x:Name="numerationBegin"/>
+										</StackLayout>
+										<StackLayout HorizontalOptions="FillAndExpand">
+											<Label  Text="Numeruj od:"  Style="{StaticResource labelEntry}"/>
+											<Entry Text="{Binding NumerationStart, Mode=TwoWay, Converter={StaticResource stringIntConvert}}" x:Name="numerationStart" Keyboard="Numeric"/>
+										</StackLayout>
+									</StackLayout>
+									<Label Text="Ilość ramek w korpusie:" Style="{StaticResource labelEntry}" />
+									<Entry Text="{Binding FramesCount, Mode=TwoWay, Converter={StaticResource stringIntConvert}}" Keyboard="Numeric" Placeholder="Ilość ramek w korpusie" x:Name="framesCount"/>
+									<Label Text="Ilość uli do dodania:" Style="{StaticResource labelEntry}" />
+									<Entry Text="{Binding BeeHiveCount, Mode=TwoWay, Converter={StaticResource stringIntConvert}}" Keyboard="Numeric" Placeholder="Ilość uli do dodania" x:Name="beeHiveCount"/>
+								</StackLayout>
+							</StackLayout>
+						</pages:CardView.Content>
+					</pages:CardView>
+					<pages:CardView Padding="0" IsVisible="{Binding IsBeeHiveBodyVisible}">
+						<pages:CardView.Content>
+							<StackLayout Padding="0">
+								<Label Text="Korpusy" Style="{StaticResource cardTitle}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+								<StackLayout Padding="15">
+									<Label LineBreakMode="WordWrap" XAlign="Center" Text="Możesz wybrać ustawienia korpusów, zostaną one dodane dla każdego ula" Margin="0,0,0,20"/>
+									<Label Text="Ilość korpusów głównych:" Style="{StaticResource labelEntry}" />
+									<Entry Text="{Binding BeeHiveBodyCount, Mode=TwoWay, Converter={StaticResource stringIntConvert}}"   Keyboard="Numeric" Placeholder="Ilość korpusow na pełną ramkę" x:Name="bodyCount"/>
+									<StackLayout Orientation="Horizontal">
+										<Label Text="Dodaj nadstawkę (korpus 1/2):" Style="{StaticResource labelEntry}" />
+										<Switch IsToggled="{Binding AddBeeHiveBodyHalf, Mode=TwoWay}" x:Name="addHalfBody" />
+									</StackLayout>
+									<Label IsVisible="{Binding AddBeeHiveBodyHalf}" Text="Ramka nadstawki:"  Style="{StaticResource labelEntry}"/>
+									<Picker IsVisible="{Binding AddBeeHiveBodyHalf}"  SelectedItem="{Binding SelectedFrameTypeHalf, Mode=TwoWay}" ItemDisplayBinding="{Binding ft_name}" x:Name="frameTypeHalf" Title="Rodzaj ramki nadstawki" ItemsSource="{Binding FramesTypesHalf}" />
+								</StackLayout>
+							</StackLayout>
+						</pages:CardView.Content>
+					</pages:CardView>
+					<Button HorizontalOptions="FillAndExpand" Text="Dodaj ule" Style="{StaticResource buttonStyle}" Command="{Binding AddBeeHives}" />
+				</StackLayout>
+				<pages:CardWithLoader Message="Generuje ule, może to chwilkę potrwać..." IsVisible="{Binding ShowLoading}"/>
+				<pages:CardView IsVisible="{Binding IsReadyVisible}">
+				<pages:CardView.Content>
+					<StackLayout>
+						<Label LineBreakMode="WordWrap" XAlign="Center" Text="Gratulacje! Pomyślnie dodano ule, możesz przejść do następnego kroku" />
+						<Button HorizontalOptions="FillAndExpand"  Text="OK, idę dalej" Style="{StaticResource buttonStyle}" Command="{Binding NextStep}" IsEnabled="{Binding IsNextStepVisible}"/>
+					</StackLayout>
+				</pages:CardView.Content>
+			</pages:CardView>
 			</StackLayout>
 		</ScrollView>
 	</ContentPage.Content>

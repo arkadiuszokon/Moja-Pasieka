@@ -60,6 +60,9 @@
     <EmbeddedResource Include="View\Creator\CreatorSelectApiary.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Components\CardWithLoader.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -84,7 +87,6 @@
     <Compile Include="CommandHandler\AddBeeHiveHandler.cs" />
     <Compile Include="Startup\AppStarter.cs" />
     <Compile Include="Startup\IStartupTask.cs" />
-    <Compile Include="Event\Core\IConsumer.cs" />
     <Compile Include="Bus\EventBus.cs" />
     <Compile Include="Event\Core\IConsumerAsync.cs" />
     <Compile Include="Startup\Task\RegisterTypesTask.cs" />
@@ -193,6 +195,17 @@
       <DependentUpon>CreatorSelectApiary.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\Creator\CreatorSelectApiaryModel.cs" />
+    <Compile Include="View\Converters\StringIntConverter.cs" />
+    <Compile Include="View\Converters\BoolInvertConverter.cs" />
+    <Compile Include="View\Components\CardWithLoader.xaml.cs">
+      <DependentUpon>CardWithLoader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Command\AddBeeHiveBody.cs" />
+    <Compile Include="CommandHandler\AddBeeHibeBodyHandler.cs" />
+    <Compile Include="Command\AddFrame.cs" />
+    <Compile Include="CommandHandler\AddFrameHandler.cs" />
+    <Compile Include="Query\GetBeeHivesOnApiary.cs" />
+    <Compile Include="QueryHandler\GetBeeHivesOnApiaryHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Practices.ServiceLocation">
@@ -296,6 +309,7 @@
     <Folder Include="ViewModel\Creator\" />
     <Folder Include="Utils\" />
     <Folder Include="Utils\Core\" />
+    <Folder Include="View\Converters\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.192-pre2\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.192-pre2\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

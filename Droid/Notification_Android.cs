@@ -10,7 +10,8 @@ namespace MojaPasieka.Droid
 {
 	public class Notification_Android : INotification
 	{
-		
+
+
 		public Task<bool> askQuestion(string title, string question, string trueLabel, string falseLabel)
 		{
 
@@ -50,5 +51,7 @@ namespace MojaPasieka.Droid
 		{
 			Toast.MakeText(Xamarin.Forms.Forms.Context, message, ToastLength.Short).Show();
 		}
+
+
 	}
 }

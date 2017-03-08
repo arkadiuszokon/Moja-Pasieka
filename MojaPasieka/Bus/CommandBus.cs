@@ -12,8 +12,6 @@ namespace MojaPasieka.cqrs
 	public class CommandBus : ICommandBus
 	{
 
-		public string tmp = "";
-
 		private readonly ILifetimeScope _resolver;
 		private readonly IEventPublisher _eventPublisher;
 

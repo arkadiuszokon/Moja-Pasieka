@@ -11,6 +11,7 @@ x:TypeArguments="pages:CreatorStartModel" xmlns="http://xamarin.com/schemas/2014
 					</StackLayout>
 				</pages:CardView.Content>
 			</pages:CardView>
+
 		</StackLayout>
 	</ContentPage.Content>
 </pages:ViewPage>

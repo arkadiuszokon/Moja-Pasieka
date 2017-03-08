@@ -188,7 +188,7 @@ namespace MojaPasieka.DataModel
 		WOODEN = 4,
 
 		[EnumName("Poliuretan")]
-		POLIPOLYURETHANE = 5,
+		POLYURETHANE = 5,
 
 		[EnumName("OSB")]
 		OSB = 6,

@@ -7,7 +7,7 @@ namespace MojaPasieka.cqrs
 {
 	public class GetFrameTypesByMainTypeHandler : IQueryHandler<GetFrameTypesByMainType, List<FrameType>>
 	{
-		private SQLiteConnection _database;
+		protected SQLiteConnection _database;
 
 		public GetFrameTypesByMainTypeHandler(SQLiteConnection database)
 		{

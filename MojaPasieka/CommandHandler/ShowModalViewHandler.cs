@@ -12,7 +12,7 @@ namespace MojaPasieka.cqrs
 
 		public async Task HandleAsync(ShowModalView command)
 		{
-			await Application.Current.MainPage.Navigation.PushModalAsync(command.view);
+			await Application.Current.MainPage.Navigation.PushModalAsync(command.View);
 		}
 	}
 }

@@ -21,8 +21,8 @@ namespace MojaPasieka.cqrs
 
 		public async Task HandleAsync(AddBeeHive command)
 		{
-			_conn.Insert(command.beeHive);
-			await _eventBus.PublishAsync<Event<BeeHive>>(new Event<BeeHive>(command.beeHive, EventAction.CREATE));
+			_conn.Insert(command.BeeHive);
+			await _eventBus.PublishAsync<Event<BeeHive>>(new Event<BeeHive>(command.BeeHive, EventAction.CREATE));
 		}
 	}
 }

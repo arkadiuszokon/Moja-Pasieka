@@ -2,6 +2,7 @@
 using System.Windows.Input;
 using Xamarin.Forms;
 using Autofac;
+using System.Diagnostics;
 
 namespace MojaPasieka.View
 {
@@ -28,6 +29,7 @@ namespace MojaPasieka.View
 		public CreatorStartModel(CreatorStart view)
 		{
 			nextStep = new Command(showNextStep);
+
 		}
 
 		private void showNextStep(object obj)

@@ -102,11 +102,11 @@ namespace MojaPasieka.View
 				{
 					using (var scope2 = IoC.container.BeginLifetimeScope())
 					{
+						IsNextStepVisible = false;
 						var creator = scope2.Resolve<Creator>();
 						creator.setApiaryContext(SelectedItem);
 						IsListEnabled = false;
 						IsAddApiaryVisible = false;
-						IsNextStepVisible = false;
 						creator.nextStep();
 					}
 				});

@@ -114,18 +114,37 @@ namespace MojaPasieka.View
 
 		public CreatorAddApiaryModel(CreatorAddApiary view)
 		{
-			ShowMap = new Command( async (obj) => 
+			ShowMap = new Command( (obj) => 
 			{
+				Task.Run(async () =>
+				{
 
+					using (var scope = IoC.container.BeginLifetimeScope())
+					{
+						IMap map = scope.Resolve<IMap>();
+						await map.showMapForLocation(SelectApiaryLocation);
+					}
+
+				}).Wait();
+
+
+			});
+
+			view.Disappearing += (sender, e) => {
 				using (var scope = IoC.container.BeginLifetimeScope())
 				{
-					IMap map = scope.Resolve<IMap>();
-					await map.showMapForLocation(SelectApiaryLocation);
+					var eb = scope.Resolve<IEventPublisher>();
+					eb.UnregisterAsyncConsumer<Event<Apiary>>(this);
+				}
+			};
+			view.Appearing += (sender, e) =>
+			{
+				using (var scope = IoC.container.BeginLifetimeScope())
+				{
 					var eb = scope.Resolve<IEventPublisher>();
 					eb.RegisterAsyncConsumer<Event<Apiary>>(this);
 				}
-
-			});
+			};
 
 			NextStep = new Command((obj) => 
 			{ 
@@ -136,32 +155,35 @@ namespace MojaPasieka.View
 					IsNextStepVisible = false;
 				}
 			});
-			AddApiary = new Command(async (object obj) => 
+			AddApiary = new Command( (object obj) => 
 			{
-				using (var scope = IoC.container.BeginLifetimeScope())
-				{
-					var cb = scope.Resolve<ICommandBus>();
-					try
+				Task.Run(async () => { 
+				
+					using (var scope = IoC.container.BeginLifetimeScope())
 					{
-						await cb.SendCommandAsync<AddApiary>(new AddApiary(new DataModel.Apiary { ap_datecreated = DateCreated, ap_latlng = Location, ap_name = ApiaryName, ap_desc = ApiaryDesc, ap_timestamp = DateTime.Now }));
-					}
-					catch (ValidationException ve)
-					{
-						scope.Resolve<INotification>().showAlert("Błąd", String.Join("\n", ve.result.message));
-						return;
-					}
-					catch (Exception)
-					{
-						scope.Resolve<INotification>().showAlert("Błąd", "Nie można dadać pasieki");
-						return;
-					}
+						var cb = scope.Resolve<ICommandBus>();
+						try
+						{
+							await cb.SendCommandAsync<AddApiary>(new AddApiary(new DataModel.Apiary { ap_datecreated = DateCreated, ap_latlng = Location, ap_name = ApiaryName, ap_desc = ApiaryDesc, ap_timestamp = DateTime.Now }));
+						}
+						catch (ValidationException ve)
+						{
+							scope.Resolve<INotification>().showAlert("Błąd", String.Join("\n", ve.result.message));
+							return;
+						}
+						catch (Exception)
+						{
+							scope.Resolve<INotification>().showAlert("Błąd", "Nie można dadać pasieki");
+							return;
+						}
 
-				}
+					}
+				
+				}).Wait();
+
 
 			});
 		}
-
-
 
 
 		void SelectApiaryLocation(string userLocation)
@@ -171,15 +193,19 @@ namespace MojaPasieka.View
 
 		public async Task HandleAsync(Event<Apiary> eventMessage)
 		{
-			if (eventMessage.action == EventAction.CREATE)
-			{
-				using (var scope = IoC.container.BeginLifetimeScope())
+			await Task.Run(() => {
+
+				if (eventMessage.action == EventAction.CREATE)
 				{
-					scope.Resolve<INotification>().showToast("Dodano pasiekę");
-					IsAddApiaryVisible = false;
-					scope.Resolve<Creator>().setApiaryContext(eventMessage.item);
+					using (var scope = IoC.container.BeginLifetimeScope())
+					{
+						scope.Resolve<INotification>().showToast("Dodano pasiekę");
+						IsAddApiaryVisible = false;
+					}
 				}
-			}
+
+			});
+
 		}
 	}
 }

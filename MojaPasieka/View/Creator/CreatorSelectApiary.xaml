@@ -26,6 +26,7 @@ x:TypeArguments="pages:CreatorSelectApiaryModel" xmlns="http://xamarin.com/schem
 				<Button HorizontalOptions="FillAndExpand"  Text="Dodaj pasiekę" Style="{StaticResource buttonStyle}" Command="{Binding AddApiary}" IsEnabled="{Binding IsAddApiaryVisible}"/>
 				<Button HorizontalOptions="FillAndExpand"  Text="OK, idę dalej" Style="{StaticResource buttonStyle}" Command="{Binding NextStep}" IsEnabled="{Binding IsNextStepVisible}"/>
 			</StackLayout>
+			
 		</StackLayout>
 	</ContentPage.Content>
 </pages:ViewPage>

@@ -21,8 +21,8 @@ namespace MojaPasieka.cqrs
 
 		public async Task HandleAsync(AddApiary command)
 		{
-			_conn.Insert(command.apiary);
-			await _eventBus.PublishAsync<Event<Apiary>>(new Event<Apiary>(command.apiary, EventAction.CREATE));
+			_conn.Insert(command.Apiary);
+			await _eventBus.PublishAsync<Event<Apiary>>(new Event<Apiary>(command.Apiary, EventAction.CREATE));
 		}
 	}
 }

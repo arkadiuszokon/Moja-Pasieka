@@ -12,12 +12,6 @@ namespace MojaPasieka.View
 			InitializeComponent();
 		}
 
-		public Button btnNextGet
-		{
-			get
-			{
-				return btnNext;
-			}
-		}
+
 	}
 }

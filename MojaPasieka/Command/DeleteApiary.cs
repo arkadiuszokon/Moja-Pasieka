@@ -5,11 +5,11 @@ namespace MojaPasieka.cqrs
 {
 	public class DeleteApiary : ICommandAsync
 	{
-		public Apiary apiary { get; private set; }
+		public Apiary Apiary { get; private set; }
 
 		public DeleteApiary(Apiary apiary)
 		{
-			this.apiary = apiary;
+			this.Apiary = apiary;
 		}
 	}
 }

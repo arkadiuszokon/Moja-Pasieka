@@ -8,7 +8,17 @@ namespace MojaPasieka.Utils
 {
 	public class EnumHelper
 	{
-		
+		/// <summary>
+		/// Zwraca wartość enuma na podstawie inta
+		/// </summary>
+		/// <returns>The enum.</returns>
+		/// <param name="enumVal">Enum value.</param>
+		/// <typeparam name="TEnum">Typ Enuma</typeparam>
+		public static TEnum getEnum<TEnum>(int enumVal)
+		{
+			return (TEnum)Enum.ToObject(typeof(TEnum), enumVal);
+		}
+
 		public static IEnumerable<EnumDictionaryObject> ReturnListFromEnum<T>()
 		{
 			List<EnumDictionaryObject> dict = new List<EnumDictionaryObject>();
