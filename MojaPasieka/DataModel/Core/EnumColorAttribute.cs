@@ -22,7 +22,7 @@ namespace MojaPasieka
 		public static string GetValue<TEnum>(TEnum enumValue) where TEnum : struct
 		{
 			var type = typeof(TEnum).GetTypeInfo();
-			var member = type.DeclaredMembers.Where((MemberInfo arg) => arg.Name == nameof(enumValue)).First();
+			var member = type.DeclaredMembers.Where((MemberInfo arg) => arg.Name == enumValue.ToString()).FirstOrDefault();
 			var attr = member.GetCustomAttributes(typeof(EnumColorAttribute)).FirstOrDefault();
 			if (attr == null)
 			{

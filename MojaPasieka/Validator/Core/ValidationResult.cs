@@ -9,12 +9,12 @@ namespace MojaPasieka.cqrs
 		/// Wynik walidacji
 		/// </summary>
 		/// <value><c>true</c> if result; otherwise, <c>false</c>.</value>
-		public bool result = true;
+		public bool Result { get; set; } = true;
 
 		/// <summary>
 		/// Komunikat o walidacji
 		/// </summary>
 		/// <value>The message.</value>
-		public List<string> message  = new List<string>();
+		public List<string> Messages { get; private set; } = new List<string>();
 	}
 }

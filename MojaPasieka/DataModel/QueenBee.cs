@@ -24,10 +24,11 @@ namespace MojaPasieka.DataModel
 		};
 	
 		private int _qb_id;
+		private int _qb_bc_id;
 		private string _qb_name;
 		private QueenBeeColor _qb_color;
 		private int _qb_year;
-		private int _qb_rs_id;
+		private int _qb_bb_id;
 		private QueenBeeSource _qb_source;
 		private int _qb_bc_idraised;
 		private int _qb_qb_id;
@@ -53,6 +54,24 @@ namespace MojaPasieka.DataModel
 			{
 				_qb_id = value;
 				OnPropertyChanged(nameof(qb_id));
+			}
+		}
+
+		/// <summary>
+		/// Id rodziny w której jest matka lub 0
+		/// </summary>
+		/// <value>The qb bc identifier.</value>
+		[Indexed]
+		public int qb_bc_id
+		{
+			get
+			{
+				return _qb_bc_id;
+			}
+			set
+			{
+				_qb_bc_id = value;
+				OnPropertyChanged(nameof(qb_bc_id));
 			}
 		}
 
@@ -115,17 +134,17 @@ namespace MojaPasieka.DataModel
 		/// </summary>
 		/// <value>The qb rs identifier.</value>
 		[Indexed]
-		public int qb_rs_id
+		public int qb_bb_id
 		{
 			get
 			{
-				return _qb_rs_id;
+				return _qb_bb_id;
 			}
 
 			set
 			{
-				_qb_rs_id = value;
-				OnPropertyChanged(nameof(qb_rs_id));
+				_qb_bb_id = value;
+				OnPropertyChanged(nameof(qb_bb_id));
 			}
 		}
 
@@ -287,7 +306,7 @@ namespace MojaPasieka.DataModel
 		[EnumName("Własna hodowla")]
 		OWN_BREEDING = 1,
 
-		[EnumName("Zakup wewnetrzny")]
+		[EnumName("Zakup zewnętrzny")]
 		EXTERNAL_PURCHASE = 2,
 
 		[EnumName("Matka rojowa")]

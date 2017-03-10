@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:ViewPage xmlns:pages="clr-namespace:MojaPasieka.View" x:TypeArguments="pages:CreatorMakeBeeColoniesModel" 
+	xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MojaPasieka.View.CreatorMakeBeeColonies">
+	<ContentPage.Resources>
+        <ResourceDictionary>
+            <pages:StringIntConverter x:Key="stringIntConvert"></pages:StringIntConverter>
+			<pages:BoolInvertConverter x:Key="boolInvertConvert"></pages:BoolInvertConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+	<ContentPage.Content>
+		<ScrollView>
+			<StackLayout Orientation="Vertical" Padding="20" x:Name="layout" Spacing="20">
+				<pages:CardView>
+					<pages:CardView.Content>
+						<StackLayout>
+							<Label LineBreakMode="WordWrap" XAlign="Center" Text="{Binding BeeHivesAdded, StringFormat='W poprzednim kroku dodałeś uli: {0:N}. Są one na razie puste, a pewnie w środku bzyczą pszczółki. Pora te ule zasiedlić. Wygenerowane rodziny i matki będą takie same - możesz zmienić je później w aplikacji.'}" />
+						</StackLayout>
+					</pages:CardView.Content>
+				</pages:CardView>
+				<StackLayout IsVisible="{Binding ShowContent}">
+					<pages:CardView Padding="0">
+						<pages:CardView.Content>
+							<StackLayout Padding="0">
+								<Label Text="Rodzina" Style="{StaticResource cardTitle}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+								<StackLayout Padding="15">
+									<Label Text="Rodzaj przeglądów (zalecam uproszczony):" Style="{StaticResource labelEntry}" />
+									<Picker SelectedItem="{Binding SelectedInspectType, Mode=TwoWay}" ItemDisplayBinding="{Binding Name}" Title="Rodzaj przeglądów" ItemsSource="{Binding BeeColonyInspectTypes}" />
+									<Label Text="Data utworzenia/zakupu:" Style="{StaticResource labelEntry}" />
+									<DatePicker Date="{Binding ColonyDateCreated, Mode=TwoWay}" Format="dd-MM-yyyy"/>
+								</StackLayout>
+							</StackLayout>
+						</pages:CardView.Content>
+					</pages:CardView>
+					<pages:CardView Padding="0">
+						<pages:CardView.Content>
+							<StackLayout Padding="0">
+								<Label Text="Matka" Style="{StaticResource cardTitle}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+								<StackLayout Padding="15">
+									<Label Text="Rasa matki" Style="{StaticResource labelEntry}" />
+									<Picker SelectedItem="{Binding SelectedBeeBreed, Mode=TwoWay}" ItemDisplayBinding="{Binding bb_name}" Title="Rasa matki" ItemsSource="{Binding BeeBreeds}" />
+									<Label Text="{Binding QueenBeeColor, StringFormat='Rok matki: {0:N}'}" Style="{StaticResource labelEntry}" />
+									<Entry Text="{Binding QueenBeeYear, Mode=TwoWay, Converter={StaticResource stringIntConvert}}" Keyboard="Numeric"/>
+									<Label Text="Źródło matki" Style="{StaticResource labelEntry}" />
+									<Picker SelectedItem="{Binding SelectedQueenBeeSource, Mode=TwoWay}" ItemDisplayBinding="{Binding Name}" Title="Źródło pozyskania matki" ItemsSource="{Binding QueenBeeSources}" />
+								</StackLayout>
+							</StackLayout>
+						</pages:CardView.Content>
+					</pages:CardView>
+					<Button HorizontalOptions="FillAndExpand" Text="Dodaj rodziny" Style="{StaticResource buttonStyle}" Command="{Binding AddBeeColonies}" />
+				</StackLayout>
+				<pages:CardWithLoader Message="Generuje ule, może to chwilkę potrwać..." IsVisible="{Binding ShowLoading}"/>
+				<pages:CardView IsVisible="{Binding IsReadyVisible}">
+					<pages:CardView.Content>
+						<StackLayout>
+							<Label LineBreakMode="WordWrap" XAlign="Center" Text="Gratulacje! Pomyślnie dodano ule, możesz przejść do następnego kroku" />
+							<Button HorizontalOptions="FillAndExpand"  Text="OK, idę dalej" Style="{StaticResource buttonStyle}" Command="{Binding NextStep}" IsEnabled="{Binding IsNextStepVisible}"/>
+						</StackLayout>
+					</pages:CardView.Content>
+				</pages:CardView>
+			</StackLayout>
+		</ScrollView>
+	</ContentPage.Content>
+</pages:ViewPage>

@@ -5,22 +5,13 @@ using MojaPasieka.DataModel;
 
 namespace MojaPasieka.cqrs
 {
-	public class DeleteBeeBreedHandler : ICommandHandlerAsync<DeleteBeeBreed>
+	public class DeleteBeeBreedHandler :CommandHandlerBase, ICommandHandlerAsync<DeleteBeeBreed>
 	{
-		private SQLiteConnection _conn;
-
-		private IEventPublisher _eventBus;
-
-		public DeleteBeeBreedHandler(SQLiteConnection conn, IEventPublisher eventBus)
-		{
-			this._conn = conn;
-			_eventBus = eventBus;
-		}
 
 		public async Task HandleAsync(DeleteBeeBreed command)
 		{
-			_conn.Delete(command.Breed);
-			await _eventBus.PublishAsync<Event<BeeBreed>>(new Event<BeeBreed>(command.Breed, EventAction.DELETE));
+			Connection.Delete(command.Breed);
+			await EventPublisher.PublishAsync<Event<BeeBreed>>(new Event<BeeBreed>(command.Breed, EventAction.DELETE));
 		}
 	}
 }

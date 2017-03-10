@@ -5,22 +5,13 @@ using SQLite;
 
 namespace MojaPasieka.cqrs
 {
-	public class AddFrameHandler : ICommandHandlerAsync<AddFrame>
+	public class AddFrameHandler :CommandHandlerBase, ICommandHandlerAsync<AddFrame>
 	{
-		private SQLiteConnection _conn;
-
-		private IEventPublisher _eventBus;
-
-		public AddFrameHandler(SQLiteConnection conn, IEventPublisher eventBus)
-		{
-			this._conn = conn;
-			_eventBus = eventBus;
-		}
 
 		public async Task HandleAsync(AddFrame command)
 		{
-			_conn.Insert(command.Frame);
-			await _eventBus.PublishAsync<Event<Frame>>(new Event<Frame>(command.Frame, EventAction.CREATE));
+			Connection.Insert(command.Frame);
+			await EventPublisher.PublishAsync<Event<Frame>>(new Event<Frame>(command.Frame, EventAction.CREATE));
 		}
 	}
 }

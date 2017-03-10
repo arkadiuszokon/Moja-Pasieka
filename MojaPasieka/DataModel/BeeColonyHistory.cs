@@ -10,7 +10,6 @@ namespace MojaPasieka.DataModel
 	public class BeeColonyHistory : DataModelBase, IDataModel
 	{
 
-
 		private int _bch_id;
 		private int _bch_bc_id;
 		private int _bch_bcht_id;

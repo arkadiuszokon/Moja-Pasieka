@@ -518,11 +518,11 @@ namespace MojaPasieka.View
 					}
 					ShowLoading = true;
 					ShowContent = false;
-					try
-					{
-						Task.Run(async () =>
-						{
 
+					Task.Run(async () =>
+					{
+						try
+						{
 							using (var scope2 = IoC.container.BeginLifetimeScope())
 							{
 								var beeHivesAdded = new List<BeeHive>();
@@ -629,7 +629,7 @@ namespace MojaPasieka.View
 												fr_color = FrameColor.YELLOW,
 												fr_desc = "",
 												fr_ft_id = bodysAdded[i].bhb_ft_id,
-												fr_order = j+1,
+												fr_order = j + 1,
 												fr_isolated = false,
 												fr_wh_id = 0,
 												fr_timestamp = DateTime.Now
@@ -643,13 +643,24 @@ namespace MojaPasieka.View
 								ShowLoading = false;
 								IsReadyVisible = true;
 							}
-
-						});
-					}
-					catch (Exception ex)
-					{
-						Debug.WriteLine(ex.ToString());
-					}
+						}
+						catch (ValidationException ve)
+						{
+							if (ve.Result.Messages.Count > 0)
+							{
+								notifyService.showAlert("Błąd", String.Join("\n", ve.Result.Messages));
+							}
+							else
+							{
+								notifyService.showAlert("Błąd", "Wystąpił błąd walidacji");
+							}
+						}
+						catch (Exception ex)
+						{
+							Debug.WriteLine(ex.ToString());
+						}
+					});
+					
 
 				});
 			}

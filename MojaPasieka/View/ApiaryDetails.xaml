@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:ViewPage xmlns:pages="clr-namespace:MojaPasieka.View" 
+x:TypeArguments="pages:ApiaryDetailsModel" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MojaPasieka.View.ApiaryDetails">
+	<ContentPage.Content>
+		<StackLayout Orientation="Vertical" Padding="20">
+			<pages:CardView>
+				<pages:CardView.Content>
+					<StackLayout >
+						<Label Text="Witaj na pasieka item"/>
+						<Label Text="{Binding ap_name}"/>
+					</StackLayout>
+				</pages:CardView.Content>
+			</pages:CardView>
+		</StackLayout>
+	</ContentPage.Content>
+</pages:ViewPage>

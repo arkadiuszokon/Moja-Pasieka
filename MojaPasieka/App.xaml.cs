@@ -10,6 +10,9 @@ using Autofac;
 using MojaPasieka.View;
 using MojaPasieka.DataModel;
 using System.Threading.Tasks;
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
 
 namespace MojaPasieka
 {
@@ -17,7 +20,6 @@ namespace MojaPasieka
 	{
 		public App()
 		{
-			
 			InitializeComponent();
 			try
 			{
@@ -27,7 +29,6 @@ namespace MojaPasieka
 			{
 				Debug.WriteLine(ex.ToString());
 			}
-
 		}
 
 
@@ -49,9 +50,10 @@ namespace MojaPasieka
 			{
 				try
 				{
-					/*
+					
 					var qb = scope.Resolve<IQueryBus>();
 					var cb = scope.Resolve<ICommandBus>();
+					/*
 					var tutorialStatus = qb.Process<GetParameter, string>(new GetParameter(ParameterName.TUTORIAL_STATUS));
 					if (tutorialStatus != "1")
 					{
@@ -65,11 +67,10 @@ namespace MojaPasieka
 					}
 					*/
 					App.Current.MainPage = scope.Resolve<Creator>();
-
 				}
 				catch (Exception ex)
 				{
-					Debug.WriteLine(ex.ToString());
+					MobileCenterLog.Error(nameof(App), "", ex);
 				}
 			}
 
@@ -78,8 +79,11 @@ namespace MojaPasieka
 
 		protected override void OnStart()
 		{
-			// Handle when your app starts
+			
 			base.OnStart();
+			MobileCenter.Start("android=e0b32b56-2713-4bdd-a130-82623fea2d59;" +
+				   "ios={Your iOS App secret here}",
+				   typeof(Analytics), typeof(Crashes));
 		}
 
 		protected override void OnSleep()

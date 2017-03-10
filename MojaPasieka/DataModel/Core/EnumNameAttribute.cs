@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using System.Linq;
+using System.Diagnostics;
 
 namespace MojaPasieka.DataModel
 {
@@ -23,13 +24,19 @@ namespace MojaPasieka.DataModel
 		public static string GetValue<TEnum>(TEnum enumValue) where TEnum : struct
 		{
 			var type = typeof(TEnum).GetTypeInfo();
-			var member = type.DeclaredMembers.Where((MemberInfo arg) => arg.Name == nameof(enumValue)).First();
-			var attr = member.GetCustomAttributes(typeof(EnumNameAttribute)).FirstOrDefault();
-			if (attr == null)
+			var members = type.DeclaredMembers;
+			foreach (var member in members)
 			{
-				return "";
+				if (member.Name == enumValue.ToString())
+				{
+					var attr = member.GetCustomAttribute(typeof(EnumNameAttribute));
+					if (attr != null)
+					{
+						return (attr as EnumNameAttribute).name;
+					}
+				}
 			}
-			return (attr as EnumNameAttribute).name;
+			return "";
 		}
 	}
 }

@@ -5,15 +5,8 @@ using SQLite;
 
 namespace MojaPasieka.cqrs
 {
-	public class GetParameterHandler : IQueryHandler<GetParameter, string>
+	public class GetParameterHandler : QueryHandlerBase, IQueryHandler<GetParameter, string>
 	{
-
-		private SQLiteConnection _database;
-
-		public GetParameterHandler(SQLiteConnection database)
-		{
-			_database = database;
-		}
 
 		public string Execute(GetParameter query)
 		{
@@ -24,7 +17,7 @@ namespace MojaPasieka.cqrs
 			else
 			{
 				
-				var res = _database.ExecuteScalar<string>("SELECT pa_value FROM tb_parameter WHERE pa_name = '" + query.pa_name + "'");
+				var res = Connection.ExecuteScalar<string>("SELECT pa_value FROM tb_parameter WHERE pa_name = '" + query.pa_name + "'");
 				if (res != null)
 				{
 					Parameter.cache[query.pa_name] = res;

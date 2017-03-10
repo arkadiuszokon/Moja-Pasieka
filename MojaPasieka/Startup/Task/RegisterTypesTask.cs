@@ -31,7 +31,6 @@ namespace MojaPasieka.Startup
 			builder.RegisterType<Creator>().As<Creator>().SingleInstance();
 			builder.RegisterType<MapUtil>().As<IMap>().SingleInstance();
 
-
 			var currentdomain = typeof(string).GetTypeInfo().Assembly.GetType("System.AppDomain").GetRuntimeProperty("CurrentDomain").GetMethod.Invoke(null, new object[] { });
 			var getassemblies = currentdomain.GetType().GetRuntimeMethod("GetAssemblies", new System.Type[] { });
 			var assemblies = getassemblies.Invoke(currentdomain, new object[] { }) as Assembly[];
@@ -39,18 +38,14 @@ namespace MojaPasieka.Startup
 			{
 				if (assemblies[i].GetName().Name == "MojaPasieka")
 				{
-
-					builder.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(ICommandHandler<>)).SingleInstance();
-					builder.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(ICommandHandlerAsync<>)).SingleInstance();
+					builder.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(ICommandHandler<>)).SingleInstance().PropertiesAutowired();
+					builder.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(ICommandHandlerAsync<>)).SingleInstance().PropertiesAutowired();
 					builder.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(IValidator<>)).SingleInstance();
 					builder.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(IValidatorAsync<>)).SingleInstance();
-					builder.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(IQueryHandler<,>)).SingleInstance();
+					builder.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(IQueryHandler<,>)).SingleInstance().PropertiesAutowired();
 					builder.RegisterAssemblyTypes(assemblies[i]).AssignableTo<DataModelBase>().AsImplementedInterfaces().SingleInstance();
 					builder.RegisterAssemblyTypes(assemblies[i]).AssignableTo<IViewModel>().WithParameter(new TypedParameter(typeof(ViewPage<>), "view"));
-
-
 					//IEnumerable<TypeInfo> types = assemblies[i].DefinedTypes;
-
 				}
 			}
 			

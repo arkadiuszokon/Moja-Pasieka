@@ -6,6 +6,7 @@ using MojaPasieka.cqrs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace MojaPasieka.View
 {
@@ -36,6 +37,7 @@ namespace MojaPasieka.View
 				eb.RegisterAsyncConsumer<Event<BeeHive>>(this);
 				eb.RegisterAsyncConsumer<Event<DataModel.Frame>>(this);
 			}
+
 		}
 
 		public Apiary apiary
@@ -93,33 +95,55 @@ namespace MojaPasieka.View
 			}
 			else if (carousel.CurrentPage is CreatorMakeBeeHives)
 			{
-
+				var makeBeeColonies = new CreatorMakeBeeColonies();
+				carousel.Children.Add(makeBeeColonies);
+				carousel.CurrentPage = makeBeeColonies;
 			}
+		}
+
+		public int getCountBeeHivesAdded()
+		{
+			return addedBeeHives.Count;
+		}
+
+		public List<BeeHive> getBeeHivesAdded()
+		{
+			return this.addedBeeHives;
 		}
 
 		public async Task HandleAsync(Event<Apiary> eventMessage)
 		{
-			if (eventMessage.action == EventAction.CREATE)
+			await Task.Run(() =>
 			{
-				setApiaryContext(eventMessage.item);
-				addedApiaries.Add(eventMessage.item);
-			}
+				if (eventMessage.Action == EventAction.CREATE)
+				{
+					setApiaryContext(eventMessage.Item);
+					addedApiaries.Add(eventMessage.Item);
+				}
+			});
 		}
 
 		public async Task HandleAsync(Event<BeeHive> eventMessage)
 		{
-			if (eventMessage.action == EventAction.CREATE)
+			await Task.Run(() => 
 			{
-				addedBeeHives.Add(eventMessage.item);
-			}
+				if (eventMessage.Action == EventAction.CREATE)
+				{
+					addedBeeHives.Add(eventMessage.Item);
+				}
+			});
+
 		}
 
 		public async Task HandleAsync(Event<DataModel.Frame> eventMessage)
 		{
-			if (eventMessage.action == EventAction.CREATE)
+			await Task.Run(() =>
 			{
-				addedFrames.Add(eventMessage.item);
-			}
+				if (eventMessage.Action == EventAction.CREATE)
+				{
+					addedFrames.Add(eventMessage.Item);
+				}
+			});
 		}
 	}
 }

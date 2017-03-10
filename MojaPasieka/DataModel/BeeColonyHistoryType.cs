@@ -11,8 +11,6 @@ namespace MojaPasieka.DataModel
 	[Table("tb_beecolonyhistorytype")]
 	public class BeeColonyHistoryType : DataModelBase, IDataModel, IDataModelSelfInit
 	{
-
-
 		private int _bcht_id;
 		private string _bcht_name;
 		private BeeColonyHistoryMain _bcht_main;

@@ -168,7 +168,7 @@ namespace MojaPasieka.View
 						}
 						catch (ValidationException ve)
 						{
-							scope.Resolve<INotification>().showAlert("Błąd", String.Join("\n", ve.result.message));
+							scope.Resolve<INotification>().showAlert("Błąd", String.Join("\n", ve.Result.Messages));
 							return;
 						}
 						catch (Exception)
@@ -195,7 +195,7 @@ namespace MojaPasieka.View
 		{
 			await Task.Run(() => {
 
-				if (eventMessage.action == EventAction.CREATE)
+				if (eventMessage.Action == EventAction.CREATE)
 				{
 					using (var scope = IoC.container.BeginLifetimeScope())
 					{

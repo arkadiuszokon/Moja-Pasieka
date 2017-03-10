@@ -13,23 +13,18 @@ namespace MojaPasieka.cqrs
 
 			if (command.Apiary.ap_name == String.Empty)
 			{
-				vr.result = false;
-				vr.message.Add("Brak nazwy pasieki");
+				vr.Result = false;
+				vr.Messages.Add("Brak nazwy pasieki");
 			}
 			if (command.Apiary.ap_latlng == String.Empty)
 			{
-				vr.result = false;
-				vr.message.Add("Brak lokalizacji pasieki");
-			}
-			if (command.Apiary.ap_datecreated == null)
-			{
-				vr.result = false;
-				vr.message.Add("Brak daty utworzenia");
+				vr.Result = false;
+				vr.Messages.Add("Brak lokalizacji pasieki");
 			}
 			if (command.Apiary.ap_datecreated > DateTime.Now)
 			{
-				vr.result = false;
-				vr.message.Add("Data utworzenia nie może być w przyszłości");
+				vr.Result = false;
+				vr.Messages.Add("Data utworzenia nie może być w przyszłości");
 			}
 			return vr;
 		}

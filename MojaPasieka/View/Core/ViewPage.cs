@@ -21,5 +21,14 @@ namespace MojaPasieka.View
 			}
 			BindingContext = _viewModel;
 		}
+
+		public ViewPage(object viewModelContext)
+		{
+			using (var scope = IoC.container.BeginLifetimeScope())
+			{
+				_viewModel = scope.Resolve<T>(new TypedParameter(this.GetType(), this), new NamedParameter("context", viewModelContext));
+			}
+			BindingContext = _viewModel;
+		}
 	}
 }

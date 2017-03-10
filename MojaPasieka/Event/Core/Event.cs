@@ -8,17 +8,16 @@ namespace MojaPasieka.cqrs
 	public class Event<TData> : IEvent where TData : DataModelBase
 	{
 
-		public TData item { get; private set; }
+		public TData Item { get; protected set; }
 
-		public EventAction action { get; private set; }
+		public EventAction Action { get; protected set; }
 
 		public Event(TData item, EventAction action)
 		{
-			this.action = action;
-			this.item = item;
+			this.Action = action;
+			this.Item = item;
 		}
 	}
-
 
 	public enum EventAction
 	{

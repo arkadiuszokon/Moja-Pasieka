@@ -47,7 +47,6 @@ namespace MojaPasieka.DataModel
 			{
 				return _bc_created;
 			}
-
 			set
 			{
 				_bc_created = value;
@@ -131,7 +130,7 @@ namespace MojaPasieka.DataModel
 	{
 		[EnumName("Uproszczony: Oceniamy rodzinę całościowo")]
 		SIMPLIFIED = 1,
-		[EnumName("Szeczółowy: Oceniamy każdą ramkę")]
+		[EnumName("Szeczółowy: Oceniamy każdą ramkę osobno")]
 		DETAILED = 2
 	}
 }

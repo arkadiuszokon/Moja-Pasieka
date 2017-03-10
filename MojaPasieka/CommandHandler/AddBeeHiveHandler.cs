@@ -7,22 +7,12 @@ using System.Diagnostics;
 
 namespace MojaPasieka.cqrs
 {
-	public class AddBeeHiveHandler : ICommandHandlerAsync<AddBeeHive>
+	public class AddBeeHiveHandler : CommandHandlerBase, ICommandHandlerAsync<AddBeeHive>
 	{
-		private SQLiteConnection _conn;
-
-		private IEventPublisher _eventBus;
-
-		public AddBeeHiveHandler(SQLiteConnection conn, IEventPublisher eventBus)
-		{
-			this._conn = conn;
-			_eventBus = eventBus;
-		}
-
 		public async Task HandleAsync(AddBeeHive command)
 		{
-			_conn.Insert(command.BeeHive);
-			await _eventBus.PublishAsync<Event<BeeHive>>(new Event<BeeHive>(command.BeeHive, EventAction.CREATE));
+			Connection.Insert(command.BeeHive);
+			await EventPublisher.PublishAsync<Event<BeeHive>>(new Event<BeeHive>(command.BeeHive, EventAction.CREATE));
 		}
 	}
 }

@@ -5,22 +5,13 @@ using System.Threading.Tasks;
 
 namespace MojaPasieka.cqrs
 {
-	public class DeleteApiaryHandler : ICommandHandlerAsync<DeleteApiary>
+	public class DeleteApiaryHandler : CommandHandlerBase, ICommandHandlerAsync<DeleteApiary>
 	{
-		private SQLiteConnection _conn;
-
-		private IEventPublisher _eventBus;
-
-		public DeleteApiaryHandler(SQLiteConnection conn, IEventPublisher eventBus)
-		{
-			this._conn = conn;
-			_eventBus = eventBus;
-		}
 
 		public async Task HandleAsync(DeleteApiary command)
 		{
-			_conn.Delete(command.Apiary);
-			await _eventBus.PublishAsync<Event<Apiary>>(new Event<Apiary>(command.Apiary, EventAction.DELETE));
+			Connection.Delete(command.Apiary);
+			await EventPublisher.PublishAsync<Event<Apiary>>(new Event<Apiary>(command.Apiary, EventAction.DELETE));
 		}
 	}
 }

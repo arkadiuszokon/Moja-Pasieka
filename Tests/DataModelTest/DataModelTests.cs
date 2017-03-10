@@ -90,14 +90,14 @@ namespace Tests
 		public async Task HandleAsync(Event<Apiary> eventMessage)
 		{
 			await Task.Delay(10);
-			Assert.IsInstanceOf(typeof(Apiary),eventMessage.item,"błędny typ danych w evencie");
+			Assert.IsInstanceOf(typeof(Apiary),eventMessage.Item,"błędny typ danych w evencie");
 		}
 
 		[Explicit]
 		public async Task HandleAsync(Event<BeeBreed> eventMessage)
 		{
 			await Task.Delay(10);
-			Assert.IsInstanceOf(typeof(BeeBreed), eventMessage.item, "błędny typ danych w evencie");
+			Assert.IsInstanceOf(typeof(BeeBreed), eventMessage.Item, "błędny typ danych w evencie");
 		}
 	}
 }

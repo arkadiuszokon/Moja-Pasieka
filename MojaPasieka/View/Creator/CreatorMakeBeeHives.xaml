@@ -6,7 +6,7 @@ x:TypeArguments="pages:CreatorMakeBeeHivesModel" xmlns="http://xamarin.com/schem
             <pages:StringIntConverter x:Key="stringIntConvert"></pages:StringIntConverter>
 			<pages:BoolInvertConverter x:Key="boolInvertConvert"></pages:BoolInvertConverter>
         </ResourceDictionary>
-        </ContentPage.Resources>
+    </ContentPage.Resources>
 	<ContentPage.Content>
 		<ScrollView>
 			<StackLayout Orientation="Vertical" Padding="20" x:Name="layout" Spacing="20">
@@ -73,13 +73,13 @@ x:TypeArguments="pages:CreatorMakeBeeHivesModel" xmlns="http://xamarin.com/schem
 				</StackLayout>
 				<pages:CardWithLoader Message="Generuje ule, może to chwilkę potrwać..." IsVisible="{Binding ShowLoading}"/>
 				<pages:CardView IsVisible="{Binding IsReadyVisible}">
-				<pages:CardView.Content>
-					<StackLayout>
-						<Label LineBreakMode="WordWrap" XAlign="Center" Text="Gratulacje! Pomyślnie dodano ule, możesz przejść do następnego kroku" />
-						<Button HorizontalOptions="FillAndExpand"  Text="OK, idę dalej" Style="{StaticResource buttonStyle}" Command="{Binding NextStep}" IsEnabled="{Binding IsNextStepVisible}"/>
-					</StackLayout>
-				</pages:CardView.Content>
-			</pages:CardView>
+					<pages:CardView.Content>
+						<StackLayout>
+							<Label LineBreakMode="WordWrap" XAlign="Center" Text="Gratulacje! Pomyślnie dodano ule, możesz przejść do następnego kroku" />
+							<Button HorizontalOptions="FillAndExpand"  Text="OK, idę dalej" Style="{StaticResource buttonStyle}" Command="{Binding NextStep}" IsEnabled="{Binding IsNextStepVisible}"/>
+						</StackLayout>
+					</pages:CardView.Content>
+				</pages:CardView>
 			</StackLayout>
 		</ScrollView>
 	</ContentPage.Content>

@@ -37,7 +37,7 @@ namespace MojaPasieka.cqrs
 			if (commandValidator != null)
 			{
 				var res = commandValidator.Validate(cmd);
-				if (res.result == false)
+				if (res.Result == false)
 				{
 					throw new ValidationException(res);
 				}
@@ -66,8 +66,8 @@ namespace MojaPasieka.cqrs
 			var commandValidatorAsync = _resolver.ResolveOptional<IValidatorAsync<TCommand>>();
 			if (commandValidatorAsync != null)
 			{
-				var res = await commandValidatorAsync.Validate(cmd);
-				if (res.result == false)
+				var res = await commandValidatorAsync.ValidateAsync(cmd);
+				if (res.Result == false)
 				{
 					throw new ValidationException(res);
 				}
@@ -77,7 +77,7 @@ namespace MojaPasieka.cqrs
 			if (commandValidator != null)
 			{
 				var res = commandValidator.Validate(cmd);
-				if (res.result == false)
+				if (res.Result == false)
 				{
 					throw new ValidationException(res);
 				}

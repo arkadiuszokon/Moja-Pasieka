@@ -10,14 +10,8 @@ namespace MojaPasieka.cqrs
 {
 	public class EventBus : IEventPublisher
 	{
-		private readonly ILifetimeScope _resolver;
 
 		private static Dictionary<Type, List<object>> _consumersAsync = new Dictionary<Type, List<object>>();
-
-		public EventBus(ILifetimeScope resolver)
-		{
-			_resolver = resolver;
-		}
 
 		public async Task PublishAsync<TEvent>(TEvent @event) where TEvent : IEvent
 		{

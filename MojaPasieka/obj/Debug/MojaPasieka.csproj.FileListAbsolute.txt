@@ -23,6 +23,7 @@ C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\De
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\Xamarin.Forms.Maps.dll
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\Xamarin.Forms.Platform.dll
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\Xamarin.Forms.Xaml.dll
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\Xciles.PclValueInjecter.dll
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\PCLStorage.Abstractions.xml
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\PCLStorage.xml
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\SQLite-net.xml
@@ -49,10 +50,17 @@ C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\De
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.View.Creator.CreatorStart.xaml.g.cs
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.View.Creator.CreatorAddApiary.xaml.g.cs
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.View.Creator.CreatorMakeBeeHives.xaml.g.cs
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.View.Creator.CreatorSelectApiary.xaml.g.cs
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.View.Components.CardWithLoader.xaml.g.cs
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.View.Creator.CreatorMakeBeeColonies.xaml.g.cs
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.View.ApiaryDetails.xaml.g.cs
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.dll
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.pdb
-C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.View.Creator.CreatorSelectApiary.xaml.g.cs
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.csprojResolveAssemblyReference.cache
-C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.View.Components.CardWithLoader.xaml.g.cs
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\Microsoft.Azure.Mobile.Analytics.dll
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\Microsoft.Azure.Mobile.Crashes.dll
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\Microsoft.Azure.Mobile.dll
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.dll.mdb
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\MojaPasieka.dll.mdb
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\obj\Debug\MojaPasieka.dll.mdb
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\bin\Debug\MojaPasieka.dll.mdb

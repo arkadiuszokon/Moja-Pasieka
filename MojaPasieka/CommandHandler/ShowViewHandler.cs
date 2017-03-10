@@ -12,7 +12,6 @@ namespace MojaPasieka.cqrs
 			if (command.AsRoot)
 			{
 				AppMainPage.setRootPage(command.View);
-
 			}
 			else
 			{
