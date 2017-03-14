@@ -3,8 +3,13 @@ using MojaPasieka.DataModel;
 
 namespace MojaPasieka.Utils
 {
-	public class QueenBeeHelper
+	public static class QueenBeeHelper
 	{
+		/// <summary>
+		/// Zamiana roku urodzenia na kolor opalitka
+		/// </summary>
+		/// <returns>The color by year.</returns>
+		/// <param name="year">Year.</param>
 		public static QueenBeeColor getColorByYear(int year)
 		{
 			var strYear = year.ToString();

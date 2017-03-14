@@ -48,12 +48,12 @@
 					</pages:CardView>
 					<Button HorizontalOptions="FillAndExpand" Text="Dodaj rodziny" Style="{StaticResource buttonStyle}" Command="{Binding AddBeeColonies}" />
 				</StackLayout>
-				<pages:CardWithLoader Message="Generuje ule, może to chwilkę potrwać..." IsVisible="{Binding ShowLoading}"/>
+				<pages:CardWithLoader Message="Generuje rodziny i matki, może to chwilkę potrwać..." IsVisible="{Binding ShowLoading}"/>
 				<pages:CardView IsVisible="{Binding IsReadyVisible}">
 					<pages:CardView.Content>
 						<StackLayout>
-							<Label LineBreakMode="WordWrap" XAlign="Center" Text="Gratulacje! Pomyślnie dodano ule, możesz przejść do następnego kroku" />
-							<Button HorizontalOptions="FillAndExpand"  Text="OK, idę dalej" Style="{StaticResource buttonStyle}" Command="{Binding NextStep}" IsEnabled="{Binding IsNextStepVisible}"/>
+							<Label LineBreakMode="WordWrap" XAlign="Center" Text="Gratulacje! Pomyślnie dodano rodziny i matki. Możesz teraz zakończyć pracę z kreatorem." />
+							<Button HorizontalOptions="FillAndExpand"  Text="OK, kończymy" Style="{StaticResource buttonStyle}" Command="{Binding NextStep}" IsEnabled="{Binding IsNextStepVisible}"/>
 						</StackLayout>
 					</pages:CardView.Content>
 				</pages:CardView>

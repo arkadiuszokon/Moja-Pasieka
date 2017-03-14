@@ -37,7 +37,6 @@ namespace MojaPasieka.View
 				eb.RegisterAsyncConsumer<Event<BeeHive>>(this);
 				eb.RegisterAsyncConsumer<Event<DataModel.Frame>>(this);
 			}
-
 		}
 
 		public Apiary apiary
@@ -98,6 +97,27 @@ namespace MojaPasieka.View
 				var makeBeeColonies = new CreatorMakeBeeColonies();
 				carousel.Children.Add(makeBeeColonies);
 				carousel.CurrentPage = makeBeeColonies;
+			}
+			else if (carousel.CurrentPage is CreatorMakeBeeColonies)
+			{
+				close();
+			}
+			else
+			{
+				close("Wystąpił błąd w kretaorze");
+
+			}
+		}
+
+		private void close(string error = "")
+		{
+			using (var scope = IoC.container.BeginLifetimeScope())
+			{
+				if (error != String.Empty)
+				{
+					scope.Resolve<INotification>().showAlert("Błąd", error);
+				}
+				App.Current.MainPage = new AppMainPage();
 			}
 		}
 

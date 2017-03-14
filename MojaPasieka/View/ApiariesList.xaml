@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:ViewPage xmlns:pages="clr-namespace:MojaPasieka.View" 
+x:TypeArguments="pages:ApiariesListModel" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MojaPasieka.View.ApiariesList">
+	<pages:ViewPage.Content>
+		<StackLayout>
+			<ListView x:Name="apiariesList" ItemsSource="{Binding Apiaries}" HasUnevenRows="true" BackgroundColor="Transparent" SelectedItem="{Binding SelectedApiary}">
+				<ListView.ItemTemplate>
+					<DataTemplate >
+						<ViewCell>
+							<pages:CardView Margin="10">
+								<pages:CardView.Content>
+									<StackLayout>
+										<Label Text="{Binding ap_name}" />
+									</StackLayout>
+								</pages:CardView.Content>
+							</pages:CardView>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</StackLayout>
+	</pages:ViewPage.Content>
+</pages:ViewPage>

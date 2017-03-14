@@ -39,6 +39,9 @@ C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\Xa
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\Xamarin.GooglePlayServices.Location.dll
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\Xamarin.GooglePlayServices.Maps.dll
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\Autofac.dll
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\Microsoft.Azure.Mobile.Analytics.dll
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\Microsoft.Azure.Mobile.Crashes.dll
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\Microsoft.Azure.Mobile.dll
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\Xciles.PclValueInjecter.dll
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\MojaPasieka.pdb
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\SQLite-net.xml
@@ -84,9 +87,9 @@ C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\obj\Debug\re
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\obj\Debug\R.cs.flag
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\obj\Debug\uploadflags.txt
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\MojaPasieka.Droid.dll.mdb
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\MojaPasieka.dll.mdb
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\Java.Interop.dll.mdb
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\Microsoft.CSharp.dll.mdb
-C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\MojaPasieka.dll.mdb
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\Mono.Android.dll.mdb
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\Mono.CSharp.dll.mdb
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\mscorlib.dll.mdb
@@ -126,8 +129,5 @@ C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\obj\Debug\an
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
-C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\Microsoft.Azure.Mobile.Analytics.dll
-C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\Microsoft.Azure.Mobile.Crashes.dll
-C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\Microsoft.Azure.Mobile.dll
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\obj\Debug\MojaPasieka.Droid.dll.mdb
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\MojaPasieka.Droid.dll.mdb

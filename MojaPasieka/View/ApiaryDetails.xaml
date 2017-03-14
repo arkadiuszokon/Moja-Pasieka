@@ -1,16 +1,52 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <pages:ViewPage xmlns:pages="clr-namespace:MojaPasieka.View" 
+	xmlns:maps="clr-namespace:TK.CustomMap;assembly=TK.CustomMap"
 x:TypeArguments="pages:ApiaryDetailsModel" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MojaPasieka.View.ApiaryDetails">
 	<ContentPage.Content>
-		<StackLayout Orientation="Vertical" Padding="20">
-			<pages:CardView>
-				<pages:CardView.Content>
-					<StackLayout >
-						<Label Text="Witaj na pasieka item"/>
-						<Label Text="{Binding ap_name}"/>
-					</StackLayout>
-				</pages:CardView.Content>
-			</pages:CardView>
-		</StackLayout>
+		<ScrollView>
+			<StackLayout Orientation="Vertical" Padding="20" Spacing="15">
+				<pages:CardView Padding="0">
+					<pages:CardView.Content>
+						<StackLayout Padding="0">
+							<Label Text="{Binding ap_name}" Style="{StaticResource cardTitle}" />
+							<StackLayout Padding="15">
+								<Label Text="Opis" Style="{StaticResource labelValue}" />
+								<Label Text="{Binding ap_desc}" Margin="0,0,0,10"/>
+								<Label Text="Data utworzenia" Style="{StaticResource labelValue}" />
+								<Label Text="{Binding ap_datecreated, StringFormat='{0:dd-MM-yyyy}'}" Margin="0,0,0,10"/>
+							</StackLayout>
+						</StackLayout>
+					</pages:CardView.Content>
+				</pages:CardView>
+				<pages:CardView Padding="0">
+					<pages:CardView.Content>
+						<StackLayout Padding="0">
+							<Label Text="Lokalizacja" Style="{StaticResource cardTitle}" />
+							 <maps:TKCustomMap HorizontalOptions="FillAndExpand" HeightRequest="200" 
+						        x:Name="MyMap"
+								IsRegionChangeAnimated="false"
+								
+								MapCenter="{Binding Location}"
+								CustomPins="{Binding Pins}"
+						        IsShowingUser="false">
+								
+						      </maps:TKCustomMap>
+						</StackLayout>
+					</pages:CardView.Content>
+				</pages:CardView>
+				<pages:CardView Padding="0">
+					<pages:CardView.Content>
+						<StackLayout Padding="0">
+							<Label Text="Statystyki" Style="{StaticResource cardTitle}" />
+							<StackLayout Padding="15">
+								<Label Text="Ilość uli" Style="{StaticResource labelValue}" />
+								<Label Text="{Binding BeeHivesCount}" Margin="0,0,0,10"/>
+
+							</StackLayout>
+						</StackLayout>
+					</pages:CardView.Content>
+				</pages:CardView>
+			</StackLayout>
+		</ScrollView>
 	</ContentPage.Content>
 </pages:ViewPage>

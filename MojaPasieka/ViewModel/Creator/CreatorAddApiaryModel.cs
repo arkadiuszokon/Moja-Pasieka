@@ -116,18 +116,11 @@ namespace MojaPasieka.View
 		{
 			ShowMap = new Command( (obj) => 
 			{
-				Task.Run(async () =>
+				using (var scope = IoC.container.BeginLifetimeScope())
 				{
-
-					using (var scope = IoC.container.BeginLifetimeScope())
-					{
-						IMap map = scope.Resolve<IMap>();
-						await map.showMapForLocation(SelectApiaryLocation);
-					}
-
-				}).Wait();
-
-
+					IMap map = scope.Resolve<IMap>();
+					map.showMapForLocation(SelectApiaryLocation);
+				}
 			});
 
 			view.Disappearing += (sender, e) => {
@@ -157,31 +150,27 @@ namespace MojaPasieka.View
 			});
 			AddApiary = new Command( (object obj) => 
 			{
-				Task.Run(async () => { 
 				
-					using (var scope = IoC.container.BeginLifetimeScope())
+				using (var scope = IoC.container.BeginLifetimeScope())
+				{
+					var cb = scope.Resolve<ICommandBus>();
+					try
 					{
-						var cb = scope.Resolve<ICommandBus>();
-						try
-						{
+						Task.Run(async () => { 
 							await cb.SendCommandAsync<AddApiary>(new AddApiary(new DataModel.Apiary { ap_datecreated = DateCreated, ap_latlng = Location, ap_name = ApiaryName, ap_desc = ApiaryDesc, ap_timestamp = DateTime.Now }));
-						}
-						catch (ValidationException ve)
-						{
-							scope.Resolve<INotification>().showAlert("Błąd", String.Join("\n", ve.Result.Messages));
-							return;
-						}
-						catch (Exception)
-						{
-							scope.Resolve<INotification>().showAlert("Błąd", "Nie można dadać pasieki");
-							return;
-						}
-
+						}).Wait();
 					}
-				
-				}).Wait();
-
-
+					catch (ValidationException ve)
+					{
+						scope.Resolve<INotification>().showAlert("Błąd", String.Join("\n", ve.Result.Messages));
+						return;
+					}
+					catch (Exception ex)
+					{
+						scope.Resolve<INotification>().showAlert("Błąd", "Nie można dadać pasieki");
+						return;
+					}
+				}
 			});
 		}
 
@@ -193,18 +182,20 @@ namespace MojaPasieka.View
 
 		public async Task HandleAsync(Event<Apiary> eventMessage)
 		{
-			await Task.Run(() => {
-
-				if (eventMessage.Action == EventAction.CREATE)
+			
+			if (eventMessage.Action == EventAction.CREATE)
+			{
+				 Device.BeginInvokeOnMainThread(() =>
 				{
 					using (var scope = IoC.container.BeginLifetimeScope())
 					{
 						scope.Resolve<INotification>().showToast("Dodano pasiekę");
 						IsAddApiaryVisible = false;
 					}
-				}
 
-			});
+				});
+
+			}
 
 		}
 	}

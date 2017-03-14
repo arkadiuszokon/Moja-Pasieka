@@ -2,17 +2,15 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\App.xaml.cs" relfile="MojaPasieka\App.xaml.cs" line="73" column="11" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.MojaPasieka.Droid PreferredExecutionTarget="Android.00ecc44dfee92e74" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MojaPasieka\App.xaml.cs">
+  <MonoDevelop.Ide.ItemProperties.MojaPasieka.Droid PreferredExecutionTarget="Android.33000950cd57221b" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MojaPasieka\View\ApiaryDetails.xaml">
     <Files>
-      <File FileName="MojaPasieka\Command\Core\ICommand.cs" Line="3" Column="2" />
+      <File FileName="MojaPasieka\Command\Core\ICommand.cs" Line="10" Column="2" />
       <File FileName="MojaPasieka\CommandHandler\Core\ICommandHandler.cs" Line="11" Column="3" />
       <File FileName="MojaPasieka\Startup\IStartupTask.cs" Line="9" Column="42" />
-      <File FileName="MojaPasieka\Startup\Task\RegisterTypesTask.cs" Line="38" Column="5" />
+      <File FileName="MojaPasieka\Startup\Task\RegisterTypesTask.cs" Line="45" Column="6" />
       <File FileName="MojaPasieka\Bus\CommandBus.cs" Line="96" Column="3" />
       <File FileName="MojaPasieka\Bus\EventBus.cs" Line="29" Column="4" />
       <File FileName="MojaPasieka\Bus\QueryBus.cs" Line="20" Column="17" />
@@ -38,38 +36,38 @@
       <File FileName="MojaPasieka\DataModel\BeeColony.cs" Line="8" Column="13" />
       <File FileName="MojaPasieka\DataModel\HoneyHarvest.cs" Line="78" Column="16" />
       <File FileName="MojaPasieka\DataModel\Apiary.cs" Line="19" Column="16" />
-      <File FileName="MojaPasieka\DataModel\Core\EnumNameAttribute.cs" Line="39" Column="14" />
+      <File FileName="MojaPasieka\DataModel\Core\EnumNameAttribute.cs" Line="15" Column="21" />
       <File FileName="MojaPasieka\DataModel\Core\IDataModelSelfInit.cs" Line="11" Column="1" />
       <File FileName="MojaPasieka\DataModel\Core\IDataModel.cs" Line="9" Column="1" />
       <File FileName="MojaPasieka\DataModel\Core\IDatabaseConnection.cs" Line="12" Column="1" />
       <File FileName="MojaPasieka\DataModel\Core\DataModelBase.cs" Line="15" Column="4" />
-      <File FileName="MojaPasieka\App.xaml.cs" Line="73" Column="49" />
-      <File FileName="MojaPasieka\DataModel\Parameter.cs" Line="14" Column="3" />
+      <File FileName="MojaPasieka\App.xaml.cs" Line="22" Column="3" />
+      <File FileName="MojaPasieka\DataModel\Parameter.cs" Line="71" Column="1" />
       <File FileName="MojaPasieka\DataModel\Core\EnumColorAttribute.cs" Line="31" Column="50" />
       <File FileName="MojaPasieka\DataModel\Scale.cs" Line="6" Column="20" />
       <File FileName="MojaPasieka\DataModel\ScaleValue.cs" Line="6" Column="17" />
       <File FileName="MojaPasieka\DataModel\Feeding.cs" Line="7" Column="18" />
       <File FileName="MojaPasieka\DataModel\FeedType.cs" Line="100" Column="7" />
       <File FileName="MojaPasieka\DataModel\Warehouse.cs" Line="9" Column="52" />
-      <File FileName="MojaPasieka\AppMainPage.cs" Line="23" Column="27" />
-      <File FileName="MojaPasieka\MenuPage.xaml" Line="21" Column="1" />
+      <File FileName="MojaPasieka\AppMainPage.cs" Line="34" Column="1" />
+      <File FileName="MojaPasieka\MenuPage.xaml" Line="16" Column="36" />
       <File FileName="MojaPasieka\View\HomePage.cs" Line="27" Column="1" />
       <File FileName="MojaPasieka\ViewModel\TutorialPageModel.cs" Line="7" Column="35" />
       <File FileName="MojaPasieka\packages.config" Line="1" Column="1" />
-      <File FileName="MojaPasieka\View\Core\ViewPage.cs" Line="30" Column="1" />
-      <File FileName="MojaPasieka\ViewModel\HomePageModel.cs" Line="8" Column="1" />
+      <File FileName="MojaPasieka\View\Core\ViewPage.cs" Line="33" Column="3" />
+      <File FileName="MojaPasieka\ViewModel\HomePageModel.cs" Line="11" Column="2" />
       <File FileName="MojaPasieka\View\Components\CardView.cs" Line="23" Column="5" />
-      <File FileName="MojaPasieka\View\HomePage.xaml" Line="13" Column="18" />
-      <File FileName="MojaPasieka\View\HomePage.xaml.cs" Line="8" Column="57" />
+      <File FileName="MojaPasieka\View\HomePage.xaml" Line="11" Column="17" />
+      <File FileName="MojaPasieka\View\HomePage.xaml.cs" Line="9" Column="52" />
       <File FileName="MojaPasieka\View\Core\AppColors.cs" Line="14" Column="57" />
       <File FileName="MojaPasieka\ViewModel\Core\IViewModel.cs" Line="2" Column="27" />
-      <File FileName="MojaPasieka\MenuPage.xaml.cs" Line="29" Column="38" />
-      <File FileName="MojaPasieka\App.xaml" Line="32" Column="1" />
+      <File FileName="MojaPasieka\MenuPage.xaml.cs" Line="49" Column="96" />
+      <File FileName="MojaPasieka\App.xaml" Line="20" Column="1" />
       <File FileName="MojaPasieka\CommandHandler\ShowViewHandler.cs" Line="25" Column="1" />
-      <File FileName="MojaPasieka\View\TutorialPage.xaml" Line="10" Column="70" />
-      <File FileName="MojaPasieka\View\TutorialPage.xaml.cs" Line="13" Column="1" />
-      <File FileName="MojaPasieka\Startup\AppStarter.cs" Line="40" Column="1" />
-      <File FileName="Droid\MainActivity.cs" Line="18" Column="1" />
+      <File FileName="MojaPasieka\View\TutorialPage.xaml" Line="17" Column="1" />
+      <File FileName="MojaPasieka\View\TutorialPage.xaml.cs" Line="17" Column="1" />
+      <File FileName="MojaPasieka\Startup\AppStarter.cs" Line="30" Column="1" />
+      <File FileName="Droid\MainActivity.cs" Line="25" Column="1" />
       <File FileName="MojaPasieka\Startup\Task\DBConnectTask.cs" Line="19" Column="1" />
       <File FileName="Droid\DatabaseConnection_Android.cs" Line="9" Column="73" />
       <File FileName="MojaPasieka\CommandHandler\AddBeeHiveHandler.cs" Line="19" Column="1" />
@@ -115,33 +113,33 @@
       <File FileName="MojaPasieka\Command\DeleteBeeBreed.cs" Line="16" Column="1" />
       <File FileName="MojaPasieka\Validator\ApiaryToDelete.cs" Line="16" Column="4" />
       <File FileName="MojaPasieka\View\Core\INotification.cs" Line="15" Column="34" />
-      <File FileName="Droid\Notification_Android.cs" Line="55" Column="3" />
+      <File FileName="Droid\Notification_Android.cs" Line="46" Column="1" />
       <File FileName="MojaPasieka\Startup\Task\RegisterPlatformDependendTypesTask.cs" Line="16" Column="1" />
       <File FileName="Droid\packages.config" Line="1" Column="1" />
       <File FileName="MojaPasieka\ViewModel\Core\ViewModelBase.cs" Line="16" Column="1" />
       <File FileName="MojaPasieka\View\Creator\CreatorStart.xaml" Line="9" Column="346" />
       <File FileName="MojaPasieka\View\Creator\CreatorStart.xaml.cs" Line="8" Column="36" />
       <File FileName="MojaPasieka\ViewModel\Creator\CreatorStartModel.cs" Line="9" Column="35" />
-      <File FileName="MojaPasieka\View\Creator\CreatorAddApiary.xaml" Line="38" Column="21" />
+      <File FileName="MojaPasieka\View\Creator\CreatorAddApiary.xaml" Line="26" Column="55" />
       <File FileName="MojaPasieka\View\Creator\CreatorAddApiary.xaml.cs" Line="16" Column="1" />
       <File FileName="MojaPasieka\ViewModel\Creator\CreatorAddApiaryModel.cs" Line="10" Column="1" />
-      <File FileName="Droid\Properties\AndroidManifest.xml" Line="23" Column="12" />
+      <File FileName="Droid\Properties\AndroidManifest.xml" Line="22" Column="12" />
       <File FileName="MojaPasieka\Utils\Core\IMap.cs" Line="14" Column="1" />
-      <File FileName="MojaPasieka\Utils\MapUtil.cs" Line="90" Column="5" />
+      <File FileName="MojaPasieka\Utils\MapUtil.cs" Line="9" Column="7" />
       <File FileName="MojaPasieka\Command\ShowModalView.cs" Line="11" Column="4" />
       <File FileName="MojaPasieka\CommandHandler\ShowModalViewHandler.cs" Line="16" Column="4" />
       <File FileName="MojaPasieka\Command\RemoveModalView.cs" Line="12" Column="21" />
       <File FileName="MojaPasieka\CommandHandler\RemoveModalViewHandler.cs" Line="19" Column="1" />
       <File FileName="MojaPasieka\Validator\ApiaryToAdd.cs" Line="23" Column="5" />
       <File FileName="MojaPasieka\Validator\Core\ValidationException.cs" Line="14" Column="1" />
-      <File FileName="Droid\MainApplication.cs" Line="1" Column="1" />
+      <File FileName="Droid\MainApplication.cs" Line="57" Column="10" />
       <File FileName="MojaPasieka\View\Creator\CreatorMakeBeeHives.xaml" Line="72" Column="31" />
       <File FileName="MojaPasieka\View\Creator\CreatorMakeBeeHives.xaml.cs" Line="8" Column="79" />
       <File FileName="MojaPasieka\ViewModel\Creator\CreatorMakeBeeHivesModel.cs" Line="658" Column="27" />
-      <File FileName="MojaPasieka\View\Creator\Creator.cs" Line="107" Column="4" />
+      <File FileName="MojaPasieka\View\Creator\Creator.cs" Line="44" Column="21" />
       <File FileName="MojaPasieka\Query\GetFrameTypesByMainType.cs" Line="14" Column="22" />
       <File FileName="MojaPasieka\QueryHandler\GetFrameTypesByMainTypeHandler.cs" Line="12" Column="21" />
-      <File FileName="MojaPasieka\Utils\EnumHelper.cs" Line="16" Column="35" />
+      <File FileName="MojaPasieka\Utils\EnumHelper.cs" Line="8" Column="2" />
       <File FileName="MojaPasieka\View\Creator\CreatorSelectApiary.xaml" Line="28" Column="18" />
       <File FileName="MojaPasieka\View\Creator\CreatorSelectApiary.xaml.cs" Line="1" Column="1" />
       <File FileName="MojaPasieka\ViewModel\Creator\CreatorSelectApiaryModel.cs" Line="36" Column="3" />
@@ -154,15 +152,15 @@
       <File FileName="MojaPasieka\Command\AddFrame.cs" Line="9" Column="31" />
       <File FileName="MojaPasieka\CommandHandler\AddFrameHandler.cs" Line="18" Column="1" />
       <File FileName="MojaPasieka\CommandHandler\AppApiaryHandler.cs" Line="12" Column="1" />
-      <File FileName="MojaPasieka\Query\GetBeeHivesOnApiary.cs" Line="15" Column="3" />
+      <File FileName="MojaPasieka\Query\GetBeeHivesOnApiary.cs" Line="17" Column="1" />
       <File FileName="MojaPasieka\QueryHandler\GetBeeHivesOnApiaryHandler.cs" Line="16" Column="3" />
-      <File FileName="MojaPasieka\View\Creator\CreatorMakeBeeColonies.xaml" Line="49" Column="138" />
+      <File FileName="MojaPasieka\View\Creator\CreatorMakeBeeColonies.xaml" Line="48" Column="23" />
       <File FileName="MojaPasieka\View\Creator\CreatorMakeBeeColonies.xaml.cs" Line="15" Column="1" />
       <File FileName="MojaPasieka\ViewModel\Creator\CreatorMakeBeeColoniesModel.cs" Line="315" Column="9" />
-      <File FileName="MojaPasieka\Utils\QueenBeeHelper.cs" Line="20" Column="24" />
-      <File FileName="MojaPasieka\View\ApiaryDetails.xaml" Line="17" Column="1" />
-      <File FileName="MojaPasieka\View\ApiaryDetails.xaml.cs" Line="13" Column="4" />
-      <File FileName="MojaPasieka\ViewModel\ApiaryDetailsModel.cs" Line="11" Column="29" />
+      <File FileName="MojaPasieka\Utils\QueenBeeHelper.cs" Line="11" Column="44" />
+      <File FileName="MojaPasieka\View\ApiaryDetails.xaml" Line="50" Column="3" />
+      <File FileName="MojaPasieka\View\ApiaryDetails.xaml.cs" Line="13" Column="1" />
+      <File FileName="MojaPasieka\ViewModel\ApiaryDetailsModel.cs" Line="95" Column="47" />
       <File FileName="MojaPasieka\MojaPasieka.csproj" Line="1" Column="1" />
       <File FileName="MojaPasieka\Command\AddBeeColony.cs" Line="16" Column="1" />
       <File FileName="MojaPasieka\Command\AddQueenBee.cs" Line="16" Column="1" />
@@ -177,6 +175,17 @@
       <File FileName="MojaPasieka\QueryHandler\CheckExistsHandler.cs" Line="18" Column="1" />
       <File FileName="MojaPasieka\Query\GetBeeColonyHistoryType.cs" Line="15" Column="1" />
       <File FileName="MojaPasieka\QueryHandler\GetBeeColonyHistoryTypeHandler.cs" Line="2" Column="29" />
+      <File FileName="MojaPasieka\View\Core\IMenuPage.cs" Line="9" Column="1" />
+      <File FileName="MojaPasieka\View\Core\MenuTitleAttribute.cs" Line="15" Column="1" />
+      <File FileName="MojaPasieka\View\BeeHivesList.xaml" Line="13" Column="18" />
+      <File FileName="MojaPasieka\View\BeeHivesList.xaml.cs" Line="16" Column="2" />
+      <File FileName="MojaPasieka\ViewModel\BeeHivesListModel.cs" Line="68" Column="4" />
+      <File FileName="MojaPasieka\Query\GetApiaryContext.cs" Line="7" Column="3" />
+      <File FileName="MojaPasieka\QueryHandler\GetApiaryContextHandler.cs" Line="33" Column="28" />
+      <File FileName="MojaPasieka\View\ApiariesList.xaml" Line="24" Column="1" />
+      <File FileName="MojaPasieka\View\ApiariesList.xaml.cs" Line="20" Column="2" />
+      <File FileName="MojaPasieka\ViewModel\ApiariesListModel.cs" Line="68" Column="1" />
+      <File FileName="MojaPasieka\obj\Debug\MojaPasieka.View.ApiariesList.xaml.g.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />

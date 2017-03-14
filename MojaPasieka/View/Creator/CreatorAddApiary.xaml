@@ -2,40 +2,42 @@
 <pages:ViewPage xmlns:pages="clr-namespace:MojaPasieka.View" 
 x:TypeArguments="pages:CreatorAddApiaryModel" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MojaPasieka.View.CreatorAddApiary">
 	<ContentPage.Content>
-		<StackLayout Orientation="Vertical" Padding="20" x:Name="layout" Spacing="20">
-			<pages:CardView>
-				<pages:CardView.Content>
-					<StackLayout>
-						<Label LineBreakMode="WordWrap" XAlign="Center" Text="Zaczynamy od utworzenia pasieki, podaj proszę jej nazwę, opis i podaj jej lokalizację" />
-					</StackLayout>
-				</pages:CardView.Content>
-			</pages:CardView>
-			<pages:CardView IsVisible="{Binding IsAddApiaryVisible}">
-				<pages:CardView.Content>
-					<StackLayout>
-						<Label Text="Nazwa:" Style="{StaticResource labelEntry}" />
-						<Entry x:Name="apiaryName" Text="{Binding ApiaryName, Mode=TwoWay}" />
-						<Label Text="Data utworzenia:" Style="{StaticResource labelEntry}" />
-						<DatePicker x:Name="dateCreated" Date="{Binding DateCreated, Mode=TwoWay}" Format="dd-MM-yyyy"/>
-						<Label Text="Opis:" Style="{StaticResource labelEntry}" />
-						<Editor HeightRequest="70" x:Name="apiaryDesc" Text="{Binding ApiaryDesc, Mode=TwoWay}" />
-						<Label Text="Lokalizacja:" Style="{StaticResource labelEntry}" />
-						<StackLayout Orientation="Horizontal">
-							<Label Text="{Binding Location}" FontSize="Small" />
-							<Button Text="Wybierz lokalizację" Style="{StaticResource buttonStyle}" Command="{Binding ShowMap}" />
+		<ScrollView>
+			<StackLayout Orientation="Vertical" Padding="20" x:Name="layout" Spacing="20">
+				<pages:CardView>
+					<pages:CardView.Content>
+						<StackLayout>
+							<Label LineBreakMode="WordWrap" XAlign="Center" Text="Zaczynamy od utworzenia pasieki, podaj proszę jej nazwę, opis i podaj jej lokalizację" />
 						</StackLayout>
-						<Button HorizontalOptions="FillAndExpand" Text="Dodaj pasiekę" Style="{StaticResource buttonStyle}" Command="{Binding AddApiary}" />
-					</StackLayout>
-				</pages:CardView.Content>
-			</pages:CardView>
-			<pages:CardView IsVisible="{Binding IsReadyVisible}">
-				<pages:CardView.Content>
-					<StackLayout>
-						<Label LineBreakMode="WordWrap" XAlign="Center" Text="Gratulacje! Pomyślnie dodano pasiekę, możesz przejść do następnego kroku" />
-						<Button HorizontalOptions="FillAndExpand"  Text="OK, idę dalej" Style="{StaticResource buttonStyle}" Command="{Binding NextStep}" IsEnabled="{Binding IsNextStepVisible}"/>
-					</StackLayout>
-				</pages:CardView.Content>
-			</pages:CardView>
-		</StackLayout>
+					</pages:CardView.Content>
+				</pages:CardView>
+				<pages:CardView IsVisible="{Binding IsAddApiaryVisible}">
+					<pages:CardView.Content>
+						<StackLayout>
+							<Label Text="Nazwa:" Style="{StaticResource labelEntry}" />
+							<Entry x:Name="apiaryName" Text="{Binding ApiaryName, Mode=TwoWay}" />
+							<Label Text="Data utworzenia:" Style="{StaticResource labelEntry}" />
+							<DatePicker x:Name="dateCreated" Date="{Binding DateCreated, Mode=TwoWay}" Format="dd-MM-yyyy"/>
+							<Label Text="Opis:" Style="{StaticResource labelEntry}" />
+							<Editor HeightRequest="70" x:Name="apiaryDesc" Text="{Binding ApiaryDesc, Mode=TwoWay}" />
+							<Label Text="Lokalizacja:" Style="{StaticResource labelEntry}" />
+							<StackLayout Orientation="Horizontal">
+								<Label Text="{Binding Location}" FontSize="Small" />
+								<Button Text="Wybierz lokalizację" Style="{StaticResource buttonStyle}" Command="{Binding ShowMap}" />
+							</StackLayout>
+							<Button HorizontalOptions="FillAndExpand" Text="Dodaj pasiekę" Style="{StaticResource buttonStyle}" Command="{Binding AddApiary}" />
+						</StackLayout>
+					</pages:CardView.Content>
+				</pages:CardView>
+				<pages:CardView IsVisible="{Binding IsReadyVisible}">
+					<pages:CardView.Content>
+						<StackLayout>
+							<Label LineBreakMode="WordWrap" XAlign="Center" Text="Gratulacje! Pomyślnie dodano pasiekę, możesz przejść do następnego kroku" />
+							<Button HorizontalOptions="FillAndExpand"  Text="OK, idę dalej" Style="{StaticResource buttonStyle}" Command="{Binding NextStep}" IsEnabled="{Binding IsNextStepVisible}"/>
+						</StackLayout>
+					</pages:CardView.Content>
+				</pages:CardView>
+			</StackLayout>
+		</ScrollView>
 	</ContentPage.Content>
 </pages:ViewPage>

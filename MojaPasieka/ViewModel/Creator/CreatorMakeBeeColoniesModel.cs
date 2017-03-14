@@ -267,6 +267,14 @@ namespace MojaPasieka.View
 				this.BeeColonyInspectTypes = new ObservableCollection<EnumDictionaryObject>(EnumHelper.ReturnListFromEnum<BeeColonyInspectedType>());
 				BeeBreeds = new ObservableCollection<BeeBreed>(qb.Process<GetFullListOf, List<object>>(new GetFullListOf(typeof(BeeBreed))).Cast<BeeBreed>().ToList());
 				QueenBeeSources = new ObservableCollection<EnumDictionaryObject>(EnumHelper.ReturnListFromEnum<QueenBeeSource>());
+				NextStep = new Command((obj) =>
+				{
+					using (var scope2 = IoC.container.BeginLifetimeScope())
+					{
+						IsNextStepVisible = false;
+						creator.nextStep();
+					}
+				});
 				AddBeeColonies = new Command((obj) => 
 				{
 					if (SelectedInspectType == null)
@@ -348,7 +356,7 @@ namespace MojaPasieka.View
 								}
 								scope2.Resolve<SQLiteConnection>().Commit();
 								ShowLoading = false;
-								IsNextStepVisible = true;
+								IsReadyVisible = true;
 							}
 						}
 						catch (ValidationException ve)

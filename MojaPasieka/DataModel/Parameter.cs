@@ -64,5 +64,7 @@ namespace MojaPasieka.DataModel
 		public const string TEST = "test";
 
 		public const string TUTORIAL_STATUS = "tutorialStatus";
+
+		public const string CURRENT_APIARY_ID = "currentApiaryID";
 	}
 }

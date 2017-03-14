@@ -6,7 +6,7 @@ using MojaPasieka.DataModel;
 
 namespace MojaPasieka.Utils
 {
-	public class EnumHelper
+	public static class EnumHelper
 	{
 		/// <summary>
 		/// Zwraca wartość enuma na podstawie inta

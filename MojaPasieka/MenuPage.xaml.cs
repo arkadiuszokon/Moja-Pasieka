@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using Xamarin.Forms;
+using Autofac;
+using MojaPasieka.cqrs;
+using Autofac.Core;
+using System.Reflection;
+using System.Linq;
 
 namespace MojaPasieka.View
 {
@@ -12,11 +17,37 @@ namespace MojaPasieka.View
 		{
 			InitializeComponent();
 			imageTop.Source = ImageSource.FromResource("MojaPasieka.Assets.MenuBees");
-			listView.ItemsSource = new ObservableCollection<MenuItem> { 
-			
-				new MenuItem { Title="Start", Icon=ImageSource.FromResource("MojaPasieka.Assets.Home") },
-				new MenuItem { Title="Moje pasieki" },
-				new MenuItem { Title="Ustawienia" }
+			var menuItems = new ObservableCollection<MenuItem>();
+			using (var scope = IoC.container.BeginLifetimeScope())
+			{
+				var items = scope.ComponentRegistry.RegistrationsFor(new TypedService(typeof(IMenuPage)));
+				foreach (var menuItem in items)
+				{
+					var titleAttr = menuItem.Activator.LimitType.GetTypeInfo().GetCustomAttribute<MenuTitleAttribute>();
+					menuItems.Add(new MenuItem
+					{
+						Title = titleAttr.Title,
+						ViewItem = menuItem.Activator.LimitType
+					});
+				}
+				menuList.ItemsSource = menuItems;
+			}
+
+			menuList.ItemSelected += (object sender, SelectedItemChangedEventArgs e) => 
+			{
+				try
+				{
+					using (var scope = IoC.container.BeginLifetimeScope())
+					{
+						var cb = scope.Resolve<ICommandBus>();
+						cb.SendCommandAsync<ShowView>(new ShowView((scope.Resolve((e.SelectedItem as MenuItem).ViewItem) as ContentPage), true));
+						App.Current.MainPage.SendBackButtonPressed();
+					}
+				}
+				catch (Exception ex)
+				{
+					IoC.container.BeginLifetimeScope().Resolve<INotification>().showAlert("Błąd", ex.Message);
+				}
 			};
 		}
 	}
@@ -28,6 +59,21 @@ namespace MojaPasieka.View
 		{
 			this.PropertyChanged?.Invoke(this,
 			  new PropertyChangedEventArgs(propertyName));
+		}
+
+		private Type _viewItem;
+
+		public Type ViewItem
+		{
+			get
+			{
+				return _viewItem;
+			}
+			set
+			{
+				_viewItem = value;
+				OnPropertyChanged(nameof(ViewItem));
+			}
 		}
 
 		private string _title;

@@ -5,10 +5,10 @@ using Xamarin.Forms;
 
 namespace MojaPasieka.View
 {
-	
-	public partial class TutorialPage : ViewPage<TutorialPageModel>
+	[MenuTitle("Ule")]
+	public partial class BeeHivesList : ViewPage<BeeHivesListModel>, IMenuPage
 	{
-		public TutorialPage()
+		public BeeHivesList()
 		{
 			InitializeComponent();
 		}

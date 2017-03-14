@@ -13,7 +13,9 @@ using System.Threading.Tasks;
 using Microsoft.Azure.Mobile;
 using Microsoft.Azure.Mobile.Analytics;
 using Microsoft.Azure.Mobile.Crashes;
+using Xamarin.Forms.Xaml;
 
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MojaPasieka
 {
 	public partial class App : Application
@@ -50,12 +52,11 @@ namespace MojaPasieka
 			{
 				try
 				{
-					
 					var qb = scope.Resolve<IQueryBus>();
 					var cb = scope.Resolve<ICommandBus>();
-					/*
+
 					var tutorialStatus = qb.Process<GetParameter, string>(new GetParameter(ParameterName.TUTORIAL_STATUS));
-					if (tutorialStatus != "1")
+					if (tutorialStatus != "")
 					{
 						await Task.Delay(500);
 						var res = await scope.Resolve<INotification>().askQuestion("Witaj", "Czy chcesz uruchomić tutorial, aby zapoznać się z aplikacją?", "Tak", "Anuluj");
@@ -65,8 +66,7 @@ namespace MojaPasieka
 							await cb.SendCommandAsync<SaveParameter>(new SaveParameter(ParameterName.TUTORIAL_STATUS, "1"));
 						}
 					}
-					*/
-					App.Current.MainPage = scope.Resolve<Creator>();
+
 				}
 				catch (Exception ex)
 				{

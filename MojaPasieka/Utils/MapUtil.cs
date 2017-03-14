@@ -80,11 +80,15 @@ namespace MojaPasieka.Utils
 			btnOK.Text = "Czekam na lokalizację...";
 			if (userLocation == null)
 			{
-				userLocation = await Plugin.Geolocator.CrossGeolocator.Current.GetPositionAsync(10000);
+				if (Plugin.Geolocator.CrossGeolocator.Current.IsGeolocationAvailable && Plugin.Geolocator.CrossGeolocator.Current.IsGeolocationEnabled)
+				{
+					userLocation = await Plugin.Geolocator.CrossGeolocator.Current.GetPositionAsync(10000);
+					var userPosition = new Position(userLocation.Latitude, userLocation.Longitude);
+					map.MoveToRegion(MapSpan.FromCenterAndRadius(userPosition, Distance.FromKilometers(3)));
+					pin.Position = userPosition;
+				}
 			}
-			var userPosition = new Position(userLocation.Latitude, userLocation.Longitude);
-			map.MoveToRegion(MapSpan.FromCenterAndRadius(userPosition, Distance.FromKilometers(3)));
-			pin.Position = userPosition;
+
 			btnOK.Text = "Wybierz lokalizację";
 			btnOK.Command = new Command( async (obj) => {
 				

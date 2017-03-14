@@ -69,6 +69,12 @@
     <EmbeddedResource Include="View\ApiaryDetails.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\BeeHivesList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ApiariesList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -221,6 +227,7 @@
       <DependentUpon>ApiaryDetails.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\ApiaryDetailsModel.cs" />
+    <Compile Include="ViewModel\ApiariesListModel.cs" />
     <Compile Include="Command\AddBeeColony.cs" />
     <Compile Include="Command\AddQueenBee.cs" />
     <Compile Include="Command\AddBeeColonyHistory.cs" />
@@ -234,6 +241,17 @@
     <Compile Include="QueryHandler\CheckExistsHandler.cs" />
     <Compile Include="Query\GetBeeColonyHistoryType.cs" />
     <Compile Include="QueryHandler\GetBeeColonyHistoryTypeHandler.cs" />
+    <Compile Include="View\Core\IMenuPage.cs" />
+    <Compile Include="View\Core\MenuTitleAttribute.cs" />
+    <Compile Include="View\BeeHivesList.xaml.cs">
+      <DependentUpon>BeeHivesList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\BeeHivesListModel.cs" />
+    <Compile Include="Query\GetApiaryContext.cs" />
+    <Compile Include="QueryHandler\GetApiaryContextHandler.cs" />
+    <Compile Include="View\ApiariesList.xaml.cs">
+      <DependentUpon>ApiariesList.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Practices.ServiceLocation">

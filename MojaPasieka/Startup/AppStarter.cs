@@ -60,8 +60,10 @@ namespace MojaPasieka.Startup
 						var res = database.CreateTable(model.GetDataModelType());
 
 						if (model is IDataModelSelfInit)
-						{	
+						{
+							database.BeginTransaction();
 							(model as IDataModelSelfInit).FillWithData(database);
+							database.Commit();
 						}
 					}
 

@@ -13,7 +13,10 @@
 				<Setter Property="FontSize" Value="Medium" />
 				<Setter Property="TextColor" Value="#BDBDBD" />
 			</Style>
-
+			<Style x:Key="labelValue" TargetType="Label">
+				<Setter Property="FontSize" Value="Small" />
+				<Setter Property="TextColor" Value="#BDBDBD" />
+			</Style>
 			<Style x:Key="itemTitle" TargetType="Label">
 				<Setter Property="FontSize" Value="Medium" />
 				<Setter Property="FontAttributes" Value="Bold" />
@@ -25,6 +28,8 @@
 				<Setter Property="TextColor" Value="#333333" />
 				<Setter Property="BackgroundColor" Value="#FDD835"/>
 				<Setter Property="HeightRequest" Value="60" />
+				<Setter Property="VerticalTextAlignment" Value="Center" />
+				<Setter Property="HorizontalTextAlignment" Value="Center" />
 			</Style>
 		</ResourceDictionary>
 	</Application.Resources>

@@ -20,10 +20,6 @@ namespace MojaPasieka.Startup
 
 		public void Execute(ContainerBuilder builder)
 		{
-			//rejestrujemy kontener
-			//_container.Register<IResolver>(_container.GetResolver());
-
-
 			//rejestrujemy elementy cqrsa
 			builder.RegisterType<EventBus>().As<IEventPublisher>().SingleInstance();
 			builder.RegisterType<CommandBus>().As<ICommandBus>().SingleInstance();
@@ -43,9 +39,9 @@ namespace MojaPasieka.Startup
 					builder.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(IValidator<>)).SingleInstance();
 					builder.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(IValidatorAsync<>)).SingleInstance();
 					builder.RegisterAssemblyTypes(assemblies[i]).AsClosedTypesOf(typeof(IQueryHandler<,>)).SingleInstance().PropertiesAutowired();
-					builder.RegisterAssemblyTypes(assemblies[i]).AssignableTo<DataModelBase>().AsImplementedInterfaces().SingleInstance();
+					builder.RegisterAssemblyTypes(assemblies[i]).AssignableTo<DataModelBase>().Where((Type arg) => arg.IsInNamespace("MojaPasieka.DataModel")).AsImplementedInterfaces().SingleInstance();
 					builder.RegisterAssemblyTypes(assemblies[i]).AssignableTo<IViewModel>().WithParameter(new TypedParameter(typeof(ViewPage<>), "view"));
-					//IEnumerable<TypeInfo> types = assemblies[i].DefinedTypes;
+					builder.RegisterAssemblyTypes(assemblies[i]).AssignableTo<IMenuPage>().AsSelf().AsImplementedInterfaces().SingleInstance();
 				}
 			}
 			
