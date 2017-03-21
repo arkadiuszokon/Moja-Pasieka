@@ -1,5 +1,4 @@
 ﻿using System;
-using Microsoft.Practices.ServiceLocation;
 using Xamarin.Forms;
 
 namespace MojaPasieka.View

@@ -552,7 +552,7 @@ namespace MojaPasieka.View
 										bh_toptype = EnumHelper.getEnum<BeeHiveTopType>(SelectedBeeHiveTop.Id),
 										bh_timestamp = DateTime.Now
 									};
-									await cb.SendCommandAsync<AddBeeHive>(new AddBeeHive(bh));
+									await cb.SendCommandAsync<SaveBeeHive>(new SaveBeeHive(bh));
 									numeration++;
 									beeHivesAdded.Add(bh);
 								}
@@ -578,7 +578,7 @@ namespace MojaPasieka.View
 													bhb_paint = "",
 													bhb_timestamp = DateTime.Now
 												};
-												await cb.SendCommandAsync<AddBeeHiveBody>(new AddBeeHiveBody(bhb));
+												await cb.SendCommandAsync<SaveBeeHiveBody>(new SaveBeeHiveBody(bhb));
 												bodysAdded.Add(bhb);
 											}
 											if (AddBeeHiveBodyHalf)
@@ -595,7 +595,7 @@ namespace MojaPasieka.View
 													bhb_paint = "",
 													bhb_timestamp = DateTime.Now
 												};
-												await cb.SendCommandAsync<AddBeeHiveBody>(new AddBeeHiveBody(bhb));
+												await cb.SendCommandAsync<SaveBeeHiveBody>(new SaveBeeHiveBody(bhb));
 												bodysAdded.Add(bhb);
 											}
 										}
@@ -613,7 +613,7 @@ namespace MojaPasieka.View
 												bhb_paint = "",
 												bhb_timestamp = DateTime.Now
 											};
-											await cb.SendCommandAsync<AddBeeHiveBody>(new AddBeeHiveBody(bhb));
+											await cb.SendCommandAsync<SaveBeeHiveBody>(new SaveBeeHiveBody(bhb));
 											bodysAdded.Add(bhb);
 										}
 									}
@@ -634,7 +634,7 @@ namespace MojaPasieka.View
 												fr_wh_id = 0,
 												fr_timestamp = DateTime.Now
 											};
-											await cb.SendCommandAsync<AddFrame>(new AddFrame(fr));
+											await cb.SendCommandAsync<SaveFrame>(new SaveFrame(fr));
 										}
 									}
 									scope2.Resolve<SQLite.SQLiteConnection>().Commit();
@@ -646,18 +646,11 @@ namespace MojaPasieka.View
 						}
 						catch (ValidationException ve)
 						{
-							if (ve.Result.Messages.Count > 0)
-							{
-								notifyService.showAlert("Błąd", String.Join("\n", ve.Result.Messages));
-							}
-							else
-							{
-								notifyService.showAlert("Błąd", "Wystąpił błąd walidacji");
-							}
+							ve.MenageError();
 						}
 						catch (Exception ex)
 						{
-							Debug.WriteLine(ex.ToString());
+							ErrorUtil.handleError(ex);
 						}
 					});
 					

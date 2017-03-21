@@ -28,7 +28,7 @@ namespace MojaPasieka.Utils
 			
 		}
 
-		public async Task showMapForLocation(Action<string> onUserSelectPoint)
+		public async Task showMapForLocation(Action<string> onUserSelectPoint, double currentLat = 0, double currentLng = 0)
 		{
 
 			if (cp == null)
@@ -77,11 +77,17 @@ namespace MojaPasieka.Utils
 				var cb = scope.Resolve<ICommandBus>();
 				await cb.SendCommandAsync<ShowModalView>(new ShowModalView(cp));
 			}
-			btnOK.Text = "Czekam na lokalizację...";
-			if (userLocation == null)
+			if (currentLng != 0 && currentLat != 0)
+			{
+				var userPosition = new Position(currentLat, currentLng);
+				map.MoveToRegion(MapSpan.FromCenterAndRadius(userPosition, Distance.FromKilometers(3)));
+				pin.Position = userPosition;
+			}
+			else if (userLocation == null)
 			{
 				if (Plugin.Geolocator.CrossGeolocator.Current.IsGeolocationAvailable && Plugin.Geolocator.CrossGeolocator.Current.IsGeolocationEnabled)
 				{
+					btnOK.Text = "Czekam na lokalizację...";
 					userLocation = await Plugin.Geolocator.CrossGeolocator.Current.GetPositionAsync(10000);
 					var userPosition = new Position(userLocation.Latitude, userLocation.Longitude);
 					map.MoveToRegion(MapSpan.FromCenterAndRadius(userPosition, Distance.FromKilometers(3)));

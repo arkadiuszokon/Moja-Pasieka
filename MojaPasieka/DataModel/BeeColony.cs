@@ -14,6 +14,7 @@ namespace MojaPasieka.DataModel
 		private int _bc_id;
 		private DateTime _bc_created;
 		private string _bc_name;
+		private int _bc_bh_id;
 		private BeeColonyInspectedType _bc_inspectedtype;
 		private string _bc_desc;
 		private DateTime _bc_timestamp;
@@ -69,6 +70,24 @@ namespace MojaPasieka.DataModel
 			{
 				_bc_name = value;
 				OnPropertyChanged(nameof(bc_name));
+			}
+		}
+
+		/// <summary>
+		/// Id ula w którym jest rodzina
+		/// </summary>
+		/// <value>The bc bh identifier.</value>
+		[Indexed]
+		public int bc_bh_id
+		{
+			get
+			{
+				return _bc_bh_id;
+			}
+			set
+			{
+				_bc_bh_id = value;
+				OnPropertyChanged(nameof(bc_bh_id));
 			}
 		}
 

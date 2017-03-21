@@ -56,7 +56,7 @@ namespace MojaPasieka
 					var cb = scope.Resolve<ICommandBus>();
 
 					var tutorialStatus = qb.Process<GetParameter, string>(new GetParameter(ParameterName.TUTORIAL_STATUS));
-					if (tutorialStatus != "")
+					if (tutorialStatus != "1")
 					{
 						await Task.Delay(500);
 						var res = await scope.Resolve<INotification>().askQuestion("Witaj", "Czy chcesz uruchomić tutorial, aby zapoznać się z aplikacją?", "Tak", "Anuluj");
@@ -66,7 +66,6 @@ namespace MojaPasieka
 							await cb.SendCommandAsync<SaveParameter>(new SaveParameter(ParameterName.TUTORIAL_STATUS, "1"));
 						}
 					}
-
 				}
 				catch (Exception ex)
 				{

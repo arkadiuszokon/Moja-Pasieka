@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:ViewPage xmlns:pages="clr-namespace:MojaPasieka.View" 
+	xmlns:maps="clr-namespace:TK.CustomMap;assembly=TK.CustomMap"
+x:TypeArguments="pages:ApiaryEditableModel"  xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MojaPasieka.View.ApiaryEditable">
+	<ContentPage.Content>
+		<StackLayout Orientation="Vertical" Padding="20" Spacing="15">
+			<pages:CardView >
+				<pages:CardView.Content>
+					<StackLayout>
+						<Label Text="Nazwa:" Style="{StaticResource labelEntry}" />
+						<Entry  Text="{Binding ap_name, Mode=TwoWay}" />
+						<Label Text="Data utworzenia:" Style="{StaticResource labelEntry}" />
+						<DatePicker x:Name="dateCreated" Date="{Binding ap_datecreated, Mode=TwoWay}" Format="dd-MM-yyyy"/>
+						<Label Text="Opis:" Style="{StaticResource labelEntry}" />
+						<Editor HeightRequest="70"  Text="{Binding ap_desc, Mode=TwoWay}" />
+						<Label Text="Lokalizacja:" Style="{StaticResource labelEntry}" />
+						<StackLayout Orientation="Horizontal">
+							<Label Text="{Binding ap_latlng}" FontSize="Small" />
+							<Button Text="Wybierz lokalizację" Style="{StaticResource buttonStyle}" Command="{Binding ShowMap}" />
+						</StackLayout>
+						<Button HorizontalOptions="FillAndExpand" Text="Zapisz" Style="{StaticResource buttonStyle}" Command="{Binding Save}" />
+					</StackLayout>
+				</pages:CardView.Content>
+			</pages:CardView>
+		</StackLayout>
+	</ContentPage.Content>
+</pages:ViewPage>

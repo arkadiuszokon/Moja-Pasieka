@@ -2,12 +2,23 @@
 <pages:ViewPage xmlns:pages="clr-namespace:MojaPasieka.View" 
 x:TypeArguments="pages:BeeHivesListModel"  xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MojaPasieka.View.BeeHivesList">
 	<ContentPage.Content>
-		<StackLayout Orientation="Vertical" Padding="20">
-			<pages:CardView>
-				<pages:CardView.Content>
-					<Label Text="Witaj na liscie uli"/>
-				</pages:CardView.Content>
-			</pages:CardView>
+		<StackLayout Orientation="Vertical">
+			<ListView x:Name="beeHivesList" ItemsSource="{Binding BeeHives}" HasUnevenRows="true" BackgroundColor="Transparent" SelectedItem="{Binding SelectedBeeHive}">
+				<ListView.ItemTemplate>
+					<DataTemplate >
+						<ViewCell>
+							<pages:CardView Margin="10">
+								<pages:CardView.Content>
+									<StackLayout>
+										<Label Text="{Binding bh_name}" />
+									</StackLayout>
+								</pages:CardView.Content>
+							</pages:CardView>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+
 		</StackLayout>
 	</ContentPage.Content>
 </pages:ViewPage>

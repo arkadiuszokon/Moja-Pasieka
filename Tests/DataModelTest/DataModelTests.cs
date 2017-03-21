@@ -43,7 +43,7 @@ namespace Tests
 				ap_name = "Przykładowa pasieka",
 				ap_timestamp = DateTime.Now
 			};
-			await cb.SendCommandAsync<AddApiary>(new AddApiary(apiary));
+			await cb.SendCommandAsync<SaveApiary>(new SaveApiary(apiary));
 
 			var currentQuan = qb.Process<GetNumOfRowsInTable, int>(new GetNumOfRowsInTable(typeof(Apiary)));
 			Assert.True(currentQuan == tmpQuan + 1, "Dodanie elementu");
@@ -70,7 +70,7 @@ namespace Tests
 				bb_name="TEST",
 				bb_timestamp=DateTime.Now
 			};
-			await cb.SendCommandAsync<AddBeeBreed>(new AddBeeBreed(beeBreed));
+			await cb.SendCommandAsync<SaveBeeBreed>(new SaveBeeBreed(beeBreed));
 
 			var currentQuan = qb.Process<GetNumOfRowsInTable, int>(new GetNumOfRowsInTable(typeof(BeeBreed)));
 			Assert.True(currentQuan == tmpQuan + 1, "Dodanie elementu");

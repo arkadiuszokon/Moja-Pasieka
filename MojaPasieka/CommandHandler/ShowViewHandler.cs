@@ -9,15 +9,18 @@ namespace MojaPasieka.cqrs
 
 		public async Task HandleAsync(ShowView command)
 		{
-			if (command.AsRoot)
-			{
-				AppMainPage.setRootPage(command.View);
-			}
-			else
-			{
-				await AppMainPage.nav.PushAsync(command.View);
+			Device.BeginInvokeOnMainThread(async () => 
+			{ 
+				if (command.AsRoot)
+				{
+					AppMainPage.setRootPage(command.View);
+				}
+				else
+				{
+					await AppMainPage.nav.PushAsync(command.View);
+				}
+			});
 
-			}
 		}
 
 	}

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <pages:ViewPage xmlns:pages="clr-namespace:MojaPasieka.View" 
-	xmlns:maps="clr-namespace:TK.CustomMap;assembly=TK.CustomMap"
+	xmlns:maps="clr-namespace:TK.CustomMap;assembly=TK.CustomMap" Title="{Binding ap_name, StringFormat='Pasieka {0:S}'}"
 x:TypeArguments="pages:ApiaryDetailsModel" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MojaPasieka.View.ApiaryDetails">
 	<ContentPage.Content>
 		<ScrollView>
@@ -25,11 +25,9 @@ x:TypeArguments="pages:ApiaryDetailsModel" xmlns="http://xamarin.com/schemas/201
 							 <maps:TKCustomMap HorizontalOptions="FillAndExpand" HeightRequest="200" 
 						        x:Name="MyMap"
 								IsRegionChangeAnimated="false"
-								
 								MapCenter="{Binding Location}"
 								CustomPins="{Binding Pins}"
 						        IsShowingUser="false">
-								
 						      </maps:TKCustomMap>
 						</StackLayout>
 					</pages:CardView.Content>
@@ -41,7 +39,6 @@ x:TypeArguments="pages:ApiaryDetailsModel" xmlns="http://xamarin.com/schemas/201
 							<StackLayout Padding="15">
 								<Label Text="Ilość uli" Style="{StaticResource labelValue}" />
 								<Label Text="{Binding BeeHivesCount}" Margin="0,0,0,10"/>
-
 							</StackLayout>
 						</StackLayout>
 					</pages:CardView.Content>

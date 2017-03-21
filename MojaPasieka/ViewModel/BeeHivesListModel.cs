@@ -14,9 +14,27 @@ namespace MojaPasieka.View
 		private static bool toRefresh = false;
 
 		private BeeHivesList view;
-		private ObservableCollection<BeeHive> _beeHives;
+		private ObservableCollection<BeeHivesListItem> _beeHives;
+		private BeeHivesListItem _selectedBeeHive;
 
-		public ObservableCollection<BeeHive> BeeHives
+		public BeeHivesListItem SelectedBeeHive
+		{
+			get
+			{
+				return _selectedBeeHive;
+			}
+			set
+			{
+				if (value != null)
+				{
+					ShowBeeHiveDetails(value);
+				}
+				_selectedBeeHive = value;
+				OnPropertyChanged(nameof(SelectedBeeHive));
+			}
+		}
+
+		public ObservableCollection<BeeHivesListItem> BeeHives
 		{
 			get
 			{
@@ -33,11 +51,43 @@ namespace MojaPasieka.View
 		{
 			this.view = view;
 			view.Appearing += View_Appearing;
+
+			view.ToolbarItems.Add(new ToolbarItem
+			{
+				Text = "Dodaj nowy ul",
+				Command = new Command(AddNewBeeHive),
+				Order=ToolbarItemOrder.Secondary
+			});
+			view.ToolbarItems.Add(new ToolbarItem
+			{
+				Text = "Zbiorcze akcje",
+				Command = new Command(MakeBulkAction),
+				Order = ToolbarItemOrder.Secondary
+			});
+
 			using (var scope = IoC.container.BeginLifetimeScope())
 			{
 				scope.Resolve<IEventPublisher>().RegisterAsyncConsumer<ParameterWasChanged>(this);
 			}
 			SetData();
+		}
+
+		private void ShowBeeHiveDetails(BeeHive beeHive)
+		{
+			using (var scope = IoC.container.BeginLifetimeScope())
+			{
+				scope.Resolve<ICommandBus>().SendCommandAsync<ShowView>(new ShowView(new BeeHiveDetails(beeHive), false));
+			}
+		}
+
+		protected void AddNewBeeHive()
+		{
+			
+		}
+
+		protected void MakeBulkAction()
+		{
+			//Todo uzupełnic
 		}
 
 		private void SetData()
@@ -49,11 +99,11 @@ namespace MojaPasieka.View
 					var qb = scope.Resolve<IQueryBus>();
 					var context = qb.Process<GetApiaryContext, Apiary>(new GetApiaryContext());
 					view.Title = "Ule w pasiece ''" + context.ap_name + "''";
-					BeeHives = new ObservableCollection<BeeHive>(qb.Process<GetBeeHivesOnApiary, List<BeeHive>>(new GetBeeHivesOnApiary(context.ap_id)));
+					BeeHives = new ObservableCollection<BeeHivesListItem>(qb.Process<GetBeeHivesList, List<BeeHivesListItem>>(new GetBeeHivesList(context.ap_id)));
 				}
 				catch (Exception ex)
 				{
-					scope.Resolve<INotification>().showAlert("Błąd", ex.Message);
+					ErrorUtil.handleError(ex);
 				}
 			}
 		}

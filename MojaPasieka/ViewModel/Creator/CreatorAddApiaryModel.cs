@@ -156,19 +156,24 @@ namespace MojaPasieka.View
 					var cb = scope.Resolve<ICommandBus>();
 					try
 					{
-						Task.Run(async () => { 
-							await cb.SendCommandAsync<AddApiary>(new AddApiary(new DataModel.Apiary { ap_datecreated = DateCreated, ap_latlng = Location, ap_name = ApiaryName, ap_desc = ApiaryDesc, ap_timestamp = DateTime.Now }));
-						}).Wait();
+						Task.Run(async () =>
+						{
+							var apiaryToSave = new DataModel.Apiary { ap_datecreated = DateCreated, ap_latlng = Location, ap_name = ApiaryName, ap_desc = ApiaryDesc, ap_timestamp = DateTime.Now };
+							await cb.SendCommandAsync<SaveApiary>(new SaveApiary(apiaryToSave));
+							if (apiaryToSave.ap_id != 0)
+							{
+								await cb.SendCommandAsync<SaveParameter>(new SaveParameter(ParameterName.CURRENT_APIARY_ID, apiaryToSave.ap_id.ToString()));
+							}
+						});
+
 					}
 					catch (ValidationException ve)
 					{
-						scope.Resolve<INotification>().showAlert("Błąd", String.Join("\n", ve.Result.Messages));
-						return;
+						ve.MenageError();
 					}
 					catch (Exception ex)
 					{
-						scope.Resolve<INotification>().showAlert("Błąd", "Nie można dadać pasieki");
-						return;
+						ErrorUtil.handleError(ex);
 					}
 				}
 			});
@@ -182,7 +187,6 @@ namespace MojaPasieka.View
 
 		public async Task HandleAsync(Event<Apiary> eventMessage)
 		{
-			
 			if (eventMessage.Action == EventAction.CREATE)
 			{
 				 Device.BeginInvokeOnMainThread(() =>

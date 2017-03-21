@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage  xmlns="http://xamarin.com/schemas/2014/forms" Title="Menu" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MojaPasieka.View.MenuPage">
-
 	<ContentPage.Content>
-        <StackLayout VerticalOptions="FillAndExpand">
-			<Image HeightRequest="150" x:Name="imageTop" Aspect="AspectFill" HorizontalOptions="FillAndExpand"/>
+        <StackLayout VerticalOptions="FillAndExpand" Spacing="0">
+			<Image x:Name="imageTop" Aspect="AspectFill" HeightRequest="100" />
+			<Label Text="" TextColor="Black" HeightRequest="40" HorizontalTextAlignment="Center" FontAttributes="Bold" VerticalTextAlignment="Center" x:Name="apiaryName" />
             <ListView x:Name="menuList" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>

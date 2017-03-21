@@ -11,6 +11,10 @@ namespace MojaPasieka.View
 		public BeeHivesList()
 		{
 			InitializeComponent();
+			beeHivesList.ItemSelected += (sender, e) =>
+			{
+				((ListView)sender).SelectedItem = null;
+			};
 		}
 	}
 }

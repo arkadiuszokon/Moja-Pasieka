@@ -5,8 +5,8 @@ using Xamarin.Forms;
 
 namespace MojaPasieka.View
 {
-	
-	public partial class TutorialPage : ViewPage<TutorialPageModel>
+	[MenuTitle("Tutorial")]
+	public partial class TutorialPage : ViewPage<TutorialPageModel>, IMenuPage
 	{
 		public TutorialPage()
 		{

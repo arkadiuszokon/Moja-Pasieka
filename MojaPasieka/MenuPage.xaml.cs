@@ -8,15 +8,18 @@ using MojaPasieka.cqrs;
 using Autofac.Core;
 using System.Reflection;
 using System.Linq;
+using MojaPasieka.DataModel;
+using System.Threading.Tasks;
 
 namespace MojaPasieka.View
 {
-	public partial class MenuPage : ContentPage
+	public partial class MenuPage : ContentPage, IConsumerAsync<ParameterWasChanged>
 	{
 		public MenuPage()
 		{
 			InitializeComponent();
 			imageTop.Source = ImageSource.FromResource("MojaPasieka.Assets.MenuBees");
+			apiaryName.BackgroundColor = AppColors.MainColor;
 			var menuItems = new ObservableCollection<MenuItem>();
 			using (var scope = IoC.container.BeginLifetimeScope())
 			{
@@ -31,6 +34,16 @@ namespace MojaPasieka.View
 					});
 				}
 				menuList.ItemsSource = menuItems;
+				try
+				{
+					var apiary = scope.Resolve<IQueryBus>().Process<GetApiaryContext, Apiary>(new GetApiaryContext());
+					apiaryName.Text = "Pasieka ''" + apiary.ap_name + "''";
+				}
+				catch (Exception ex)
+				{
+					apiaryName.Text = "Wybierz/dodaj pasiekę";
+				}
+				scope.Resolve<IEventPublisher>().RegisterAsyncConsumer<ParameterWasChanged>(this);
 			}
 
 			menuList.ItemSelected += (object sender, SelectedItemChangedEventArgs e) => 
@@ -46,9 +59,28 @@ namespace MojaPasieka.View
 				}
 				catch (Exception ex)
 				{
-					IoC.container.BeginLifetimeScope().Resolve<INotification>().showAlert("Błąd", ex.Message);
+					ErrorUtil.handleError(ex);
 				}
 			};
+		}
+
+		public async Task HandleAsync(ParameterWasChanged eventMessage)
+		{
+			if (eventMessage.pa_name == ParameterName.CURRENT_APIARY_ID)
+			{
+				using (var scope = IoC.container.BeginLifetimeScope())
+				{
+					try
+					{
+						var apiary = scope.Resolve<IQueryBus>().Process<GetApiaryContext, Apiary>(new GetApiaryContext());
+						apiaryName.Text = "Pasieka ''" + apiary.ap_name + "''";
+					}
+					catch (Exception ex)
+					{
+						apiaryName.Text = "Wybierz/dodaj pasiekę";
+					}
+				}
+			}
 		}
 	}
 

@@ -7,7 +7,7 @@ namespace MojaPasieka.Utils
 	{
 		void showMap();
 
-		Task showMapForLocation(Action<string> onUserSelectPoint);
+		Task showMapForLocation(Action<string> onUserSelectPoint, double currentLat = 0, double currentLng = 0);
 
 	}
 }

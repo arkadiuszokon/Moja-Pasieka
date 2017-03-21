@@ -5,7 +5,7 @@ using MojaPasieka.DataModel;
 
 namespace MojaPasieka.cqrs
 {
-	public class QueenBeeToAdd : IValidator<AddQueenBee>
+	public class QueenBeeToAdd : IValidator<SaveQueenBee>
 	{
 		private ILifetimeScope scope;
 
@@ -14,7 +14,7 @@ namespace MojaPasieka.cqrs
 			this.scope = scope;
 		}
 
-		public ValidationResult Validate(AddQueenBee command)
+		public ValidationResult Validate(SaveQueenBee command)
 		{
 			var vr = new ValidationResult();
 			if (command.Queen.qb_bb_id == 0)

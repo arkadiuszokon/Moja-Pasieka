@@ -6,12 +6,12 @@ using Xamarin.Forms;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace MojaPasieka.View
 {
-	public class ApiariesListModel :ViewModelBase, IViewModel
+	public class ApiariesListModel :ViewModelBase, IViewModel, IConsumerAsync<Event<Apiary>>
 	{
-
 		private ObservableCollection<Apiary> _apiaries;
 		private Apiary _selectedApiary;
 
@@ -25,7 +25,7 @@ namespace MojaPasieka.View
 			{
 				if (value != null)
 				{
-					showApiaryDetails(value);
+					ShowApiaryDetails(value);
 				}
 				_selectedApiary = null;
 				OnPropertyChanged(nameof(SelectedApiary));
@@ -55,15 +55,23 @@ namespace MojaPasieka.View
 				Command = new Command(AddApiary),
 				Order = ToolbarItemOrder.Secondary
 			});
+			SetData();
+			using (var scope = IoC.container.BeginLifetimeScope())
+			{
+				scope.Resolve<IEventPublisher>().RegisterAsyncConsumer<Event<Apiary>>(this);
+			}
+		}
+
+		public void SetData()
+		{
 			using (var scope = IoC.container.BeginLifetimeScope())
 			{
 				var qb = scope.Resolve<IQueryBus>();
 				Apiaries = new ObservableCollection<Apiary>(qb.Process<GetFullListOf, List<object>>(new GetFullListOf(typeof(Apiary))).Cast<Apiary>().ToList());
 			}
-
 		}
 
-		private void showApiaryDetails(Apiary apiary)
+		private void ShowApiaryDetails(Apiary apiary)
 		{
 			using (var scope = IoC.container.BeginLifetimeScope())
 			{
@@ -73,7 +81,15 @@ namespace MojaPasieka.View
 
 		private void AddApiary()
 		{
+			using (var scope = IoC.container.BeginLifetimeScope())
+			{
+				scope.Resolve<ICommandBus>().SendCommandAsync<ShowView>(new ShowView(new ApiaryEditable(), false));
+			}
+		}
 
+		public async Task HandleAsync(Event<Apiary> eventMessage)
+		{
+			SetData();
 		}
 	}
 }

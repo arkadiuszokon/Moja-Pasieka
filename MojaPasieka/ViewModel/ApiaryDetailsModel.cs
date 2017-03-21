@@ -13,11 +13,12 @@ using System.Collections.Generic;
 
 namespace MojaPasieka.View
 {
-	public class ApiaryDetailsModel : MojaPasieka.DataModel.Apiary, IViewModel
+	public class ApiaryDetailsModel : MojaPasieka.DataModel.Apiary, IViewModel, IConsumerAsync<Event<Apiary>>
 	{
 		private Position _location;
 		private ObservableCollection<TKCustomMapPin> _pins;
 		private string _beeHivesCount;
+		private Apiary _context;
 
 		public string BeeHivesCount
 		{
@@ -61,9 +62,7 @@ namespace MojaPasieka.View
 		public ApiaryDetailsModel(ApiaryDetails view, DataModel.Apiary context)
 		{
 			this.InjectFrom(context);
-			view.Title = "Pasieka ''" + ap_name + "''"; 
-			Debug.WriteLine(this.ap_name);
-
+			this._context = context;
 			using (var scope = IoC.container.BeginLifetimeScope())
 			{
 				var qb = scope.Resolve<IQueryBus>();
@@ -77,6 +76,29 @@ namespace MojaPasieka.View
 						Order = ToolbarItemOrder.Secondary
 					});
 				}
+				scope.Resolve<IEventPublisher>().RegisterAsyncConsumer<Event<Apiary>>(this);
+			}
+
+			view.ToolbarItems.Add(new ToolbarItem
+			{
+				Text = "Edytuj pasiekę",
+				Command = new Command(EditApiary),
+				Order = ToolbarItemOrder.Secondary
+			});
+			view.ToolbarItems.Add(new ToolbarItem
+			{
+				Text = "Usuń pasiekę",
+				Command = new Command(DeleteApiary),
+				Order = ToolbarItemOrder.Secondary
+			});
+			SetData();
+		}
+
+		public void SetData()
+		{
+			using (var scope = IoC.container.BeginLifetimeScope())
+			{
+				var qb = scope.Resolve<IQueryBus>();
 				var latlng = ap_latlng.Split(';');
 				if (latlng.Length > 1)
 				{
@@ -94,19 +116,6 @@ namespace MojaPasieka.View
 				var beeHives = qb.Process<GetBeeHivesOnApiary, List<BeeHive>>(new GetBeeHivesOnApiary(ap_id));
 				BeeHivesCount = beeHives.Count.ToString();
 			}
-
-			view.ToolbarItems.Add(new ToolbarItem
-			{
-				Text = "Edytuj pasiekę",
-				Command = new Command(EditApiary),
-				Order = ToolbarItemOrder.Secondary
-			});
-			view.ToolbarItems.Add(new ToolbarItem
-			{
-				Text = "Usuń pasiekę",
-				Command = new Command(DeleteApiary),
-				Order = ToolbarItemOrder.Secondary
-			});
 		}
 
 		private void ChooseApiary()
@@ -125,7 +134,19 @@ namespace MojaPasieka.View
 
 		private void EditApiary()
 		{
+			using (var scope = IoC.container.BeginLifetimeScope())
+			{
+				scope.Resolve<ICommandBus>().SendCommandAsync<ShowView>(new ShowView(new ApiaryEditable(_context), false));
+			}
+		}
 
+		public async Task HandleAsync(Event<Apiary> eventMessage)
+		{
+			if (eventMessage.Item.ap_id == ap_id)
+			{
+				this.InjectFrom(eventMessage.Item);
+				SetData();
+			}
 		}
 	}
 }

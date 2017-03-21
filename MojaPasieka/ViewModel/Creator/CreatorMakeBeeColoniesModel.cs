@@ -315,9 +315,10 @@ namespace MojaPasieka.View
 										bc_desc = "",
 										bc_inspectedtype = EnumHelper.getEnum<BeeColonyInspectedType>(SelectedInspectType.Id),
 										bc_name = "Rodzina w ulu: " + beeHivesAdded[i].bh_name,
+										bc_bh_id = beeHivesAdded[i].bh_id,
 										bc_timestamp = DateTime.Now
 									};
-									await cb.SendCommandAsync<AddBeeColony>(new AddBeeColony(bc));
+									await cb.SendCommandAsync<SaveBeeColony>(new SaveBeeColony(bc));
 									coloniesAdded.Add(bc);
 								}
 								scope2.Resolve<SQLiteConnection>().Commit();
@@ -334,7 +335,7 @@ namespace MojaPasieka.View
 										bch_timestamp = DateTime.Now,
 										bch_bcht_id = newColony.bcht_id
 									};
-									await cb.SendCommandAsync<AddBeeColonyHistory>(new AddBeeColonyHistory(bch));
+									await cb.SendCommandAsync<SaveBeeColonyHistory>(new SaveBeeColonyHistory(bch));
 
 									var queen = new QueenBee
 									{
@@ -352,7 +353,7 @@ namespace MojaPasieka.View
 										qb_year = QueenBeeYear,
 										qb_timestamp = DateTime.Now
 									};
-									await cb.SendCommandAsync<AddQueenBee>(new AddQueenBee(queen));
+									await cb.SendCommandAsync<SaveQueenBee>(new SaveQueenBee(queen));
 								}
 								scope2.Resolve<SQLiteConnection>().Commit();
 								ShowLoading = false;
@@ -361,18 +362,11 @@ namespace MojaPasieka.View
 						}
 						catch (ValidationException ve)
 						{
-							if (ve.Result.Messages.Count > 0)
-							{
-								notifyService.showAlert("Błąd", String.Join("\n", ve.Result.Messages));
-							}
-							else
-							{
-								notifyService.showAlert("Błąd", "Wystąpił błąd walidacji");
-							}
+							ve.MenageError();
 						}
 						catch (Exception ex)
 						{
-
+							ErrorUtil.handleError(ex);
 						}
 					});
 				});
