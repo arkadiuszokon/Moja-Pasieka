@@ -276,6 +276,8 @@
     <Compile Include="QueryHandler\GetBeeHiveBodiesHandler.cs" />
     <Compile Include="Query\GetFramesInBeeHiveBody.cs" />
     <Compile Include="QueryHandler\GetFramesInBeeHiveBodyHandler.cs" />
+    <Compile Include="Query\GetColonyInBeeHive.cs" />
+    <Compile Include="QueryHandler\GetColonyInBeeHiveHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />

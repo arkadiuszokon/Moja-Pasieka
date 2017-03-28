@@ -134,5 +134,15 @@ C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\obj\Debug\an
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\NControl.dll
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\NControl.Droid.dll
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\NGraphics.Android.dll
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\NGraphics.dll
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\NGraphics.Android.xml
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\NGraphics.Android.dll.mdb
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\NGraphics.xml
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\NGraphics.dll.mdb
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\obj\Debug\android\assets\NGraphics.Android.dll.mdb
+C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\obj\Debug\android\assets\NGraphics.dll.mdb
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\obj\Debug\MojaPasieka.Droid.dll.mdb
 C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\Droid\bin\Debug\MojaPasieka.Droid.dll.mdb

@@ -3,15 +3,59 @@
 	 Title="{Binding bh_name, StringFormat='Ul {0:S}'}"
 x:TypeArguments="pages:BeeHiveDetailsModel" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MojaPasieka.View.BeeHiveDetails">
 	<ContentPage.Content>
-		<StackLayout Padding="20">
-			<pages:CardView >
-				<pages:CardView.Content>
-					<StackLayout>
-						<ContentView Content="{Binding BeeHiveDrawing}" />
-					</StackLayout>
-				</pages:CardView.Content>
-			</pages:CardView>
-
-		</StackLayout>
+		<ScrollView>
+			<StackLayout Padding="20">
+				<pages:CardView >
+					<pages:CardView.Content>
+						<StackLayout>
+							<ContentView Content="{Binding BeeHiveDrawing}" />
+						</StackLayout>
+					</pages:CardView.Content>
+				</pages:CardView>
+				<pages:CardView Padding="0">
+					<pages:CardView.Content>
+						<StackLayout Padding="0">
+							<Label Text="Dane ula" Style="{StaticResource cardTitle}" />
+							<StackLayout Padding="15">
+								<Label Text="Nazwa" Style="{StaticResource labelValue}" />
+								<Label Text="{Binding bh_name}" Margin="0,0,0,10"/>
+								<Label Text="Opis" Style="{StaticResource labelValue}" />
+								<Label Text="{Binding bh_desc}" Margin="0,0,0,10"/>
+								<Label Text="Typ" Style="{StaticResource labelValue}" />
+								<Label Text="{Binding BeeHiveType}" Margin="0,0,0,10"/>
+								<Label Text="Materiał" Style="{StaticResource labelValue}" />
+								<Label Text="{Binding BeeHiveMaterial}" Margin="0,0,0,10"/>
+								<Label Text="Przykrycie" Style="{StaticResource labelValue}" />
+								<Label Text="{Binding BeeHiveTop}" Margin="0,0,0,10"/>
+								<Label Text="Dennica" Style="{StaticResource labelValue}" />
+								<Label Text="{Binding BeeHiveBottom}" Margin="0,0,0,10"/>
+								<Label Text="Malowanie" Style="{StaticResource labelValue}" />
+								<Label Text="{Binding bh_paint}" Margin="0,0,0,10"/>
+							</StackLayout>
+						</StackLayout>
+					</pages:CardView.Content>
+				</pages:CardView>
+				<pages:CardView Padding="0">
+					<pages:CardView.Content>
+						<StackLayout Padding="0">
+							<Label Text="Historia ula" Style="{StaticResource cardTitle}" />
+							<ListView HeightRequest="300" ItemsSource="{Binding BeeHiveHistory}" />
+						</StackLayout>
+					</pages:CardView.Content>
+				</pages:CardView>
+				<pages:CardView Padding="0" IsVisible="{Binding BeeHiveNotEmpty}">
+					<pages:CardView.Content>
+						<StackLayout Padding="0">
+							<Label Text="Rodzina w ulu" Style="{StaticResource cardTitle}" />
+							<StackLayout Padding="15">
+								<Label Text="Nazwa" Style="{StaticResource labelValue}" />
+								<Label Text="{Binding BeeColonyName}" Margin="0,0,0,10"/>
+								<ProgressBar Progress="0.8" BackgroundColor="Transparent" />
+							</StackLayout>
+						</StackLayout>
+					</pages:CardView.Content>
+				</pages:CardView>
+			</StackLayout>
+		</ScrollView>
 	</ContentPage.Content>
 </pages:ViewPage>
