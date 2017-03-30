@@ -1,33 +1,32 @@
-﻿<Properties StartupConfiguration="{4E901ACF-5B0E-4254-BB64-292057558CF7}|Default">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="C:\Users\Arkadiusz.INSOLUTIONS\Documents\Projects\MojaPasieka\MojaPasieka\Bus\CommandBus.cs" relfile="MojaPasieka\Bus\CommandBus.cs" line="69" column="5" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.MojaPasieka.Droid PreferredExecutionTarget="Android.AVD_GalaxyNexus_ToolsForApacheCordova" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MojaPasieka\ViewModel\BeeHiveDetailsModel.cs">
+﻿<Properties StartupConfiguration="{9D5FB15A-1523-4F4D-A936-F0FBE85AEBC1}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
+  <MonoDevelop.Ide.ItemProperties.MojaPasieka.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.334655FD-7C29-4843-A5E6-35CBA7445CA2" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Entitlements.plist">
     <Files>
-      <File FileName="MojaPasieka\ViewModel\BeeHiveDetailsModel.cs" Line="180" Column="5" />
-      <File FileName="MojaPasieka\ViewModel\TutorialPageModel.cs" Line="1" Column="1" />
-      <File FileName="MojaPasieka\View\TutorialPage.xaml" Line="1" Column="1" />
-      <File FileName="MojaPasieka\View\TutorialPage.xaml.cs" Line="17" Column="1" />
-      <File FileName="MojaPasieka\Query\GetBeeHiveBodies.cs" Line="15" Column="3" />
-      <File FileName="MojaPasieka\QueryHandler\GetBeeHiveBodiesHandler.cs" Line="12" Column="4" />
-      <File FileName="MojaPasieka\Query\GetFramesInBeeHiveBody.cs" Line="17" Column="1" />
-      <File FileName="MojaPasieka\QueryHandler\GetFramesInBeeHiveBodyHandler.cs" Line="15" Column="1" />
-      <File FileName="MojaPasieka\DataModel\Frame.cs" Line="1" Column="1" />
-      <File FileName="MojaPasieka\QueryHandler\GetFrameTypesByMainTypeHandler.cs" Line="1" Column="1" />
-      <File FileName="MojaPasieka\Bus\Core\IQueryBus.cs" Line="8" Column="11" />
-      <File FileName="MojaPasieka\Startup\Task\DBConnectTask.cs" Line="15" Column="4" />
-      <File FileName="MojaPasieka\View\HomePage.xaml" Line="1" Column="1" />
-      <File FileName="MojaPasieka\Query\GetColonyInBeeHive.cs" Line="16" Column="1" />
-      <File FileName="MojaPasieka\QueryHandler\GetColonyInBeeHiveHandler.cs" Line="14" Column="1" />
-      <File FileName="MojaPasieka\DataModel\BeeColonyHistory.cs" Line="16" Column="28" />
-      <File FileName="MojaPasieka\DataModel\BeeColonyCondition.cs" Line="36" Column="5" />
-      <File FileName="MojaPasieka\View\HomePage.xaml.cs" Line="1" Column="1" />
+      <File FileName="MojaPasieka/ViewModel/Core/ViewModelBase.cs" Line="4" Column="27" />
+      <File FileName="../../../../Library/Frameworks/Xamarin.Android.framework/Versions/7.2.0-7/lib/xbuild/Xamarin/Android/Xamarin.Android.Common.targets" Line="17" Column="1" />
+      <File FileName="iOS/Main.cs" Line="17" Column="1" />
+      <File FileName="iOS/AppDelegate.cs" Line="20" Column="4" />
+      <File FileName="Droid/MainApplication.cs" Line="1" Column="1" />
+      <File FileName="Droid/MainActivity.cs" Line="1" Column="1" />
+      <File FileName="MojaPasieka/App.xaml" Line="1" Column="1" />
+      <File FileName="MojaPasieka/App.xaml.cs" Line="38" Column="1" />
+      <File FileName="MojaPasieka/AppMainPage.cs" Line="33" Column="4" />
+      <File FileName="iOS/Entitlements.plist" />
+      <File FileName="iOS/DatabaseConnection_iOS.cs" Line="9" Column="2" />
+      <File FileName="Droid/DatabaseConnection_Android.cs" Line="12" Column="63" />
+      <File FileName="Droid/Notification_Android.cs" Line="9" Column="1" />
+      <File FileName="iOS/Notification_iOS.cs" Line="16" Column="16" />
+      <File FileName="MojaPasieka/Startup/AppStarter.cs" Line="46" Column="5" />
+      <File FileName="MojaPasieka/Startup/Task/RegisterPlatformDependendTypesTask.cs" Line="16" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.MojaPasieka.Droid PreferredExecutionTarget="Android.73QDU16C28005723" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/arkadiuszokon/Documents/Moja-Pasieka/MojaPasieka/App.xaml.cs" relfile="MojaPasieka/App.xaml.cs" line="29" column="8" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
 </Properties>

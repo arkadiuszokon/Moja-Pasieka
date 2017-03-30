@@ -15,51 +15,6 @@
           "lib/netstandard1.1/Autofac.dll": {}
         }
       },
-      "CarouselView.FormsPlugin/3.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.Forms": "2.2.0.31"
-        },
-        "compile": {
-          "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid10+Xamarin.iOS10/CarouselView.FormsPlugin.Abstractions.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid10+Xamarin.iOS10/CarouselView.FormsPlugin.Abstractions.dll": {}
-        }
-      },
-      "Microsoft.Azure.Mobile/0.7.0": {
-        "type": "package",
-        "compile": {
-          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Microsoft.Azure.Mobile.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Microsoft.Azure.Mobile.dll": {}
-        }
-      },
-      "Microsoft.Azure.Mobile.Analytics/0.7.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Azure.Mobile": "0.7.0"
-        },
-        "compile": {
-          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Microsoft.Azure.Mobile.Analytics.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Microsoft.Azure.Mobile.Analytics.dll": {}
-        }
-      },
-      "Microsoft.Azure.Mobile.Crashes/0.7.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Azure.Mobile": "0.7.0"
-        },
-        "compile": {
-          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Microsoft.Azure.Mobile.Crashes.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Microsoft.Azure.Mobile.Crashes.dll": {}
-        }
-      },
       "Microsoft.Bcl/1.1.10": {
         "type": "package",
         "dependencies": {
@@ -588,7 +543,7 @@
           "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.Geolocator.dll": {}
         }
       },
-      "Xamarin.Forms/2.3.4.214-pre5": {
+      "Xamarin.Forms/2.3.4.221-pre6": {
         "type": "package",
         "compile": {
           "lib/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20/Xamarin.Forms.Core.dll": {},
@@ -636,68 +591,6 @@
         "lib/net45/Autofac.xml",
         "lib/netstandard1.1/Autofac.dll",
         "lib/netstandard1.1/Autofac.xml"
-      ]
-    },
-    "CarouselView.FormsPlugin/3.0.1": {
-      "sha512": "VOOMLSlJKudFBzNOAxnDEN78PZYcW06JfMXm+2D0WyUQurW/lMIYApcRJWHAA7mL4AxxVx3pYkm2Y2JEzp7rWg==",
-      "type": "package",
-      "path": "carouselview.formsplugin/3.0.1",
-      "files": [
-        "carouselview.formsplugin.3.0.1.nupkg.sha512",
-        "carouselview.formsplugin.nuspec",
-        "lib/MonoAndroid/CarouselView.FormsPlugin.Abstractions.dll",
-        "lib/MonoAndroid/CarouselView.FormsPlugin.Android.dll",
-        "lib/UAP10/CarouselView.FormsPlugin.Abstractions.dll",
-        "lib/UAP10/CarouselView.FormsPlugin.UWP.dll",
-        "lib/UAP10/CarouselView.FormsPlugin.UWP.pri",
-        "lib/UAP10/CarouselView.FormsPlugin.UWP/CarouselView.FormsPlugin.UWP.xr.xml",
-        "lib/UAP10/FlipViewControl.xbf",
-        "lib/UAP10/VerticalFlipViewControl.xbf",
-        "lib/Xamarin.iOS10/CarouselView.FormsPlugin.Abstractions.dll",
-        "lib/Xamarin.iOS10/CarouselView.FormsPlugin.iOS.dll",
-        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid10+Xamarin.iOS10/CarouselView.FormsPlugin.Abstractions.dll"
-      ]
-    },
-    "Microsoft.Azure.Mobile/0.7.0": {
-      "sha512": "1mhC5F+Q8JiEWapWXHOwoV5bURW6EBx2etY0tgij4l5QXG1vvcxiHVUefJPYub7r2oMBNhi60sLLF0LoYCw1eQ==",
-      "type": "package",
-      "path": "microsoft.azure.mobile/0.7.0",
-      "files": [
-        "lib/MonoAndroid403/Microsoft.Azure.Mobile.Android.Bindings.dll",
-        "lib/MonoAndroid403/Microsoft.Azure.Mobile.dll",
-        "lib/Xamarin.iOS10/Microsoft.Azure.Mobile.dll",
-        "lib/Xamarin.iOS10/Microsoft.Azure.Mobile.iOS.Bindings.dll",
-        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Microsoft.Azure.Mobile.dll",
-        "microsoft.azure.mobile.0.7.0.nupkg.sha512",
-        "microsoft.azure.mobile.nuspec"
-      ]
-    },
-    "Microsoft.Azure.Mobile.Analytics/0.7.0": {
-      "sha512": "VV/AAX3IJCHo3Xbk82hZdlFN+V6MqOuoBy4s8wOc+a/JXPVL+upnTrvJ79l2lrUawsix/r0d7fiyM0+ybmRpKw==",
-      "type": "package",
-      "path": "microsoft.azure.mobile.analytics/0.7.0",
-      "files": [
-        "lib/MonoAndroid403/Microsoft.Azure.Mobile.Analytics.Android.Bindings.dll",
-        "lib/MonoAndroid403/Microsoft.Azure.Mobile.Analytics.dll",
-        "lib/Xamarin.iOS10/Microsoft.Azure.Mobile.Analytics.dll",
-        "lib/Xamarin.iOS10/Microsoft.Azure.Mobile.Analytics.iOS.Bindings.dll",
-        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Microsoft.Azure.Mobile.Analytics.dll",
-        "microsoft.azure.mobile.analytics.0.7.0.nupkg.sha512",
-        "microsoft.azure.mobile.analytics.nuspec"
-      ]
-    },
-    "Microsoft.Azure.Mobile.Crashes/0.7.0": {
-      "sha512": "O8qk0htwjLFBDpm3Uu5KRG85/A2o+Pn11+xd27C3fZMitjRsJqbH5hwKrVSGriD8+5LKkeZ7IO0z8FwNfEjSsg==",
-      "type": "package",
-      "path": "microsoft.azure.mobile.crashes/0.7.0",
-      "files": [
-        "lib/MonoAndroid403/Microsoft.Azure.Mobile.Crashes.Android.Bindings.dll",
-        "lib/MonoAndroid403/Microsoft.Azure.Mobile.Crashes.dll",
-        "lib/Xamarin.iOS10/Microsoft.Azure.Mobile.Crashes.dll",
-        "lib/Xamarin.iOS10/Microsoft.Azure.Mobile.Crashes.iOS.Bindings.dll",
-        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/Microsoft.Azure.Mobile.Crashes.dll",
-        "microsoft.azure.mobile.crashes.0.7.0.nupkg.sha512",
-        "microsoft.azure.mobile.crashes.nuspec"
       ]
     },
     "Microsoft.Bcl/1.1.10": {
@@ -3463,10 +3356,10 @@
         "xam.plugin.geolocator.nuspec"
       ]
     },
-    "Xamarin.Forms/2.3.4.214-pre5": {
-      "sha512": "1bKFoHU6bhFQAPBhXBoibf9sOKLvgVZXRsSC75zGfaqbryOAXHdsW0EkKdejxbiJ29OtNRYRutCvq44OBcsSmg==",
+    "Xamarin.Forms/2.3.4.221-pre6": {
+      "sha512": "16ExnX7/onE/eKeFlAyIXYmbHWawg8p4R7f2zmTt4re3x845ZmHdSLpNRHl5e5kvqOyV3/vYt/5RSg3Ll6NvlA==",
       "type": "package",
-      "path": "xamarin.forms/2.3.4.214-pre5",
+      "path": "xamarin.forms/2.3.4.221-pre6",
       "files": [
         "build/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20/Mono.Cecil.Mdb.dll",
         "build/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20/Mono.Cecil.Pdb.dll",
@@ -3616,7 +3509,7 @@
         "lib/wpa81/Xamarin.Forms.Platform.dll",
         "lib/wpa81/Xamarin.Forms.Xaml.dll",
         "lib/wpa81/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.2.3.4.214-pre5.nupkg.sha512",
+        "xamarin.forms.2.3.4.221-pre6.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -3695,10 +3588,6 @@
   "projectFileDependencyGroups": {
     "": [
       "Autofac >= 4.4.0",
-      "CarouselView.FormsPlugin >= 3.0.1",
-      "Microsoft.Azure.Mobile >= 0.7.0",
-      "Microsoft.Azure.Mobile.Analytics >= 0.7.0",
-      "Microsoft.Azure.Mobile.Crashes >= 0.7.0",
       "Microsoft.Bcl >= 1.1.10",
       "Microsoft.Bcl.Build >= 1.0.21",
       "Microsoft.Net.Http >= 2.2.29",
@@ -3743,7 +3632,7 @@
       "System.Xml.XDocument >= 4.3.0",
       "TK.CustomMap >= 1.5.1",
       "Xam.Plugin.Geolocator >= 3.0.4",
-      "Xamarin.Forms >= 2.3.4.214-pre5",
+      "Xamarin.Forms >= 2.3.4.221-pre6",
       "Xamarin.Forms.Maps >= 2.3.3.193",
       "Xciles.PclValueInjecter >= 1.2.1",
       "modernhttpclient >= 2.4.2",
@@ -3755,6 +3644,6 @@
   "tools": {},
   "projectFileToolGroups": {},
   "packageFolders": {
-    "C:\\Users\\Arkadiusz.INSOLUTIONS\\.nuget\\packages\\": {}
+    "/Users/arkadiuszokon/.nuget/packages/": {}
   }
 }

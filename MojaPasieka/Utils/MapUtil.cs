@@ -85,13 +85,16 @@ namespace MojaPasieka.Utils
 			}
 			else if (userLocation == null)
 			{
-				if (Plugin.Geolocator.CrossGeolocator.Current.IsGeolocationAvailable && Plugin.Geolocator.CrossGeolocator.Current.IsGeolocationEnabled)
+				if(Device.RuntimePlatform == Device.Android)
 				{
-					btnOK.Text = "Czekam na lokalizację...";
-					userLocation = await Plugin.Geolocator.CrossGeolocator.Current.GetPositionAsync(10000);
-					var userPosition = new Position(userLocation.Latitude, userLocation.Longitude);
-					map.MoveToRegion(MapSpan.FromCenterAndRadius(userPosition, Distance.FromKilometers(3)));
-					pin.Position = userPosition;
+					if (Plugin.Geolocator.CrossGeolocator.Current.IsGeolocationAvailable && Plugin.Geolocator.CrossGeolocator.Current.IsGeolocationEnabled)
+					{
+						btnOK.Text = "Czekam na lokalizację...";
+						userLocation = await Plugin.Geolocator.CrossGeolocator.Current.GetPositionAsync (10000);
+						var userPosition = new Position (userLocation.Latitude, userLocation.Longitude);
+						map.MoveToRegion(MapSpan.FromCenterAndRadius(userPosition, Distance.FromKilometers(3)));
+						pin.Position = userPosition;
+					}
 				}
 			}
 

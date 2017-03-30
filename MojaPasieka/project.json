@@ -1,10 +1,6 @@
 ﻿{
   "dependencies": {
     "Autofac": "4.4.0",
-    "CarouselView.FormsPlugin": "3.0.1",
-    "Microsoft.Azure.Mobile": "0.7.0",
-    "Microsoft.Azure.Mobile.Analytics": "0.7.0",
-    "Microsoft.Azure.Mobile.Crashes": "0.7.0",
     "Microsoft.Bcl": "1.1.10",
     "Microsoft.Bcl.Build": "1.0.21",
     "Microsoft.Net.Http": "2.2.29",
@@ -52,7 +48,7 @@
     "System.Xml.XDocument": "4.3.0",
     "TK.CustomMap": "1.5.1",
     "Xam.Plugin.Geolocator": "3.0.4",
-    "Xamarin.Forms": "2.3.4.214-pre5",
+    "Xamarin.Forms": "2.3.4.221-pre6",
     "Xamarin.Forms.Maps": "2.3.3.193",
     "Xciles.PclValueInjecter": "1.2.1"
   },

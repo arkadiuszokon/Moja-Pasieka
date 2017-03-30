@@ -10,12 +10,9 @@ using Autofac;
 using MojaPasieka.View;
 using MojaPasieka.DataModel;
 using System.Threading.Tasks;
-using Microsoft.Azure.Mobile;
-using Microsoft.Azure.Mobile.Analytics;
-using Microsoft.Azure.Mobile.Crashes;
+
 using Xamarin.Forms.Xaml;
 
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MojaPasieka
 {
 	public partial class App : Application
@@ -69,7 +66,7 @@ namespace MojaPasieka
 				}
 				catch (Exception ex)
 				{
-					MobileCenterLog.Error(nameof(App), "", ex);
+					Debug.WriteLine (ex.ToString ());
 				}
 			}
 
@@ -80,9 +77,7 @@ namespace MojaPasieka
 		{
 			
 			base.OnStart();
-			MobileCenter.Start("android=e0b32b56-2713-4bdd-a130-82623fea2d59;" +
-				   "ios={Your iOS App secret here}",
-				   typeof(Analytics), typeof(Crashes));
+
 		}
 
 		protected override void OnSleep()
